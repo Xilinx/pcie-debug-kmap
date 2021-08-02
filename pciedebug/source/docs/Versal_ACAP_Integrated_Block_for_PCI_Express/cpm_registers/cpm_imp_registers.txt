@@ -1,0 +1,12 @@
+https://www.xilinx.com/html_docs/registers/am012/am012-versal-register-reference.html#cpm4_pcie0_attr___axisten_if_enable_msg_route.html
+https://www.xilinx.com/html_docs/registers/am012/am012-versal-register-reference.html#cpm4_pcie0_attr___pl_report_all_phy_errors.html
+https://www.xilinx.com/html_docs/registers/am012/am012-versal-register-reference.html#cpm4_pcie0_attr___pl_eq_bypass_phase23.html
+
+https://www.xilinx.com/html_docs/registers/am012/am012-versal-register-reference.html#cpm4_pcie0_attr___pfx_bar0_control_0.html
+https://www.xilinx.com/html_docs/registers/am012/am012-versal-register-reference.html#cpm4_pcie0_attr___pfx_bar0_control_1.html
+https://www.xilinx.com/html_docs/registers/am012/am012-versal-register-reference.html#cpm4_pcie0_attr___pfx_bar0_control_2.html
+https://www.xilinx.com/html_docs/registers/am012/am012-versal-register-reference.html#cpm4_pcie0_attr___pfx_bar0_control_2.html
+
+https://www.xilinx.com/html_docs/registers/am012/am012-versal-register-reference.html#cpm4_pcie0_attr___phy_rdy.html
+
+https://www.xilinx.com/html_docs/registers/am012/am012-versal-register-reference.html#cpm4_pcie0_attr___cfg_interrupt.html
