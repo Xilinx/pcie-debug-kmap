@@ -1,5 +1,3 @@
-# Vitis Video Analytics
+# PCIe Debug K-Map
 
-## View the [main index file](https://gitenterprise.xilinx.com/techdocs/ivas/blob/master/index.rst)
-
-## View the [HTML](https://pages.gitenterprise.xilinx.com/techdocs/ivas/)
+## View the [documentation](https://xilinx.github.io/pcie-debug-kmap/)
