@@ -1,0 +1,31 @@
+PCIe Application Notes
+XAPP1177: Designing with SR-IOV Capability of Xilinx Virtex-7 PCI Express Gen3 Integrated Block
+http://www.xilinx.com/support/documentation/application_notes/xapp1177-pcie-gen3-sriov.pdf
+XAPP1179: Using Tandem Configuration for PCIe in the Kintex-7 Connectivity TRD
+http://www.xilinx.com/support/documentation/application_notes/xapp1179-tandem-config-pcie.pdf
+XAPP1184: PIPE Mode Simulation Using Integrated Endpoint PCI Express Block in Gen2 x8 and Gen3 x8 Configurations
+http://www.xilinx.com/support/documentation/application_notes/xapp1184-PIPE-mode-PCIe.pdf
+XAPP1171: PCI Express Endpoint-DMA Initiator Subsystem
+http://www.xilinx.com/support/documentation/application_notes/xapp1171-pcie-central-dma-subsystem.pdf
+XAPP1201: Virtex-7 (XT and HT) and UltraScale FPGAs Gen3 Integrated Block for PCI Express to AXI4-Lite Bridge
+http://www.xilinx.com/support/documentation/application_notes/xapp1201.pdf
+XAPP1198: In-System Eye Scan of a PCI Express Link with Vivado IP Integrator and AXI4
+http://www.xilinx.com/support/documentation/application_notes/xapp1198-eye-scan.pdf
+XAPP859: Virtex-5 FPGA Integrated Endpoint Block for PCI Express Designs: DDR2 SDRAM DMA Initiator Demonstration Platform
+http://www.xilinx.com/support/documentation/application_notes/xapp859.pdf
+"XAPP1002: Using ChipScope Pro to Debug Endpoint Block Plus Wrapper, Endpoint, and Endpoint PIPE"
+http://www.xilinx.com/support/documentation/application_notes/xapp1002.pdf
+XAPP 1022: Using the Memory Endpoint Test Driver (MET) with the Programmed Input/Output Example Design for PCI Express Endpoint Cores
+http://www.xilinx.com/support/documentation/application_notes/xapp1022.pdf
+XAPP 1052: Bus Master DMA Performance Demonstration Reference Design for the Xilinx Endpoint PCI Express Solutions
+http://www.xilinx.com/support/documentation/application_notes/xapp1052.pdf
+XAPP518: In-System Programming of BPI PROM for Virtex-6 FPGAs Using PCI Express Technology
+http://www.xilinx.com/support/documentation/application_notes/xapp518-isp-bpi-prom-virtex-6-pcie.pdf
+XAPP883: Fast Configuration of PCI Express Technology through Partial Reconfiguration
+http://www.xilinx.com/support/documentation/application_notes/xapp883_Fast_Config_PCIe.pdf
+XAPP1201: Virtex-7 (XT and HT) and UltraScale FPGAs Gen3 Integrated Block for PCI Express to AXI4-Lite Bridge
+https://www.xilinx.com/support/documentation/application_notes/xapp1201.pdf
+XAPP1198: In-System Eye Scan of a PCI Express Link with Vivado IP Integrator and AXI4
+https://www.xilinx.com/support/documentation/application_notes/xapp1198-eye-scan.pdf
+XAPP1286: 7 Series FPGAs Gen2 Integrated Block for PCIe to AXI4-Lite Bridge
+https://www.xilinx.com/support/documentation/application_notes/xapp1286-pcie-axi4-lite-bridge.pdf
