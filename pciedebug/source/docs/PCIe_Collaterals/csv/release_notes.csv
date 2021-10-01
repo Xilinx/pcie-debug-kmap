@@ -1,0 +1,21 @@
+AR Number,Title,Remarks
+Xilinx Answer 75397,`Versal ACAP DMA and Bridge Subsystem for PCI Express <https://www.xilinx.com/support/answers/75397.html>`_,
+Xilinx Answer 75396,`Versal ACAP CPM DMA and Bridge Mode for PCI Express <https://www.xilinx.com/support/answers/75396.html>`_,
+Xilinx Answer 75350,`Versal ACAP CPM Mode for PCI Express <https://www.xilinx.com/support/answers/75350.html>`_,
+Xilinx Answer 73083,`Versal ACAP Integrated Block for PCI Express <https://www.xilinx.com/support/answers/73083.html>`_,
+Xilinx Answer 72289,`Versal ACAP PHY for PCI Express <https://www.xilinx.com/support/answers/72289.html>`_,
+Xilinx Answer 70927,`Queue DMA subsystem for PCI Express (PCIe) <https://www.xilinx.com/support/answers/70927.html>`_,
+Xilinx Answer 66988,`UltraScale Architecture PHY for PCI Express <https://www.xilinx.com/support/answers/66988.html>`_,
+Xilinx Answer 65751,`UltraScale+ PCI Express Integrated Block <https://www.xilinx.com/support/answers/65751.html>`_,
+Xilinx Answer 65443,`DMA Subsystem for PCI Express <https://www.xilinx.com/support/answers/65443.html>`_,
+Xilinx Answer 57945,`UltraScale FPGA Gen3 Integrated Block for PCI Express <https://www.xilinx.com/support/answers/57945.html>`_,
+Xilinx Answer 61898,`AXI Bridge for PCI Express Gen3 <https://www.xilinx.com/support/answers/61898.html>`_,
+Xilinx Answer 54645,`Virtex-7 FPGA Gen3 Integrated Block for PCI Express (v2.0 and onwards) <https://www.xilinx.com/support/answers/54645.html>`_,For v2.0 and onwards in Vivado Design Suite.
+Xilinx Answer 47441,`Virtex-7 FPGA Gen3 Integrated Block for PCI Express (before v2.0) <https://www.xilinx.com/support/answers/47441.html>`_,For all versions in ISE Design Suite and versions prior to v2.0 in Vivado Design Suite.
+Xilinx Answer 54643,`7 Series Integrated Block for PCI Express (v2.0 and onwards) <https://www.xilinx.com/support/answers/54643.html>`_,For v2.0 and onwards in Vivado Design Suite.
+Xilinx Answer 40469,`7 Series Integrated Block for PCI Express (before v2.0) <https://www.xilinx.com/support/answers/40469.html>`_,For all versions in ISE Design Suite and versions prior to v2.0 in Vivado Design Suite.
+Xilinx Answer 54646,`AXI PCI Express (v2.0 and onwards)  <https://www.xilinx.com/support/answers/54646.html>`_,For v2.0 and onwards in Vivado Design Suite.
+Xilinx Answer 44969,`AXI PCI Express (before v2.0) <https://www.xilinx.com/support/answers/44969.html>`_,For all versions in ISE Design Suite (EDK) and versions prior to v2.0 in Vivado Design Suite.
+Xilinx Answer 65178,`Virtex-6 FPGA Integrated Block for PCI Express <https://www.xilinx.com/support/answers/65178.html>`_,Master Answer Record
+Xilinx Answer 65177,`Spartan-6 FPGA Integrated Endpoint Block for PCI Express <https://www.xilinx.com/support/answers/65177.html>`_,Master Answer Record
+Xilnx Answer 51597,`Endpoint Block Plus Wrapper for PCI Express <https://www.xilinx.com/support/answers/51597.html>`_,Master Answer Record
