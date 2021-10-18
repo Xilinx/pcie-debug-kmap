@@ -29,7 +29,7 @@ QDMA Performance Debug Questions
 QDMA Performance Debug Checklist
 --------------------------------
 
-    - Review Chapter "Improving Performance Through the CPM and PL PCIe" in UG1388
+    - Review Chapter "Improving Performance Through the CPM and PL PCIe" in User Guide 1388
     - Make sure that “Relax ordering” is enabled and Host accept Relax ordering.
     - Make sure “Extended tag” is enabled.
     - Make sure all the Ring base address and data address are 4K aligned. (or to MPS boundary) 
