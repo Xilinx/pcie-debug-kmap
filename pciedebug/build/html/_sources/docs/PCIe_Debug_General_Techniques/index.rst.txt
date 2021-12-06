@@ -71,7 +71,10 @@ Set Bus Master Enable bit
 
 If you are sending upstream traffic from endpoint to the host, make sure the Bus Master Enable is set in the endpoint. You can check this by looking at lspci log.
 The command to enable Bus Master Enable bit is:
+
 > setpci -s <bb:dd.f> COMMAND=0x7
+
 An illustrative example to set the Bus Master Enable bit can be found in the link below:
+
 https://support.xilinx.com/s/article/Reading-PCIe-Configuration-Space-of-Versal-ACAP-Integrated-Block-for-PCI-Express-through-Configuration-Management-Interface 
     
