@@ -9,7 +9,8 @@ General Debug Checklist
 * Make sure the FMAP register is programmed. This is required to associate how many queues are allocated to each function. 
 * Check if fetch crediting is enabled or not (See Credit Descriptor Context Structure); the user logic is required to provide a credit for each descriptor that should be fetched.
 * Make sure the hardware and credit context are cleared before enabling the queue.
-* Check PIDX and CIDX values. Make sure there are enough descriptors.
+* Check Debug Information on “DMA/Bridge Subsystem for PCI Express” and “Queue DMA Subsystem for PCI Express” for Versal ACAP Devices
+https://support.xilinx.com/s/article/000033516?language=en_US
 
 QDMA Performance Debug Questions
 --------------------------------
