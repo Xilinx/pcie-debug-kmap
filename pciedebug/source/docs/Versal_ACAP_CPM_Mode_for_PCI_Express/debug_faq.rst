@@ -3,6 +3,9 @@
 General Debug Checklist
 =======================
 
+* Review Versal ACAP PCB Design User Guide (UG863) and Versal ACAP Schematic Review Checklist (XTP546)
+    * https://docs.xilinx.com/r/en-US/ug863-versal-pcb-design
+    * https://www.xilinx.com/cgi-bin/docs/ctdoc?cid=90f995d8-c517-4adc-a95c-13a8994d6618;d=xtp546-versal-schematic-review-checklist.zip
 * Check if the PCIe IP is detected in lspci 
     * Ref: https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Debugging-PCIe-Issues-using-lspci-and-setpci/ba-p/1148199
 * If the PCIe is not detected in lspci, do a warm reboot of the host machine

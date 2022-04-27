@@ -354,6 +354,136 @@ function OptanonWrapper() { }
             
   <div class="section" id="check-pidx-update">
 <span id="id1"></span><h1>Check PIDX Update<a class="headerlink" href="#check-pidx-update" title="Permalink to this headline">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 7%" />
+<col style="width: 9%" />
+<col style="width: 15%" />
+<col style="width: 45%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>How to check?</p></th>
+<th class="head"><p>Programmed by</p></th>
+<th class="head"><p>Maintained by</p></th>
+<th class="head"><p>Key information</p></th>
+<th class="head"><p>PIDX/CIDX</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Completion Queue Descriptor Status</p></td>
+<td><p>dma-ctl (dump queue completion)</p></td>
+<td><p>Completion Engine</p></td>
+<td><p>Completion Engine</p></td>
+<td><p>Last location of Completion Ring</p></td>
+<td><p>Contains PIDX/CIDX/Interrupt Status/Color status bit</p></td>
+</tr>
+<tr class="row-odd"><td><p>H2C Stream Writeback Status Descriptor</p></td>
+<td><p>dma-ctl (dump queue descriptor)</p></td>
+<td><p>Descriptor Engine</p></td>
+<td><p>Descriptor Engine</p></td>
+<td><p>Last location of H2C Queue</p></td>
+<td><p>Containx PIDX and CIDX</p></td>
+</tr>
+<tr class="row-even"><td><p>MM C2H/H2C - Writeback Status Structure</p></td>
+<td><p>dma-ctl (dump queue descriptor)</p></td>
+<td><p>Descriptor Engine</p></td>
+<td><p>Descriptor Engine</p></td>
+<td><p>Last Location of H2C/C2H Queue</p></td>
+<td><p>Containx PIDX and CIDX</p></td>
+</tr>
+<tr class="row-odd"><td><p>Software maintains CIDX and copy of PIDX for completion queue</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Software maintains PIDX and copy of CIDX for H2C/C2H queues</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Descriptor Engine also maintains CIDX and a copy of SW PIDX</p></td>
+<td colspan="3"><p>dma-ctl (dump queue)</p></td>
+<td><p>Available in Hardware Context and Software Context</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td colspan="6"></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p>Descriptor Context</p></td>
+<td><p>Indexed by H2C and C2H QID</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Hardware Context</p></td>
+<td><p>dma-ctl (dump queue)</p></td>
+<td><p>Descriptor Engine</p></td>
+<td rowspan="3"><p>Once the queue is enabled, context is dynamically updated by Hardware.</p></td>
+<td><p>Contains Status Only</p></td>
+<td><p>Contains CIDX Information</p></td>
+</tr>
+<tr class="row-odd"><td><p>Credit Context</p></td>
+<td><p>dma-ctl (dump queue)</p></td>
+<td><p>Descriptor Engine</p></td>
+<td><p>Contains Status Only</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Software Context</p></td>
+<td><p>dma-ctl (dump queue)</p></td>
+<td><p>Driver</p></td>
+<td><p>Software context should only be updated through the direct mapped address space to update the PIDX and Interrupt Arm bit. See QDMA_DMAP_SEL_H2C_DSC_PIDX[2048] (0x18004) and QDMA_DMAP_SEL_C2H_DSC_PIDX[2048] (0x18008)</p></td>
+<td><p>Contains PIDX information</p></td>
+</tr>
+<tr class="row-odd"><td><p>Completion Context</p></td>
+<td><p>dmactl</p></td>
+<td><p>Driver (PIDX is initialized to 0 by driver)</p></td>
+<td><p>Completion Engine</p></td>
+<td><p>Maintained on Per Queue basis. Stores the base address of the Completion Ring, PIDX, CIDX etc.</p></td>
+<td><p>Contains completion PIDX &amp; CIDX information</p></td>
+</tr>
+<tr class="row-even"><td><p>Prefetch Context</p></td>
+<td><p>dma-ctl (dump queue)</p></td>
+<td><p>Driver</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Interrupt Context</p></td>
+<td><p>dma-ctl (dump queue)</p></td>
+<td><p>Driver</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Host Profile Context</p></td>
+<td><p>dma-ctl (dump queue)</p></td>
+<td><p>Driver</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td colspan="6"></td>
+</tr>
+<tr class="row-even"><td><p>Interrupt Aggregation Ring</p></td>
+<td><p>dma-ctl</p></td>
+<td></td>
+<td><p>Hardware</p></td>
+<td><p>If the interrupts for multipe queues are aggregated into the interrupt aggregatoin ring, the status descriptor information is available in the interrupt aggretatoin ring as well</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CMPT Entry</p></td>
+<td><p>dma-ctl (dump queue completion)</p></td>
+<td><p>Completion Engine</p></td>
+<td><p>Completion Engine</p></td>
+<td><p>Contains Color Bit informaton</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
