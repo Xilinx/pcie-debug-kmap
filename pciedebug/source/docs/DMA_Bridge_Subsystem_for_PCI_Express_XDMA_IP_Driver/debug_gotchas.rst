@@ -18,4 +18,4 @@ Debug Gotchas
 
 
 .. note::
-    The above debug gotchas are taken from QDMA Product Guide PG195.Please refer to the latest version of the document for new updates.
+    The above debug gotchas are taken from XDMA Product Guide PG195.Please refer to the latest version of the document for new updates.
