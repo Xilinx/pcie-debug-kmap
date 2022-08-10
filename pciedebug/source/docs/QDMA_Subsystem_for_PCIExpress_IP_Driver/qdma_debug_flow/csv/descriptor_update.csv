@@ -1,0 +1,5 @@
+Descriptor Update,
+:ref:`Check Global Error Registers <global_error_registers>`,:ref:`Check Global Error Registers <global_error_registers>`
+:ref:`Check PIDX Update`,:ref:`Check Software Context <software_descriptor_context_structure_definition>`
+:ref:`Check Traffic Manager Status Interface for new descriptor <qdma_tm_credit_output_port_descriptions>`,:ref:`Check Hardware Context <hardware_descriptor_structure_definition>`
+:ref:`Check Queue Invalid bit in Hardware Context <hardware_descriptor_structure_definition>`,:ref:`Check Credit Context <credit_descriptor_context_structure_definition>`
