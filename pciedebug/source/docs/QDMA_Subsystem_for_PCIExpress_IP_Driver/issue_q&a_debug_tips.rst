@@ -14,6 +14,10 @@ Issues/Debug Tips/Questions
     * QDMA Linux Driver Design Flow https://xilinx.github.io/dma_ip_drivers/master/QDMA/linux-kernel/html/qdma_design.html 
     * DMA Control Application (dma-ctl) https://xilinx.github.io/dma_ip_drivers/master/QDMA/linux-kernel/html/dmactl.html 
     * Linux Distributions and Kernel Versions Support https://xilinx.github.io/dma_ip_drivers/master/QDMA/linux-kernel/html/system-requirements.html
+* Review the below links from QDMA DPDK Driver Documentation; it might be helpful in debugging DPDK driver issues:
+    * Linux Distributions and Kernel Versions Support https://xilinx.github.io/dma_ip_drivers/master/QDMA/DPDK/html/system-requirements.html
+    * QDMA DPDK Driver UseCases https://xilinx.github.io/dma_ip_drivers/master/QDMA/DPDK/html/qdma_usecases.html
+    * DPDK Driver debug https://xilinx.github.io/dma_ip_drivers/master/QDMA/DPDK/html/driver-design.html#dpdk-driver-debug
 * QDMA Driver failed to load (qdma:qdma_device_online: qdma_init failed -16.)
     * Make sure to connect st_rx_msg_rdy, tm_dsc_sts_rdy and soft_reset_n to 1'b1
 * tm_dsc_sts_error reports error in h2c direction. The issue seems to occur after the first PIDX update write to QDMA. 
