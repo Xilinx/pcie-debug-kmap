@@ -1,4 +1,4 @@
-{%- if 'singlehtml' not in builder %}
+{%- if builder != 'singlehtml' %}
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
     <input type="text" name="q" placeholder="{{ _('Search docs') }}" />
