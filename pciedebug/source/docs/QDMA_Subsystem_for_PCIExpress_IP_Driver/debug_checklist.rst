@@ -30,6 +30,9 @@ QDMA Performance Debug Checklist
 --------------------------------
 
     - Review Chapter "Improving Performance Through the CPM and PL PCIe" in UG1388
+        - https://docs.xilinx.com/r/2021.1-English/ug1388-acap-system-integration-validation-methodology/Improving-Performance-Through-the-CPM-and-PL-PCIe
+    - Review " Performance and Utilization" in PG344 
+        - https://docs.xilinx.com/r/en-US/pg344-pcie-dma-versal/Performance-and-Resource-Utilization?tocId=6QfBEhQFba9swgGuwrX89A
     - Make sure that “Relax ordering” is enabled and Host accept Relax ordering.
     - Make sure “Extended tag” is enabled.
     - Make sure all the Ring base address and data address are 4K aligned. (or to MPS boundary) 
