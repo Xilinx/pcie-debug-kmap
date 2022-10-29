@@ -2,3 +2,4 @@ Description ,URL
 AXI Bridge for PCI Express Gen3 Subsystem v3.0,https://www.xilinx.com/support/documentation/ip_documentation/axi_pcie3/v3_0/pg194-axi-bridge-pcie-gen3.pdf
 Reading AXI PCIe Gen3/XDMA internal registers using JTAG to AXI Master IP,https://www.xilinx.com/support/answers/71322.html
 AXI Bridge for PCI Express - Release Notes and Known Issues for Vivado 2013.1 and newer tool versions, https://www.xilinx.com/support/answers/54646.html
+DMA Subsystem for PCI Express (XDMA) - AXI Memory Mapped H2C Default Example Design, https://support.xilinx.com/s/article/000034166?language=en_US
