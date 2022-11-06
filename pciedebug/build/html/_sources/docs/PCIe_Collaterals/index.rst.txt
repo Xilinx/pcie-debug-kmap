@@ -12,5 +12,4 @@ PCIe Collaterals
     PCIe_Application_Notes.rst
     PCIe_Videos.rst
     PCIe_White_Papers.rst
-	PCIe_Application_Notes_a.rst
 

@@ -19,6 +19,17 @@ General Debug Checklist
 * Are the transactions on the user interface synchronous to the user clocks?
 * Are all top level inputs driven?
 
+.. _versal_acap_cpm5_simulation_example_design:
+
+Versal ACAP CPM5 Simulation Example Design
+------------------------------------------
+* Versal ACAP CPM5 QDMA Simulation Example Design
+    - https://github.com/Xilinx/XilinxCEDStore/tree/2022.2/ced/Xilinx/IPI/Versal_CPM5_QDMA_Simulation_Design
+    - Read me: https://github.com/Xilinx/XilinxCEDStore/blob/2022.2/ced/Xilinx/IPI/Versal_CPM5_QDMA_Simulation_Design/readme.txt
+* Veral ACAP CPM5 BMD Simulation Example Design
+    - https://github.com/Xilinx/XilinxCEDStore/tree/2022.2/ced/Xilinx/IPI/Versal_CPM5_PCIe_BMD_Simulation_Design
+    - Read me: https://github.com/Xilinx/XilinxCEDStore/blob/2022.2/ced/Xilinx/IPI/Versal_CPM5_PCIe_BMD_Simulation_Design/readme.txt
+
 .. _simulation_docs_debug_collaterals:
 
 Documents and Debug Collaterals
