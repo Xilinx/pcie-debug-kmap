@@ -3,7 +3,8 @@
 General Debug Checklist
 =======================
 
-* See: https://support.xilinx.com/s/article/000033516?language=en_US
+* Review: https://support.xilinx.com/s/article/000033516?language=en_US
+* Review: https://support.xilinx.com/s/article/000033539?language=en_US
 * For " read file: Input/output error", check (Xilinx Answer 72813)
 * If the simulation of the example design generated with "AXI Stream with Completion" is not working, make sure PF0 BAR2 is enabled. The example design implements registers which are accessed from the host through BAR2. 
 * Check if the base address of all ring buffer (H2C, C2H and CMPT) are aligned to the 4K address. 
