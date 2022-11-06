@@ -9,6 +9,7 @@ Versal ACAP CPM Mode for PCI Express
     debug_faq.rst
     issue_q&a_debug_tips.rst
     links_docs_misc.rst
+    versal_acap_cpm_example_designs.rst
     
     
     
