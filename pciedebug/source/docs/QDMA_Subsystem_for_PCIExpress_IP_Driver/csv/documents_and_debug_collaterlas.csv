@@ -7,3 +7,4 @@ Queue DMA subsystem for PCI Express (PCIe) - Performance Report,https://www.xili
 QDMA Debug File System Support, https://xilinx.github.io/dma_ip_drivers/master/QDMA/linux-kernel/html/debugfs.html
 Migration Guide [Vivado 2021.2] - QDMA/AXI Bridge 4.0 Soft IP to Versal CPM4 QDMA/AXI Bridge Hard IP, https://support.xilinx.com/s/article/33054?language=en_US
 Debug Information on “DMA/Bridge Subsystem for PCI Express” and “Queue DMA Subsystem for PCI Express” for Versal ACAP Devices, https://support.xilinx.com/s/article/000033516?language=en_US
+Migration Guide for "DMA/Bridge Subsystem for PCI Express" and "Queue DMA Subsystem for PCI Express" from UltraScale+ to Versal ACAP devices, https://support.xilinx.com/s/article/000033502?language=en_US
