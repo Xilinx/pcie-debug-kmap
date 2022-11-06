@@ -8,6 +8,7 @@ PCIe Collaterals
     
     PCIe_LFARs_Long_Form_Answer_Records.rst
     PCIe_Debug_Tips_and_Techniques_Blogs.rst
+	Versal_ACAP_PCIe_Product_Guides_and_Related_Documents.rst
     PCIe_Release_Notes.rst
     PCIe_Application_Notes.rst
     PCIe_Videos.rst
