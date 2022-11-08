@@ -1,5 +1,5 @@
 ############################
-PCIe Debug K-Map
+PCIeEEEEE Debug K-Map
 ############################
 
 
@@ -42,7 +42,7 @@ PCIe Debug K-Map
 
 .. toctree::
    :maxdepth: 20
-   :caption: PS/PL PCIe RC Drivers
+   :caption: PS/PL PCIeEEEEE RC Drivers
 
    docs/PS_PCIe_PL_PCIe_Root_Port_Driver/index
    
