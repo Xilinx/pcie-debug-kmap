@@ -18,3 +18,6 @@ S.No.,Title
 17,`DMA Subsystem for PCI Express (XDMA) - AXI Memory Mapped H2C Default Example Design Analysis <https://support.xilinx.com/s/article/000034166>`_
 18,`Correctable Error Message Generation through AER mechanism in Versal ACAP Integrated Block for PCI Express Example Design Simulation <https://support.xilinx.com/s/article/Correctable-Error-Message-Generation-through-AER-mechanism-in-Versal-ACAP-Integrated-Block-for-PCI-Express-Example-Design-Simulation?language=en_US>`_
 19,`Verifying Versal ACAP PCIe Memory Write / Memory Read / Completion Transactions <https://support.xilinx.com/s/article/000034419?language=en_US>`_
+20,`Running the 'Versal CPM Tandem PCIe' CED Example Design on a VPK120 Development Board <https://support.xilinx.com/s/article/000034563?language=en_US>`_
+21,`Generating a PL PCIE based QDMA Subsystem for PCI Express in the AXI Bridge Mode Endpoint Example Design using the Versal ACAP CPM Mode for PCI Express IP with Modular Architecture Flow for a VPK120 Development Board <https://support.xilinx.com/s/article/000034590?language=en_US>`_
+
