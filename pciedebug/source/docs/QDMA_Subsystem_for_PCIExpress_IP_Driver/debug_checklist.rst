@@ -66,20 +66,9 @@ QDMA Performance Debug Checklist
             - processor.max_cstate=0 intel_idle.max_cstate=0 intel_pstate=disable 
                 - This will disable power savings on CPUs and disable intel_idle as well as the intel_pstate cpu frequency scaling driver. In addition, always double-confirm from 'cat /proc/cpuinfo | grep -i Mhz' output that all of the intended CPUs are operating at max speed. 
     - General Guidance
-        - The internal QDMA descriptor fetch engine is limited in its operation and is optimized for smaller numbers of queues (16 or less). This is common for compute applications.
-        - To achieve high QDMA performance in cases where large numbers of queues are used (32+), small packet sizes are used (512-bytes or less), and worst-case traffic patterns are used (round-robin one transfer per queue); external descriptor management or Simple Bypass mode should be used. This is common for networking applications.
-            - You may still be able to achieve sufficient performance for your application without using simple bypass if you can avoid one of the conditions described above.
-                - Decrease the number of Queues by coalescing data streams into fewer queues.
-                    - 16 or fewer Queues
-                - Increase packet size by combining transactions in the user-logic to create larger transfers.
-                    - DPDK C2H: 1+ KBytes, DPDK H2C: 512+ Bytes
-                    - Linux Kernel Driver C2H: 1+Kbytes, Linux Kernel Drive H2C: 2Kbyte
-                - Modify the traffic pattern to avoid round-robin.
-                    - Send more transactions (burst) to a fewer numbers of queues (16 or less) before cycling in/out traffic from new queues.
-                        - Min burst size = (packet size limit from (2) / (actual packet size)
-    - Make sure the driver is not reading the context when the queue is enabled; it can result in reduced performance.
-    - Excessive writebacks events can severely reduce the descriptor enginer performance and consume bandwidth to the host. 
-    - H2C stream interface is shared by all the queues.  Stream engine is designed to saturate PCIe for packets sizes as low as 128b. Recommendation: restrict the packet size to be host page size or maximum transfer unit as required by the user application. 
-    - If there is both H2C and C2H traffic, use H2C_REQ_THROT, it will throttle H2C making way for more PCIe resource for C2H.
-    - The QDMA Subsystem for PCIe has a shallow completion  input FIFO of depth 2. For bett erperformance, add FIFO for completi on  input as shown in the diagram below. Depth and width of the FIFO depends on the use case. Width is dependent on the largest CMPT size for the applicati on, and depth is dependent on performance needs. For best performance for 64 Byte CMPT, a depth of 512 is recommended.
-    - If there is an issue with H2C performace, make sure h2c_byp_in_st_sdi port is asserted once in every 32 or 64 descriptors. If “h2c_byp_in_st_sdi” port is always high, for every packet transferred, there needs to be a status update going from QDMA to the Host. This will impact performance because the DMA will have to share the bus with “status update” for every single packet along with the other requests going to the Host. Also, it slows down the descriptor engine as it needs to switch context every time there is a status update. 
+        - Make sure the driver is not reading the context when the queue is enabled; it can result in reduced performance.
+        - Excessive writebacks events can severely reduce the descriptor enginer performance and consume bandwidth to the host. 
+        - H2C stream interface is shared by all the queues.  Stream engine is designed to saturate PCIe for packets sizes as low as 128b. Recommendation: restrict the packet size to be host page size or maximum transfer unit as required by the user application. 
+        - If there is both H2C and C2H traffic, use H2C_REQ_THROT, it will throttle H2C making way for more PCIe resource for C2H.
+        - The QDMA Subsystem for PCIe has a shallow completion  input FIFO of depth 2. For bett erperformance, add FIFO for completi on  input as shown in the diagram below. Depth and width of the FIFO depends on the use case. Width is dependent on the largest CMPT size for the applicati on, and depth is dependent on performance needs. For best performance for 64 Byte CMPT, a depth of 512 is recommended.
+        - If there is an issue with H2C performace, make sure h2c_byp_in_st_sdi port is asserted once in every 32 or 64 descriptors. If “h2c_byp_in_st_sdi” port is always high, for every packet transferred, there needs to be a status update going from QDMA to the Host. This will impact performance because the DMA will have to share the bus with “status update” for every single packet along with the other requests going to the Host. Also, it slows down the descriptor engine as it needs to switch context every time there is a status update. 

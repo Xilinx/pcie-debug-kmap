@@ -246,57 +246,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 <li><dl class="simple">
 <dt>General Guidance</dt><dd><ul>
-<li><p>The internal QDMA descriptor fetch engine is limited in its operation and is optimized for smaller numbers of queues (16 or less). This is common for compute applications.</p></li>
-<li><dl class="simple">
-<dt>To achieve high QDMA performance in cases where large numbers of queues are used (32+), small packet sizes are used (512-bytes or less), and worst-case traffic patterns are used (round-robin one transfer per queue); external descriptor management or Simple Bypass mode should be used. This is common for networking applications.</dt><dd><ul>
-<li><dl class="simple">
-<dt>You may still be able to achieve sufficient performance for your application without using simple bypass if you can avoid one of the conditions described above.</dt><dd><ul>
-<li><dl class="simple">
-<dt>Decrease the number of Queues by coalescing data streams into fewer queues.</dt><dd><ul>
-<li><p>16 or fewer Queues</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Increase packet size by combining transactions in the user-logic to create larger transfers.</dt><dd><ul>
-<li><p>DPDK C2H: 1+ KBytes, DPDK H2C: 512+ Bytes</p></li>
-<li><p>Linux Kernel Driver C2H: 1+Kbytes, Linux Kernel Drive H2C: 2Kbyte</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Modify the traffic pattern to avoid round-robin.</dt><dd><ul>
-<li><dl class="simple">
-<dt>Send more transactions (burst) to a fewer numbers of queues (16 or less) before cycling in/out traffic from new queues.</dt><dd><ul>
-<li><p>Min burst size = (packet size limit from (2) / (actual packet size)</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
 <li><p>Make sure the driver is not reading the context when the queue is enabled; it can result in reduced performance.</p></li>
 <li><p>Excessive writebacks events can severely reduce the descriptor enginer performance and consume bandwidth to the host.</p></li>
 <li><p>H2C stream interface is shared by all the queues.  Stream engine is designed to saturate PCIe for packets sizes as low as 128b. Recommendation: restrict the packet size to be host page size or maximum transfer unit as required by the user application.</p></li>
 <li><p>If there is both H2C and C2H traffic, use H2C_REQ_THROT, it will throttle H2C making way for more PCIe resource for C2H.</p></li>
 <li><p>The QDMA Subsystem for PCIe has a shallow completion  input FIFO of depth 2. For bett erperformance, add FIFO for completi on  input as shown in the diagram below. Depth and width of the FIFO depends on the use case. Width is dependent on the largest CMPT size for the applicati on, and depth is dependent on performance needs. For best performance for 64 Byte CMPT, a depth of 512 is recommended.</p></li>
 <li><p>If there is an issue with H2C performace, make sure h2c_byp_in_st_sdi port is asserted once in every 32 or 64 descriptors. If “h2c_byp_in_st_sdi” port is always high, for every packet transferred, there needs to be a status update going from QDMA to the Host. This will impact performance because the DMA will have to share the bus with “status update” for every single packet along with the other requests going to the Host. Also, it slows down the descriptor engine as it needs to switch context every time there is a status update.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </div></blockquote>
 </div>
