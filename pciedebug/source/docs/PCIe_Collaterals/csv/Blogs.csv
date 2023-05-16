@@ -20,4 +20,6 @@ S.No.,Title
 19,`Verifying Versal ACAP PCIe Memory Write / Memory Read / Completion Transactions <https://support.xilinx.com/s/article/000034419?language=en_US>`_
 20,`Running the 'Versal CPM Tandem PCIe' CED Example Design on a VPK120 Development Board <https://support.xilinx.com/s/article/000034563?language=en_US>`_
 21,`Generating a PL PCIE based QDMA Subsystem for PCI Express in the AXI Bridge Mode Endpoint Example Design using the Versal ACAP CPM Mode for PCI Express IP with Modular Architecture Flow for a VPK120 Development Board <https://support.xilinx.com/s/article/000034590?language=en_US>`_
-
+22,`Running the Versal ACAP CPM5 PCIE Gen4x8 QDMA CED Example Design <https://support.xilinx.com/s/article/000034687?language=en_US>`_
+23,`Running the Versal QDMA Subsystem for PCI Express IP Example Design Simulation in Questa Advanced Simulator <https://support.xilinx.com/s/article/000035090?language=en_US>`_
+24,`Queue DMA Subsystem for PCI Express (QDMA) Performance Tuning General Guidelines <https://support.xilinx.com/s/article/000035142?language=en_US>`_
