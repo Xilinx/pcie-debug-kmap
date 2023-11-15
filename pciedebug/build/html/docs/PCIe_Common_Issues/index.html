@@ -133,7 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><p>Check using ILA if the cfg_ltssm_state signal shows an L0 state (‘h10).</p></li>
 <li><p>If in the L0 state, check if it consistently stays in the L0 state or is going through recovery state continuously.</p></li>
 <li><dl class="simple">
-<dt>Repeatedly going through recovery state indicates a link integrity issue.</dt><dd><ul>
+<dt>Repeatedly going through the recovery state indicates a link integrity issue.</dt><dd><ul>
 <li><p>If it is stable in L0 state, check if PCIe Config Request TLP’s are exchanged and that each Completion TLP is returned.</p></li>
 <li><p>This is part of the PCI enumeration process and must be done within 100ms of the Power Good indication.</p></li>
 <li><p>Try doing a warm reboot and if the device is now detected after a warm reboot, this requirement was violated.</p></li>

@@ -9,7 +9,7 @@ Enumeration shows no PCIe device (lspci)
 ----------------------------------------
     - Check using ILA if the cfg_ltssm_state signal shows an L0 state ('h10). 
     - If in the L0 state, check if it consistently stays in the L0 state or is going through recovery state continuously. 
-    - Repeatedly going through recovery state indicates a link integrity issue.
+    - Repeatedly going through the recovery state indicates a link integrity issue.
         - If it is stable in L0 state, check if PCIe Config Request TLP's are exchanged and that each Completion TLP is returned. 
         - This is part of the PCI enumeration process and must be done within 100ms of the Power Good indication. 
         - Try doing a warm reboot and if the device is now detected after a warm reboot, this requirement was violated. 
