@@ -3,9 +3,9 @@
 Versal Adaptive SoC CPM Example Designs
 ===============================
 
-* 1 Versal Adaptive SoC CPM5 QDMA Simulation Example Design
+* 1 - Versal Adaptive SoC CPM5 QDMA Simulation Example Design
     - https://github.com/Xilinx/XilinxCEDStore/tree/2023.2/ced/Xilinx/IPI/Versal_CPM_QDMA_EP_Simulation_Design/cpm5_qdma
-* (2) Versal Adaptive SoC CPM4 QDMA Simulation Example Design
+* 2 - Versal Adaptive SoC CPM4 QDMA Simulation Example Design
     - https://github.com/Xilinx/XilinxCEDStore/tree/2023.2/ced/Xilinx/IPI/Versal_CPM_QDMA_EP_Simulation_Design/cpm4_qdma 
 * (3) Versal Adaptive SoC CPM5 BMD Simulation Example Design
     - https://github.com/Xilinx/XilinxCEDStore/tree/2023.2/ced/Xilinx/IPI/Versal_CPM_PCIE_BMD_EP_Simulation_Design/cpm5_bmd
