@@ -25,3 +25,8 @@ S.No.,Title
 24,`Queue DMA Subsystem for PCI Express (QDMA) Performance Tuning General Guidelines <https://support.xilinx.com/s/article/000035142?language=en_US>`_
 25,`How to Compile the DPDK Driver and Run the QDMA Test App on a VPK120 Versal Development Board: A Step-by-Step Guide with Screenshots <https://support.xilinx.com/s/article/000035131?language=en_US>`_
 26,`Generating User MSI-X Interrupts in the QDMA Subsystem for PL PCIE4 and PL PCIE5 Example Design Simulation <https://support.xilinx.com/s/article/000034904?language=en_US>`_
+27,`Flow Control Credit Signal Analysis in the Versal Adaptive SoC Integrated Block for PCI Express LogiCORE IP <https://support.xilinx.com/s/article/000035485?language=en_US>`_
+28,`Demystifying the Lane Reversal Requirement in Versal Adaptive SoC CPM Mode for PCIe IP <https://support.xilinx.com/s/article/000035567?language=en_US>`_
+29,`Deep Dive into Versal ACAP QDMA Subsystem for PL PCIE4 and PL PCIE5 Descriptor Bypass In/Out Loopback Example Design <https://support.xilinx.com/s/article/000035427?language=en_US>`_
+30,`Versal ACAP Integrated Block for PCI Express Example Design Simulation <https://support.xilinx.com/s/article/000034904?language=en_US>`_
+31,`Demystifying Host Profile Context Programming in the QDMA Subsystem for CPM5 <https://support.xilinx.com/s/article/000035811?language=en_US>`_
