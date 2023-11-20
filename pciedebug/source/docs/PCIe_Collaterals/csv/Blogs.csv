@@ -1,13 +1,13 @@
 S.No.,Title
-1,`Demystifying PIPE interface packets using the in-built descrambler module in UltraScale+ Devices Integrated Block for PCI Express Gen3 <https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Demystifying-PIPE-interface-packets-using-the-in-built/ba-p/980246>`_
+1,`Demystifying PIPE interface packets using the in-built descrambler module in UltraScale+ Devices Integrated Block for PCI Express Gen3 <https://support.xilinx.com/s/article/980246?language=en_US>`_
 2,`QDMA Linux Kernel Driver Usage and Debug Guide <https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/QDMA-Linux-Kernel-Driver-Usage-and-Debug-Guide/ba-p/1019376>`_
 3,`Debugging PCIe Issues using lspci and setpci <https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Debugging-PCIe-Issues-using-lspci-and-setpci/ba-p/1148199>`_
 4,`Debugging PCI Express Link Training Issues with Integrated Debugging Features in the IP <https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Debugging-PCI-Express-Link-Training-Issues-with-Integrated/ba-p/1097525>`_
 5,`Debugging PCIe Issues Using Python <https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Debugging-PCIe-Issues-Using-Python/ba-p/1157469>`_
 6,"`Debugging Versal ACAP Integrated Block for PCIe Express link issues using in-built """"PCIe Link Debug"""" feature <https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Debugging-Versal-ACAP-Integrated-Block-for-PCIe-Express-link/ba-p/1203707>`_"
 7,`Understanding the new PL PCIE IP Generation flow for Versal ACAP Devices <https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Understanding-the-new-PL-PCIE-IP-Generation-flow-for-Versal-ACAP/ba-p/1215986>`_
-8,`Debugging Versal ACAP CPM Mode for PCI Express Designs using Vivado ILA <https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Debugging-Versal-ACAP-CPM-Mode-for-PCI-Express-Designs-using/ba-p/1218411>`_
-9,`Register based debugging of Versal ACAP CPM Mode for PCI Express Designs <https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Register-based-debugging-of-Versal-ACAP-CPM-Mode-for-PCI-Express/ba-p/1221922>`_
+8,`Debugging Versal ACAP CPM Mode for PCI Express Designs using Vivado ILA <https://support.xilinx.com/s/article/1218411?language=en_US>`_
+9,`Register based debugging of Versal ACAP CPM Mode for PCI Express Designs <https://support.xilinx.com/s/article/1221922?language=en_US>`_
 10,`Using the ILA Advanced Trigger Feature to debug designs with the Versal ACAP Integrated Block for PCI Express IP <https://support.xilinx.com/s/article/1260220?language=en_US>`_
 11,`Demystifying BDF Table programming for Slave Bridge Address Translations for AXI address <https://support.xilinx.com/s/article/Demystifying-BDF-Table-programming-for-Slave-Bridge-Address-Translations-for-AXI-address?language=en_US>`_
 12,`Reading the PCIe Configuration Space of the Versal ACAP Integrated Block for PCI Express through the Configuration Management Interface <https://support.xilinx.com/s/article/Reading-PCIe-Configuration-Space-of-Versal-ACAP-Integrated-Block-for-PCI-Express-through-Configuration-Management-Interface?language=en_US>`_
