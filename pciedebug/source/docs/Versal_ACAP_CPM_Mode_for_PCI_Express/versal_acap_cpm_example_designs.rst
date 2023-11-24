@@ -31,8 +31,10 @@ Versal Adaptive SoC CPM Example Designs
     - https://github.com/Xilinx/XilinxCEDStore/tree/2023.2/ced/Xilinx/IPI/Versal_CPM_QDMA_EP_Design/cpm5_qdma_st_only 
 * 14 - Versal Adaptive SoC CPM5 PCIE PIO Example Design 
     - https://github.com/Xilinx/XilinxCEDStore/tree/2023.2/ced/Xilinx/IPI/Versal_CPM_PCIE_PIO_EP_Design/cpm5_pcie_pio
+	- https://support.xilinx.com/s/article/000035901?language=en_US
 * 15 - Versal Adaptive SoC CPM4 PCIE PIO Example Design 
     - https://github.com/Xilinx/XilinxCEDStore/tree/2023.2/ced/Xilinx/IPI/Versal_CPM_PCIE_PIO_EP_Design/cpm4_pcie_pio
+	- https://support.xilinx.com/s/article/000035901?language=en_US
 * 16 - Versal Adaptive SoC CPM5 PCIE BMD EndPoint Example Design
     - https://github.com/Xilinx/XilinxCEDStore/tree/2023.2/ced/Xilinx/IPI/Versal_CPM_PCIE_BMD_EP_Design/cpm5_bmd_ep
 * 17 - Versal Adaptive SoC CPM4 PCIE BMD EndPoint Example Design
