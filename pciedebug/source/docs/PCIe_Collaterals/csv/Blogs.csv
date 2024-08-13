@@ -32,3 +32,10 @@ S.No.,Title
 31,`Demystifying Host Profile Context Programming in the QDMA Subsystem for CPM5 <https://support.xilinx.com/s/article/000035811?language=en_US>`_
 32,`Understanding the "Versal CPM PCIE PIO EP Design" CED Example in Vivado 2023.2 <https://support.xilinx.com/s/article/000035901?language=en_US>`_
 33,`Deciphering the PIDX Update Mechanism in a QDMA Subsystem for CPM5 <https://support.xilinx.com/s/article/Deciphering-PIDX-Update-Mechanism-in-QDMA-Subsystem-for-PCI-Express?language=en_US>`_
+34,`Understanding FLR in the QDMA Subsystem for PCI Express IP: Troubleshooting and Analysis <https://support.xilinx.com/s/article/000036350?language=en_US>`_
+35,`Modifying UltraScale Gen3 Integrated Block for PCI Express Example Design to Simulate Vendor Defined Messages <https://support.xilinx.com/s/article/000036476?language=en_US>`_
+36,`Illustrating CPM4 QDMA Bridge Slave Mode AXI to PCIe Address Translation in Simulation <https://support.xilinx.com/s/article/000036349?language=en_US>`_
+37,`Simulating Marker Response Mechanism with Versal Adaptive SoC DMA and Bridge Subsystem for PCI Express Example Design <https://support.xilinx.com/s/article/000036441?language=en_US>`_
+38,`Understanding Versal CPM CED QDMA Example Design Simulation <https://support.xilinx.com/s/article/000036469?language=en_US>`_
+39,`Understanding the "Versal CPM5 QDMA Gen4x8 ST Only Performance Design" CED Example in Vivado 2024.1 <https://support.xilinx.com/s/article/Understanding-the-Versal-CPM5-QDMA-Gen4x8-ST-Only-Performance-Design-CED-Example-in-Vivado-2023-2?language=en_US>`_
+40,`Demystifying CPM5 BDF Table programming for Slave Bridge Address Translations for AXI addresses <https://support.xilinx.com/s/article/Demystifying-CPM5-BDF-Table-programming-for-Slave-Bridge-Address-Translations-for-AXI-address?language=en_US>`_
