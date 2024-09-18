@@ -42,7 +42,7 @@ PCIe Debug K-Map
 
 .. toctree::
    :maxdepth: 20
-   :caption: PS/PL PCIe RC Drivers
+   :caption: Embedded PCI Express
 
    docs/PS_PCIe_PL_PCIe_Root_Port_Driver/index
    
