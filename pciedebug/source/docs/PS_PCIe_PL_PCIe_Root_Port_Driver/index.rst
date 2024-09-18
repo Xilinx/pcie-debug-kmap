@@ -1,7 +1,7 @@
 .. _ps_pcie_pl_pcie_rootport_driver:
 
 ============================================
-Embedded PCI Express
+Documentation & Debugging Resources
 ============================================
 
 .. toctree::
