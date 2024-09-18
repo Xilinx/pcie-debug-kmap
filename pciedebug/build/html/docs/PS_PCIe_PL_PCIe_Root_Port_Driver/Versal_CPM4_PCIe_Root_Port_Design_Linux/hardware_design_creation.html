@@ -18,7 +18,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5RHQV7');</script>
 <!-- End Google Tag Manager -->
-  <title>General Debug Checklist &mdash; PCIe Debug K-Map 1.0 documentation</title>
+  <title>Hardware Design Creation &mdash; PCIe Debug K-Map 1.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/_static/custom.css" type="text/css" />
@@ -91,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation &amp; Debugging Resources</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Versal CPM4 PCIe Root Port Design (Linux)</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">General Debug Checklist</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hardware Design Creation</a></li>
 </ul>
 </li>
 </ul>
@@ -111,7 +111,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Versal CPM4 PCIe Root Port Design (Linux)</a> &raquo;</li>
-      <li>General Debug Checklist</li>
+      <li>Hardware Design Creation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM4_PCIe_Root_Port_Design_Linux/hardware_design_creation.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -121,73 +121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="general-debug-checklist">
-<span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>General Debug Checklist<a class="headerlink" href="#general-debug-checklist" title="Permalink to this heading">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li><dl class="simple">
-<dt>PS-PCIe Driver Debug Checklist</dt><dd><ul>
-<li><p>The PCI Express Controller Programing Model section in UG1085 summarizes programming of the PCI Express controller for Endpoint and Root Port mode operations. Review that section to make sure programming of the PS-GT Transceiver Interface, IOU for Reset Pin, PCI Express Controller and Bridge initialization has been done correctly.</p></li>
-<li><p>Try with the latest version of PetaLinux.</p></li>
-<li><p>Make sure that the correct version of the BSP is being used for a particular board and silicon revision if the design being run is based on BSP and not on template flow.</p></li>
-<li><p>For specific user design, it is recommended to configure and build a PetaLinux project from the HDF file generated from that design.</p></li>
-<li><p>Confirm that the correct driver and DTS are being used</p></li>
-<li><p>Test with an off the shelf card (for example, NIC as an endpoint)</p></li>
-<li><dl class="simple">
-<dt>When debugging a user design, it is helpful to compare register values with the example design for a development board such as the ZCU102. The command below can be used to read a range of registers:</dt><dd><ul>
-<li><p>xsct% mrd 0xFD480000 100</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>If the BARs are not assigned, check if the device is advertising a valid class code. If an incorrect class code is provided when configuring Root Port mode in PCW, BAR assignment fails during Linux enumeration.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>PL-PCIe Driver Debug Checklist</dt><dd><ul>
-<li><dl class="simple">
-<dt>When setting up a Zynq UltraScale+ MPSoC system for PetaLinux with XDMA PL-PCIe (Bridge Mode) in Root Port configuration, there are a number of settings and options that should be used to experience seamless interoperability of the System, IP, and the PetaLinux Driver (pcie-xdma-pl). (<a class="reference external" href="https://www.xilinx.com/support/answers/70854.html">https://www.xilinx.com/support/answers/70854.html</a>) provides details on the following topics.</dt><dd><ul>
-<li><p>AXI BAR Translation Registers for correct DTS enumeration</p></li>
-<li><p>Endpoint Devices with Non-Prefetch BARs</p></li>
-<li><p>AXI-Lite Control Bus on AXI Bridge</p></li>
-<li><p>Root Port PCI Express BAR Disable</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Common Checklist</dt><dd><ul>
-<li><p>Review: PS/PL PCIe Drivers - Release Notes (<a class="reference external" href="https://www.xilinx.com/support/answers/70702.html">https://www.xilinx.com/support/answers/70702.html</a>)</p></li>
-<li><p>Review Xilinx PCI Express (PS-PCIe/PL-PCIe) Drivers Debug Guide (<a class="reference external" href="https://www.xilinx.com/support/answers/71210.html">https://www.xilinx.com/support/answers/71210.html</a>)</p></li>
-<li><dl class="simple">
-<dt>Unlike x86 platforms where the BIOS enables Memory space (MemEn) in the device configuration space, embedded platforms do not enable MemEn bits during enumeration. An Endpoint driver with relevant PCIe API’s is required for this. To check BAR access via devmem, you should set MemEn via the “setpci” command as shown below. setpci is a utility for querying and configuring PCI devices.</dt><dd><ul>
-<li><p>setpci -s 01:00.1 COMMAND=0x7</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>If an endpoint is connected and if the link is established successfully, the log file reports ‘Link is UP’. Confirm that the link is UP before proceeding with further investigation.</p></li>
-<li><p>Endpoint functionality can be checked with endpoint drivers. The respective endpoint driver must be enabled in the kernel build.</p></li>
-<li><dl class="simple">
-<dt>If the device is not deteced in lspci, try by rescanning as shown below.</dt><dd><ul>
-<li><p>echo 1 &gt; /sys/bus/pci/devices/0000:00:00.0/remove</p></li>
-<li><p>echo 1 &gt; /sys/bus/pci/rescan</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
+  <div class="section" id="hardware-design-creation">
+<span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>Hardware Design Creation<a class="headerlink" href="#hardware-design-creation" title="Permalink to this heading">¶</a></h1>
 </div>
 
 
