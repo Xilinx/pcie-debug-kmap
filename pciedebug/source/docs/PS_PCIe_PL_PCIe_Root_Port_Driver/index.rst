@@ -14,3 +14,16 @@ Documentation & Debugging Resources
     
 .. specific_issues.rst
 
+============================================
+Documentation & Debugging Resources2
+============================================
+
+.. toctree::
+
+    debug_faq.rst
+    issue_q&a_debug_tips.rst
+    links_docs_misc.rst
+    
+    
+    
+.. specific_issues.rst
