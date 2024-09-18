@@ -13,6 +13,6 @@ Versal CPM4 PCIe Root Port Design (Linux)
 	tactical_patch_requirement.rst
 	system_testability_and_setup.rst
 	supporting_documentation.rst
-	debugging.rst
+..	debugging.rst
 	
 	
