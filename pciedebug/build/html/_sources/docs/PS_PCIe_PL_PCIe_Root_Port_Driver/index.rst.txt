@@ -1,7 +1,7 @@
 .. _ps_pcie_pl_pcie_rootport_driver:
 
 ============================================
-Xilinx PCI Express (PS-PCIe/PL-PCIe) Drivers
+Embedded PCI Express
 ============================================
 
 .. toctree::
