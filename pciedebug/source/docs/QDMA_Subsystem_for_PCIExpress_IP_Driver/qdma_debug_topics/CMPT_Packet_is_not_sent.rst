@@ -3,7 +3,6 @@
 CMPT Packet is not sent
 =======================
 
-	* Review Software Context, Completion Context and Prefetch Context for each queue. 
 		* Review Software Context, Completion Context and Prefetch Context for each queue. 
 		* Which mode is used? Streaming mode or Memory Mapped mode?
 		* How many queues are enabled?
