@@ -10,13 +10,14 @@ Documents and Debug Collaterals
 
 .. _qdma_useful_links:
 
-Useful Links
-============
+.. Removed Useful Links
+.. Useful Links
+.. ============
 
-.. csv-table::
-    :align: left
-    :file: csv/useful_links.csv
-    :header-rows: 1
+.. .. csv-table::
+..     :align: left
+..     :file: csv/useful_links.csv
+..     :header-rows: 1
 
 .. .. _qdma_misc:
 
