@@ -40,6 +40,7 @@ PCIe Debug K-Map
 
    docs/QDMA_Subsystem_for_PCIExpress_IP_Driver/index
    docs/QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_conceptual_topics/index
+   docs/QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_debug_topics/index
 
 .. toctree::
    :maxdepth: 20
