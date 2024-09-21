@@ -266,28 +266,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
-<dt>axis_c2h_status_drop is asserted</dt><dd><ul>
-<li><p>Check if desc_rsp_err is set or not in QDMa_C2H_ERR_STAT</p></li>
-<li><dl class="simple">
-<dt>Check the following registers:</dt><dd><ul>
-<li><p>QDMA_C2H_DROP_LEN_MISMATCH (0xBB4)</p></li>
-<li><p>QDMA_C2H_DROP_DESC_RSP_LEN (0xBB8)</p></li>
-<li><p>QDMA_C2H_DROP_QID_FIFO_LEN (0xBBC)</p></li>
-<li><p>QDMA_C2H_DROP_PAYLOAD_CNT (0xBB0)</p></li>
-<li><p>Interrupt Decode 2 Register (0xE38)</p></li>
-<li><p>C2H_PACKETS_DROP (0x088)</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>Make sure the descriptor is still available; check tm_dsc_sts_error/tm_dsc_sts_avl</p></li>
-<li><p>Make sure PIDX/CIDX is updated correctly</p></li>
-<li><p>Check s_axis_c2h_tready</p></li>
-</ul>
-</dd>
-</dl>
-</li>
 </ul>
 </div>
 
