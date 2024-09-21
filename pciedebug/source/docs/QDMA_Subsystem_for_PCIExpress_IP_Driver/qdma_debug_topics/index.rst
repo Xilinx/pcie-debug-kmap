@@ -7,6 +7,7 @@ QDMA Debug Topics
 .. toctree::
 
     general_debug_checklist.rst
+	qdma_performance_debug.rst
     axis_c2h_status_drop is asserted.rst
     simple_bypass_packet_drop.rst
     
