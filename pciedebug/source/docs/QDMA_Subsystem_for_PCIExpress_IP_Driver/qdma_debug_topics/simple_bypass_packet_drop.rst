@@ -8,5 +8,3 @@ Packets being dropped in Simple Bypass Mode
 	  For more information, see the below link:
 		https://docs.xilinx.com/r/en-US/pg347-cpm-dma-bridge/C2H-Stream-Modes?tocId=k~agbMXDqpS_4dpKXB2MLg
 
-..            *   The PCI Express Controller Programing Model section in UG1085 summarizes programming of the PCI Express controller for Endpoint and Root Port mode operations. Review that section to make sure programming of the PS-GT Transceiver Interface, IOU for Reset Pin, PCI Express Controller and Bridge initialization has been done correctly.
-
