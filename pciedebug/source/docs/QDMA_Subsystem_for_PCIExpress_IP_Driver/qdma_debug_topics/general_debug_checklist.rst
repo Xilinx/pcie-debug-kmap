@@ -1,4 +1,4 @@
-.. _qdma_debug_topics:
+.. _qdma_general_debug_checklist:
 
 General Debug Checklist
 =======================
