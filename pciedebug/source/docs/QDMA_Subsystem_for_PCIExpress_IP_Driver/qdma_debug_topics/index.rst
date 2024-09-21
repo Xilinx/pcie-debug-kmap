@@ -12,6 +12,7 @@ QDMA Debug Topics
     axis_c2h_status_drop is asserted.rst
     simple_bypass_packet_drop.rst
     CMPT_Packet_is_not_sent.rst
+	invalid_pidx_update_error.rst
     
 	
     
