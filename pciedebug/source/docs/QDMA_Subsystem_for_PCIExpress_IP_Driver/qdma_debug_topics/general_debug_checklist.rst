@@ -3,6 +3,14 @@
 General Debug Checklist
 =======================
 
-    In Simple Bypass Mode, if there is an issue where packets are getting dropped, make sure the correct value is provided to c2h_byp_in_st_csh_pfch_tag[6:0] for all transfers. Check MDMA_C2H_PFCH_BYP_TAG (0x140C) in the register dump and confirm the value matches the value provided in c2h_byp_in_st_csh_pfch_tag[6:0]. For more information, see the below link:
-	https://docs.xilinx.com/r/en-US/pg347-cpm-dma-bridge/C2H-Stream-Modes?tocId=k~agbMXDqpS_4dpKXB2MLg
+    - Review: https://support.xilinx.com/s/article/000033516?language=en_US
+    - Review: https://support.xilinx.com/s/article/000033539?language=en_US
+    - For ” read file: Input/output error”, check (Xilinx Answer 72813)
+    - If the simulation of the example design generated with “AXI Stream with Completion” is not working, make sure PF0 BAR2 is enabled. The example design implements registers which are accessed from the host through BAR2.
+    - Check if the base address of all ring buffer (H2C, C2H and CMPT) are aligned to the 4K address.
+    - Make sure the FMAP register is programmed. This is required to associate how many queues are allocated to each function.
+    - Check if fetch crediting is enabled or not (See Credit Descriptor Context Structure); the user logic is required to provide a credit for each descriptor that should be fetched.
+    - Make sure the hardware and credit context are cleared before enabling the queue.
+    - Check PIDX and CIDX values. Make sure there are enough descriptors.
+
 
