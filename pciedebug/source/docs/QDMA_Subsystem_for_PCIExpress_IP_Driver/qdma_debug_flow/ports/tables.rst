@@ -7,7 +7,10 @@ QDMA Global Port Descriptions
 
 .. note::
 
-   See the latest version of PG302 for updates
+   The table above is sourced from PG302. Refer to the links below for the relevant IP table.
+   PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Global-Ports
+   PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Global-Ports?tocId=OZuHNoSk7b_ljTFaCFeXow
+   PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Global-Ports
 
 .. _axi4_memory_mapped_master_bridge_read_address_interface_port_descriptions:
 
@@ -18,10 +21,7 @@ AXI4 Memory Mapped Master Bridge Read Address Interface Port Descriptions
 
 .. note::
 
-   The table above is sourced from PG302. Refer to the links below for the relevant IP table.
-   PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Global-Ports
-   PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Global-Ports?tocId=OZuHNoSk7b_ljTFaCFeXow
-   PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Global-Ports
+   See the latest version of PG302 for updates
 
 .. _axi4_memory_mapped_master_bridge_read_interface_port_descriptions:
 
