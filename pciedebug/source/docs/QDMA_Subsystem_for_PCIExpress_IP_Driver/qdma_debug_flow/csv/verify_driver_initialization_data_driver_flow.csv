@@ -1,5 +1,5 @@
 Verify Driver Initialization Data/Driver Flow,,,
 H2C MM,C2H MM,H2C ST,C2H ST
 :ref:`Review H2C MM Driver Flow <axi4_memory_mapped_h2c_flow>`,:ref:`Review C2H MM Driver Flow <axi4_memory_mapped_c2h_flow>`,:ref:`Review H2C ST Driver Flow <axi4-stream_h2c_flow>`,:ref:`Review C2H ST Driver Flow <axi4-stream_c2h_flow>`
-:ref:`Review dmesg log <DMESG Log>`,:ref:`Review dmesg log <DMESG Log>`,:ref:`Review dmesg log <DMESG Log>`,:ref:`Review dmesg log <DMESG Log>`
+:ref:`Review dmesg log <DMESG Log>`,,,
 :ref:`Review Context Programming <context_programming>`,:ref:`Review Context Programming <context_programming>`,:ref:`Review Context Programming <context_programming>`,:ref:`Review Context Programming <context_programming>`
