@@ -8,9 +8,11 @@ QDMA Global Port Descriptions
 .. note::
 
    * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
-	* PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Global-Ports
-	* PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Global-Ports?tocId=OZuHNoSk7b_ljTFaCFeXow
-	* PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Global-Ports
+	 * PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Global-Ports
+	 * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Global-Ports?tocId=OZuHNoSk7b_ljTFaCFeXow
+	 * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Global-Ports
+    
+    See the latest version of PG302, PG344, PG347 for updates
 
 .. _axi4_memory_mapped_master_bridge_read_address_interface_port_descriptions:
 
@@ -20,8 +22,11 @@ AXI4 Memory Mapped Master Bridge Read Address Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Master-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Master-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 .. _axi4_memory_mapped_master_bridge_read_interface_port_descriptions:
 
@@ -31,8 +36,11 @@ AXI4 Memory Mapped Master Bridge Read Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Master-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Master-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 .. _axi4_memory_mapped_master_bridge_write_address_interface_port_descriptions:
 
@@ -42,8 +50,11 @@ AXI4 Memory Mapped Master Bridge Write Address Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Master-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Master-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_memory_mapped_master_bridge_write_interface_port_descriptions:
@@ -54,8 +65,11 @@ AXI4 Memory Mapped Master Bridge Write Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Master-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Master-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_memory_mapped_master_bridge_write_response_interface_port_descriptions:
@@ -66,8 +80,11 @@ AXI4 Memory Mapped Master Bridge Write Response Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Master-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Master-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_bridge_slave_write_address_interface_port_descriptions:
@@ -78,8 +95,11 @@ AXI4 Bridge Slave Write Address Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Slave-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Slave-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_bridge_slave_write_interface_port_descriptions:
@@ -90,8 +110,11 @@ AXI4 Bridge Slave Write Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Slave-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Slave-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_bridge_slave_write_response_interface_port_descriptions:
@@ -102,8 +125,11 @@ AXI4 Bridge Slave Write Response Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Slave-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Slave-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_bridge_slave_read_address_interface_port_descriptions:
@@ -114,8 +140,11 @@ AXI4 Bridge Slave Read Address Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Slave-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Slave-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_bridge_slave_read_interface_port_descriptions:
@@ -126,8 +155,11 @@ AXI4 Bridge Slave Read Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Bridge-Slave-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Slave-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _config_axi4-lite_memory_mapped_write_master_interface_port_descriptions:
@@ -138,8 +170,11 @@ Config AXI4-Lite Memory Mapped Write Master Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Lite-Master-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Lite-Master-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _config_axi4-lite_memory_mapped_read_master_interface_port_descriptions:
@@ -150,8 +185,11 @@ Config AXI4-Lite Memory Mapped Read Master Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Lite-Master-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Lite-Master-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _config_axi4-lite_memory_mapped_write_slave_interface_signals:
@@ -162,8 +200,11 @@ Config AXI4-Lite Memory Mapped Write Slave Interface Signals
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Lite-Slave-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Lite-Slave-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _config_axi4-lite_memory_mapped_read_slave_interface_signals:
@@ -174,8 +215,11 @@ Config AXI4-Lite Memory Mapped Read Slave Interface Signals
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Lite-Slave-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Lite-Slave-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_memory_mapped_dma_read_address_interface_signals:
@@ -186,9 +230,12 @@ AXI4 Memory Mapped DMA Read Address Interface Signals
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Memory-Mapped-DMA-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Memory-Mapped-DMA-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Memory-Mapped-Interface?tocId=nHCC~3lUKCHYh9MZrllDrA
 
-   See the latest version of PG302 for updates
-
+   See the latest version of PG302, PG344, PG347 for updates
 
 .. _axi4_memory_mapped_dma_read_interface_signals:
 
@@ -198,8 +245,12 @@ AXI4 Memory Mapped DMA Read Interface Signals
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Memory-Mapped-DMA-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Memory-Mapped-DMA-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Memory-Mapped-Interface?tocId=nHCC~3lUKCHYh9MZrllDrA
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_memory_mapped_dma_write_address_interface_signals:
@@ -210,8 +261,12 @@ AXI4 Memory Mapped DMA Write Address Interface Signals
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Memory-Mapped-DMA-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Memory-Mapped-DMA-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Memory-Mapped-Interface?tocId=nHCC~3lUKCHYh9MZrllDrA
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_memory_mapped_dma_write_interface_signals:
@@ -222,8 +277,12 @@ AXI4 Memory Mapped DMA Write Interface Signals
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Memory-Mapped-DMA-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Memory-Mapped-DMA-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Memory-Mapped-Interface?tocId=nHCC~3lUKCHYh9MZrllDrA
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_memory_mapped_dma_write_response_interface_signals:
@@ -234,8 +293,12 @@ AXI4 Memory Mapped DMA Write Response Interface Signals
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Memory-Mapped-DMA-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Memory-Mapped-DMA-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Memory-Mapped-Interface?tocId=nHCC~3lUKCHYh9MZrllDrA
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4-stream_h2c_port_descriptions:
@@ -246,8 +309,12 @@ AXI4-Stream H2C Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Stream-H2C-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-H2C-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Stream-H2C-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4-stream_c2h_port_descriptions:
@@ -258,8 +325,12 @@ AXI4-Stream C2H Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Stream-C2H-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-C2H-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Stream-C2H-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4-stream_c2h_completion_port_descriptions:
@@ -270,8 +341,13 @@ AXI4-Stream C2H Completion Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+   
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Stream-C2H-Completion-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-C2H-Completion-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Stream-C2H-Completion-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi-st_c2h_status_port_descriptions:
@@ -282,8 +358,13 @@ AXI-ST C2H Status Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+   
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Stream-Status-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-Status-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Stream-Status-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi-st_c2h_write_cmp_port_descriptions:
@@ -294,8 +375,12 @@ AXI-ST C2H Write Cmp Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Stream-C2H-Write-Completion-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-C2H-Write-Completion-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Stream-C2H-Write-Completion-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _vdm_port_descriptions:
@@ -306,8 +391,13 @@ VDM Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
 
-   See the latest version of PG302 for updates
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/VDM-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/VDM-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/VDM-Ports
+
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _configuration_extend_interface_port_descriptions:
@@ -318,8 +408,12 @@ Configuration Extend Interface Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
 
-   See the latest version of PG302 for updates
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Configuration-Extend-Interface-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Configuration-Extend-Interface-Ports
+
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _flr_port_descriptions:
@@ -331,7 +425,12 @@ FLR Port Descriptions
 
 .. note::
 
-   See the latest version of PG302 for updates
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/FLR-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/FLR-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/FLR-Ports
+
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _qdma_h2c-streaming_bypass_input_port_descriptions:
@@ -342,8 +441,12 @@ QDMA H2C-Streaming Bypass Input Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Descriptor-Bypass-Input-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Input-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Descriptor-Bypass-Input-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _qdma_h2c-mm_descriptor_bypass_input_port_descriptions:
@@ -354,8 +457,12 @@ QDMA H2C-MM Descriptor Bypass Input Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Descriptor-Bypass-Input-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Input-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Descriptor-Bypass-Input-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _qdma_c2h-streaming_cache_bypass_input_port_descriptions:
@@ -366,8 +473,12 @@ QDMA C2H-Streaming Cache Bypass Input Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Descriptor-Bypass-Input-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Input-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Descriptor-Bypass-Input-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _qdma_c2h-mm_descriptor_bypass_input_port_descriptions:
@@ -378,8 +489,12 @@ QDMA C2H-MM Descriptor Bypass Input Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Descriptor-Bypass-Input-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Input-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Descriptor-Bypass-Input-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _qdma_h2c_descriptor_bypass_output_port_descriptions:
@@ -390,8 +505,12 @@ QDMA H2C Descriptor Bypass Output Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Descriptor-Bypass-Output-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Output-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Descriptor-Bypass-Output-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _qdma_c2h_descriptor_bypass_output_port_descriptions:
@@ -402,8 +521,12 @@ QDMA C2H Descriptor Bypass Output Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Descriptor-Bypass-Output-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Output-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Descriptor-Bypass-Output-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _qdma_descriptor_credit_input_port_descriptions:
@@ -414,8 +537,13 @@ QDMA Descriptor Credit Input Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Descriptor-Credit-Input-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Credit-Input-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Descriptor-Credit-Input-Ports
 
-   See the latest version of PG302 for updates
+
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _qdma_tm_credit_output_port_descriptions:
@@ -426,8 +554,12 @@ QDMA TM Credit Output Port Descriptions
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/QDMA-Traffic-Manager-Credit-Output-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Traffic-Manager-Credit-Output-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/QDMA-Traffic-Manager-Credit-Output-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
    
 .. _user_interrupts_port_descriptions:
@@ -438,8 +570,12 @@ User Interrupts Port Descriptions
    :align: center
  
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/User-Interrupts
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/User-Interrupts?tocId=JDdZMAsujF8XvOqyC4QD7w
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/User-Interrupts?tocId=Bitp2ey_91KNCZTqp1MyFA
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _queue_status_ports:
@@ -450,8 +586,12 @@ Queue Status Ports
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Queue-Status-Ports
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Queue-Status-Ports
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Queue-Status-Ports
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _queue_status_data:
@@ -462,8 +602,12 @@ Queue status data
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Queue-Status-Data-qsts_out_data
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Queue-Status-Data-qsts_out_data
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Queue-Status-Data
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4_memory_mapped_c2h_flow:
@@ -474,8 +618,13 @@ AXI4 Memory Mapped C2H Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Memory-Mapped-C2H-Flow
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Memory-Mapped-C2H-Flow
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Memory-Mapped-C2H-Flow
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
+
 
 
 .. _axi4_memory_mapped_h2c_flow:
@@ -486,8 +635,12 @@ AXI4 Memory Mapped H2C Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Memory-Mapped-C2H-Flow
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Memory-Mapped-C2H-Flow
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Memory-Mapped-C2H-Flow
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4-stream_c2h_flow:
@@ -498,8 +651,12 @@ AXI4-Stream C2H Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Stream-C2H-Flow
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-C2H-Flow
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Stream-C2H-Flow
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _axi4-stream_h2c_flow:
@@ -510,8 +667,12 @@ AXI4-Stream H2C Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI4-Stream-H2C-Flow
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-H2C-Flow
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI4-Stream-H2C-Flow
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _context_programming:
@@ -522,8 +683,13 @@ Context Programming
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Context-Programming
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Context-Programming
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Context-Programming
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
+
 
 
 .. _descriptor_fetch_flow:
@@ -534,8 +700,12 @@ Descriptor Fetch Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Fetch
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Fetch
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Descriptor-Fetch
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _software_descriptor_context_structure_definition:
@@ -547,8 +717,12 @@ Software Descriptor Context Structure Definition
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _hardware_descriptor_structure_definition:
@@ -560,8 +734,12 @@ Hardware Descriptor Structure Definition
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Hardware-Descriptor-Context-Structure-0x2-C2H-and-0x3-H2C
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Hardware-Descriptor-Context-Structure-0x2-C2H-and-0x3-H2C
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Hardware-Descriptor-Context-Structure-0x2-C2H-and-0x3-H2C
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _credit_descriptor_context_structure_definition:
@@ -572,8 +750,12 @@ Credit Descriptor Context Structure Definition
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Credit-Descriptor-Context-Structure
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Credit-Descriptor-Context-Structure
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Credit-Descriptor-Context-Structure
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _c2h_prefetch_context_structure:
@@ -584,8 +766,12 @@ C2H Prefetch Context Structure
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/C2H-Prefetch-Engine
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Prefetch-Engine
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/C2H-Prefetch-Engine
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _h2c_internal_mode_flow:
@@ -596,8 +782,12 @@ H2C Internal Mode Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Internal-and-Bypass-Modes
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Internal-and-Bypass-Modes
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Internal-and-Bypass-Modes
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _h2c_bypass_mode_flow:
@@ -608,8 +798,12 @@ H2C Bypass Mode Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Internal-and-Bypass-Modes
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Internal-and-Bypass-Modes
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Internal-and-Bypass-Modes
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
    
    
 .. _handling_exception_events:
@@ -620,8 +814,12 @@ Handling Exception Events
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Handling-Exception-Events
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Handling-Exception-Events
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Handling-Exception-Events
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _h2c_and_c2h_queue:
@@ -632,9 +830,12 @@ H2C and C2H Queue
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/H2C-and-C2H-Queues
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/H2C-and-C2H-Queues
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/H2C-and-C2H-Queues
 
-   See the latest version of PG302 for updates
-
+   See the latest version of PG302, PG344, PG347 for updates
 
 .. _completion_queue_flow:
 
@@ -644,8 +845,12 @@ Completion Queue Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Completion-Queue
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Queue
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Completion-Queue
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _c2h_simple_bypass_mode_flow:
@@ -656,8 +861,12 @@ C2H Simple Bypass Mode Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Modes
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Stream-Modes
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/C2H-Stream-Modes
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 .. _c2h_cache_bypass_mode_flow:
@@ -668,8 +877,13 @@ C2H Cache Bypass Mode Flow
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Modes
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Stream-Modes
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/C2H-Stream-Modes
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
+
 
 
 .. _axi_memory_mapped_writeback_status_structure_for_h2c_and_c2h:
@@ -680,32 +894,44 @@ AXI Memory Mapped Writeback Status Structure for H2C and C2H
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Writeback-Status-Structure-for-H2C-and-C2H
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Memory-Mapped-Writeback-Status-Structure-for-H2C-and-C2H
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/AXI-Memory-Mapped-Writeback-Status-Structure-for-H2C-and-C2H
 
-   See the latest version of PG302 for updates
-
+   See the latest version of PG302, PG344, PG347 for updates
 
 .. _axi4-stream_h2c_writeback_status_descriptor_structure:
 
-AXI4-Stream Completion Status Structure
+AXI4-Stream H2C Writeback Status Descriptor Structure
 ---------------------------------------
 .. image:: table_images/058_axi4-stream_h2c_writeback_status_descriptor_structure.png
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Status-Descriptor-Writeback
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/H2C-Stream-Status-Descriptor-Writeback
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/H2C-Stream-Status-Descriptor-Writeback
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
+
 
 
 .. _axi4-stream_completion_status_structure:
 
-AXI4-Stream H2C Writeback Status Descriptor Structure
+AXI4-Stream Completion Status Structure
 -----------------------------------------------------
 .. image:: table_images/059_axi4-stream_completion_status_structure.png
    :align: center
 
 .. note::
+   * The table above is sourced from PG302. Refer to the links below for the latest relevant IP table.
+    * PG302: https://docs.amd.com/r/en-US/pg302-qdma/Completion-Status-Structure
+    * PG344: https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Status-Structure
+    * PG347: https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Completion-Status-Structure
 
-   See the latest version of PG302 for updates
+   See the latest version of PG302, PG344, PG347 for updates
 
 
 
