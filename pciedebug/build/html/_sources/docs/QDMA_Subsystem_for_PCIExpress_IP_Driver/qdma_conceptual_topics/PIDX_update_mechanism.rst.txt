@@ -1,28 +1,35 @@
-.. _qdma_conceptual_topics_pidx_update_mechanism:
+.. _PG302_important_design_considerations:
 
-Deciphering the PIDX Update Mechanism in a QDMA Subsystem for CPM5
-==================================================================
 
-.. container:: highlight-box
+PG302 Important Design Considerations
+=====================================
+
+
+
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Engine?tocId=IapAFAz_pMIftrJvFO5TaQ`
     
         - If a queue is associated with interrupt aggregation, AMD recommends that the status descriptor be turned off, and instead the DMA status be received from the interrupt aggregation ring.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Engine?tocId=5bP1owSpu0KFRSL~uEv2lQ`
     
         - The total length of all descriptors put together must be less than 64 KB.
         - For internal mode queues, each descriptor defines a single AXI4-Stream packet to be transferred to the H2C AXI-ST interface. A packet with multiple descriptors straddling is not allowed due to the lack of per queue storage. However, packets with multiple descriptors straddling can be implemented using the descriptor bypass mode.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Engine?tocId=w7xytGq781SYeea3XB7G3A`
     
         - In Simple Bypass Mode, the engine does not track anything for the queue, and the user logic can define its own method to receive descriptors. The user logic is then responsible for delivering the packet and associated descriptor through the simple bypass interface. The ordering of the descriptors fetched by a queue in the bypass interface and the C2H stream interface must be maintained across all queues in bypass mode.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Bridge-Master-Interface`
     
@@ -30,19 +37,22 @@ Deciphering the PIDX Update Mechanism in a QDMA Subsystem for CPM5
         - Virtual function group (VFG) refers to the VF group number. It is equivalent to the PF number associated with the corresponding VF. VFG_OFFSET refers to the VF number with respect to a particular PF. Note that this is not the FIRST_VF_OFFSET of each PF.
         - Note that all VFs belonging to the same PF share the same PCIe to AXI translation vector. Therefore, the AXI address space of each VF is concatenated together. Use VFG_OFFSET to calculate the actual starting address of AXI for a particular VF.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/PCIe-RQ/RC`
     
         - With a 512-bit interface, straddling is enabled. While straddling is supported, all combinations of RQ straddled transactions might not be implemented.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/General-Design-of-Queues`
     
         - If queue size is 8, which contains the entry index 0 to 7, the last entry (index 7) is reserved for status. This index should never be used for PIDX update, and PIDX update should never be equal to CIDX. For this case, if CIDX is 0, the maximum PIDX update would be 6.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/Limitations`
     
@@ -50,7 +60,8 @@ Deciphering the PIDX Update Mechanism in a QDMA Subsystem for CPM5
         - ECC and Slave Narrow Burst support is mutually exclusive.
         - If you want an ECC feature, the recommendation is to up-size your AXI Master externally.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization`
     
@@ -60,21 +71,24 @@ Deciphering the PIDX Update Mechanism in a QDMA Subsystem for CPM5
         - For optimal QDMA streaming performance, packet buffers of the descriptor ring should be aligned to at least 256 bytes.
         - AMD recommends that you limit the total outstanding descriptor fetch to be less than 8 KB on the PCIe. For example, limit the outstanding credits across all queues to 512 for a 16B descriptor.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization`
     
         - AMD recommends that this port be asserted once in 32 packets or 64 packets. And if there are no more descriptors left then assert h2c_byp_in_st_sdi at the last descriptor. This requirement is per queue basis, and applies to AXI4 (H2C and C2H) bypass transfers and AXI4-Stream H2C transfers.
         - For AXI4-Stream C2H Simple bypass mode, the dsc_crdt_in_fence port should be set to 1 for performance reasons. This recommendation assumes the user design already coalesced credits for each queue and sent them to the IP. In internal mode, set the fence bit in the QDMA_C2H_PFCH_CFG_2 (0xA84) register.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Context`
     
         - Prior to enabling the queue, the hardware and credit context must first be cleared. After this is done, the software context can be programmed and the qen bit can be set to enable the queue. After the queue is enabled, the software context should only be updated through the direct mapped address space to update the Producer Index and Interrupt Arm® bit, unless the queue is being disabled.
         - Reading the context when the queue is enabled is not recommended as it can result in reduced performance.
 
-.. container:: highlight-box
+.. note::
+    :class: highlight-box
 
     • `https://docs.amd.com/r/en-US/pg302-qdma/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C`
     
