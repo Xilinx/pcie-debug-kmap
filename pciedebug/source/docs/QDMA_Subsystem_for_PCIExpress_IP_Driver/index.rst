@@ -10,6 +10,7 @@ QDMA Subsystem for PCIExpress (IP/Driver)
     qdma_debug_flow/src/debug_gotchas.rst
     debug_faq.rst
     links_docs_misc.rst
+	PG302_important_design_considerations.rst
     
     
     
