@@ -8,8 +8,9 @@ Important Design Considerations from PG302
 
     When tackling design issues, navigating a lengthy product guide can be overwhelming. To streamline your troubleshooting process, this article lists essential design considerations directly from the product guide, highlighting key points to keep in mind. This article condenses over 200 pages into a focused, 10-12 page summary, making it easier to access the most relevant information quickly. For full details, be sure to click the provided link to explore each consideration further in the original product guide.
 
+.. title:: PG302 Important Design Considerations
 
-.. note:: **Descriptor Engine**
+.. note::
     :class: highlight-box
 
     • https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Engine?tocId=IapAFAz_pMIftrJvFO5TaQ
