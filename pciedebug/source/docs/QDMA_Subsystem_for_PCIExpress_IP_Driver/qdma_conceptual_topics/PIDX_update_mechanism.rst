@@ -1,8 +1,8 @@
 .. _PG302_important_design_considerations:
 
 
-PG302 Important Design Considerations
-=====================================
+Important Design Considerations from PG302
+==========================================
 
 .. container:: Introduction
 
@@ -19,7 +19,7 @@ PG302 Important Design Considerations
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Engine?tocId=5bP1owSpu0KFRSL~uEv2lQ`
+    • https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Engine?tocId=5bP1owSpu0KFRSL~uEv2lQ
     
         - The total length of all descriptors put together must be less than 64 KB.
         - For internal mode queues, each descriptor defines a single AXI4-Stream packet to be transferred to the H2C AXI-ST interface. A packet with multiple descriptors straddling is not allowed due to the lack of per queue storage. However, packets with multiple descriptors straddling can be implemented using the descriptor bypass mode.
@@ -27,14 +27,14 @@ PG302 Important Design Considerations
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Engine?tocId=w7xytGq781SYeea3XB7G3A`
+    • https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Engine?tocId=w7xytGq781SYeea3XB7G3A
     
         - In Simple Bypass Mode, the engine does not track anything for the queue, and the user logic can define its own method to receive descriptors. The user logic is then responsible for delivering the packet and associated descriptor through the simple bypass interface. The ordering of the descriptors fetched by a queue in the bypass interface and the C2H stream interface must be maintained across all queues in bypass mode.
 
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Bridge-Master-Interface`
+    • https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Bridge-Master-Interface
     
         - One or more PCIe BAR of any physical function (PF) or virtual function (VF) can be mapped to the AXI-MM bridge master interface. This selection must be made prior to design compilation.
         - Virtual function group (VFG) refers to the VF group number. It is equivalent to the PF number associated with the corresponding VF. VFG_OFFSET refers to the VF number with respect to a particular PF. Note that this is not the FIRST_VF_OFFSET of each PF.
@@ -43,21 +43,21 @@ PG302 Important Design Considerations
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/PCIe-RQ/RC`
+    • https://docs.amd.com/r/en-US/pg302-qdma/PCIe-RQ/RC
     
         - With a 512-bit interface, straddling is enabled. While straddling is supported, all combinations of RQ straddled transactions might not be implemented.
 
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/General-Design-of-Queues`
+    • https://docs.amd.com/r/en-US/pg302-qdma/General-Design-of-Queues
     
         - If queue size is 8, which contains the entry index 0 to 7, the last entry (index 7) is reserved for status. This index should never be used for PIDX update, and PIDX update should never be equal to CIDX. For this case, if CIDX is 0, the maximum PIDX update would be 6.
 
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/Limitations`
+    • https://docs.amd.com/r/en-US/pg302-qdma/Limitations
     
         - Use AXI SmartConnect to support Narrow Burst.
         - ECC and Slave Narrow Burst support is mutually exclusive.
@@ -66,7 +66,7 @@ PG302 Important Design Considerations
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization`
+    • https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization
     
         - Global register for timer should have a value of 30 for 3 μs.
         - The driver should update TX/RX PIDX in batches of 64.
@@ -77,7 +77,7 @@ PG302 Important Design Considerations
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization`
+    • https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization
     
         - AMD recommends that this port be asserted once in 32 packets or 64 packets. And if there are no more descriptors left then assert h2c_byp_in_st_sdi at the last descriptor. This requirement is per queue basis, and applies to AXI4 (H2C and C2H) bypass transfers and AXI4-Stream H2C transfers.
         - For AXI4-Stream C2H Simple bypass mode, the dsc_crdt_in_fence port should be set to 1 for performance reasons. This recommendation assumes the user design already coalesced credits for each queue and sent them to the IP. In internal mode, set the fence bit in the QDMA_C2H_PFCH_CFG_2 (0xA84) register.
@@ -85,7 +85,7 @@ PG302 Important Design Considerations
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Context`
+    • https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Context
     
         - Prior to enabling the queue, the hardware and credit context must first be cleared. After this is done, the software context can be programmed and the qen bit can be set to enable the queue. After the queue is enabled, the software context should only be updated through the direct mapped address space to update the Producer Index and Interrupt Arm® bit, unless the queue is being disabled.
         - Reading the context when the queue is enabled is not recommended as it can result in reduced performance.
@@ -93,7 +93,7 @@ PG302 Important Design Considerations
 .. note::
     :class: highlight-box
 
-    • `https://docs.amd.com/r/en-US/pg302-qdma/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C`
+    • https://docs.amd.com/r/en-US/pg302-qdma/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C
     
         - irq_req: Interrupt due to error waiting to be sent (waiting for irq_arm). This bit should be cleared when the queue context is initialized.
         - err_wb_sent: A writeback/interrupt was sent for an error. Once this bit is set no more writebacks or interrupts will be sent for the queue. This bit should be cleared when the queue context is initialized.
