@@ -131,6 +131,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
+<p><strong>Descriptor Engine</strong></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Engine?tocId=IapAFAz_pMIftrJvFO5TaQ">https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Engine?tocId=IapAFAz_pMIftrJvFO5TaQ</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If a queue is associated with interrupt aggregation, AMD recommends that the status descriptor be turned off, and instead the DMA status be received from the interrupt aggregation ring.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Engine?tocId=5bP1owSpu0KFRSL~uEv2lQ">https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Engine?tocId=5bP1owSpu0KFRSL~uEv2lQ</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The total length of all descriptors put together must be less than 64 KB.</p></li>
+<li><p>For internal mode queues, each descriptor defines a single AXI4-Stream packet to be transferred to the H2C AXI-ST interface. A packet with multiple descriptors straddling is not allowed due to the lack of per queue storage. However, packets with multiple descriptors straddling can be implemented using the descriptor bypass mode.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Engine?tocId=w7xytGq781SYeea3XB7G3A">https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Engine?tocId=w7xytGq781SYeea3XB7G3A</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>In Simple Bypass Mode, the engine does not track anything for the queue, and the user logic can define its own method to receive descriptors. The user logic is then responsible for delivering the packet and associated descriptor through the simple bypass interface. The ordering of the descriptors fetched by a queue in the bypass interface and the C2H stream interface must be maintained across all queues in bypass mode.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Bridge-Master-Interface">https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Bridge-Master-Interface</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>One or more PCIe BAR of any physical function (PF) or virtual function (VF) can be mapped to the AXI-MM bridge master interface. This selection must be made prior to design compilation.</p></li>
+<li><p>Virtual function group (VFG) refers to the VF group number. It is equivalent to the PF number associated with the corresponding VF. VFG_OFFSET refers to the VF number with respect to a particular PF. Note that this is not the FIRST_VF_OFFSET of each PF.</p></li>
+<li><p>Note that all VFs belonging to the same PF share the same PCIe to AXI translation vector. Therefore, the AXI address space of each VF is concatenated together. Use VFG_OFFSET to calculate the actual starting address of AXI for a particular VF.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/PCIe-RQ/RC">https://docs.amd.com/r/en-US/pg302-qdma/PCIe-RQ/RC</a></p>
 <blockquote>
