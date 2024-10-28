@@ -18,7 +18,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5RHQV7');</script>
 <!-- End Google Tag Manager -->
-  <title>PG302 Important Design Considerations &mdash; PCIe Debug K-Map 1.0 documentation</title>
+  <title>Important Design Considerations from PG302 &mdash; PCIe Debug K-Map 1.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/_static/custom.css" type="text/css" />
@@ -88,7 +88,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">QDMA Subsystem for PCIExpress (IP/Driver)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">QDMA Conceptual Topics</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">PG302 Important Design Considerations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Important Design Considerations from PG302</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../qdma_debug_topics/index.html">QDMA Debug Topics</a></li>
@@ -114,7 +114,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">QDMA Conceptual Topics</a> &raquo;</li>
-      <li>PG302 Important Design Considerations</li>
+      <li>Important Design Considerations from PG302</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/docs/QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_conceptual_topics/PIDX_update_mechanism.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -124,8 +124,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="pg302-important-design-considerations">
-<span id="id1"></span><h1>PG302 Important Design Considerations<a class="headerlink" href="#pg302-important-design-considerations" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="important-design-considerations-from-pg302">
+<span id="pg302-important-design-considerations"></span><h1>Important Design Considerations from PG302<a class="headerlink" href="#important-design-considerations-from-pg302" title="Permalink to this heading">¶</a></h1>
 <div class="introduction docutils container">
 <p>When tackling design issues, navigating a lengthy product guide can be overwhelming. To streamline your troubleshooting process, this article lists essential design considerations directly from the product guide, highlighting key points to keep in mind. This article condenses over 200 pages into a focused, 10-12 page summary, making it easier to access the most relevant information quickly. For full details, be sure to click the provided link to explore each consideration further in the original product guide.</p>
 </div>
@@ -144,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Engine?tocId=5bP1owSpu0KFRSL~uEv2lQ</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Engine?tocId=5bP1owSpu0KFRSL~uEv2lQ">https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Engine?tocId=5bP1owSpu0KFRSL~uEv2lQ</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>The total length of all descriptors put together must be less than 64 KB.</p></li>
@@ -157,7 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Engine?tocId=w7xytGq781SYeea3XB7G3A</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Engine?tocId=w7xytGq781SYeea3XB7G3A">https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Engine?tocId=w7xytGq781SYeea3XB7G3A</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>In Simple Bypass Mode, the engine does not track anything for the queue, and the user logic can define its own method to receive descriptors. The user logic is then responsible for delivering the packet and associated descriptor through the simple bypass interface. The ordering of the descriptors fetched by a queue in the bypass interface and the C2H stream interface must be maintained across all queues in bypass mode.</p></li>
@@ -169,7 +169,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Bridge-Master-Interface</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Bridge-Master-Interface">https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Bridge-Master-Interface</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>One or more PCIe BAR of any physical function (PF) or virtual function (VF) can be mapped to the AXI-MM bridge master interface. This selection must be made prior to design compilation.</p></li>
@@ -183,7 +183,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/PCIe-RQ/RC</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/PCIe-RQ/RC">https://docs.amd.com/r/en-US/pg302-qdma/PCIe-RQ/RC</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>With a 512-bit interface, straddling is enabled. While straddling is supported, all combinations of RQ straddled transactions might not be implemented.</p></li>
@@ -195,7 +195,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/General-Design-of-Queues</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/General-Design-of-Queues">https://docs.amd.com/r/en-US/pg302-qdma/General-Design-of-Queues</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>If queue size is 8, which contains the entry index 0 to 7, the last entry (index 7) is reserved for status. This index should never be used for PIDX update, and PIDX update should never be equal to CIDX. For this case, if CIDX is 0, the maximum PIDX update would be 6.</p></li>
@@ -207,7 +207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/Limitations</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/Limitations">https://docs.amd.com/r/en-US/pg302-qdma/Limitations</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Use AXI SmartConnect to support Narrow Burst.</p></li>
@@ -221,7 +221,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization">https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Global register for timer should have a value of 30 for 3 μs.</p></li>
@@ -237,7 +237,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization">https://docs.amd.com/r/en-US/pg302-qdma/Performance-and-Resource-Utilization</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>AMD recommends that this port be asserted once in 32 packets or 64 packets. And if there are no more descriptors left then assert h2c_byp_in_st_sdi at the last descriptor. This requirement is per queue basis, and applies to AXI4 (H2C and C2H) bypass transfers and AXI4-Stream H2C transfers.</p></li>
@@ -250,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Context</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Context">https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Context</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Prior to enabling the queue, the hardware and credit context must first be cleared. After this is done, the software context can be programmed and the qen bit can be set to enable the queue. After the queue is enabled, the software context should only be updated through the direct mapped address space to update the Producer Index and Interrupt Arm® bit, unless the queue is being disabled.</p></li>
@@ -263,7 +263,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="highlight-box admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><p><cite>https://docs.amd.com/r/en-US/pg302-qdma/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C</cite></p>
+<li><p><a class="reference external" href="https://docs.amd.com/r/en-US/pg302-qdma/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C">https://docs.amd.com/r/en-US/pg302-qdma/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C</a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>irq_req: Interrupt due to error waiting to be sent (waiting for irq_arm). This bit should be cleared when the queue context is initialized.</p></li>
