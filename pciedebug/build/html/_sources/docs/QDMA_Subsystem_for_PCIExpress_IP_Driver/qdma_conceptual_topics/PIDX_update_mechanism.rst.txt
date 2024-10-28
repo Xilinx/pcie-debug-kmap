@@ -9,14 +9,14 @@ Important Design Considerations from PG302
     When tackling design issues, navigating a lengthy product guide can be overwhelming. To streamline your troubleshooting process, this article lists essential design considerations directly from the product guide, highlighting key points to keep in mind. This article condenses over 200 pages into a focused, 10-12 page summary, making it easier to access the most relevant information quickly. For full details, be sure to click the provided link to explore each consideration further in the original product guide.
 
 
-.. note::
+.. Descriptor Engine::
     :class: highlight-box
 
     • https://docs.amd.com/r/en-US/pg302-qdma/Descriptor-Engine?tocId=IapAFAz_pMIftrJvFO5TaQ
     
         - If a queue is associated with interrupt aggregation, AMD recommends that the status descriptor be turned off, and instead the DMA status be received from the interrupt aggregation ring.
 
-.. note::
+.. H2C Stream Engine::
     :class: highlight-box
 
     • https://docs.amd.com/r/en-US/pg302-qdma/H2C-Stream-Engine?tocId=5bP1owSpu0KFRSL~uEv2lQ
@@ -24,14 +24,14 @@ Important Design Considerations from PG302
         - The total length of all descriptors put together must be less than 64 KB.
         - For internal mode queues, each descriptor defines a single AXI4-Stream packet to be transferred to the H2C AXI-ST interface. A packet with multiple descriptors straddling is not allowed due to the lack of per queue storage. However, packets with multiple descriptors straddling can be implemented using the descriptor bypass mode.
 
-.. note::
+.. C2H Stream Engine::
     :class: highlight-box
 
     • https://docs.amd.com/r/en-US/pg302-qdma/C2H-Stream-Engine?tocId=w7xytGq781SYeea3XB7G3A
     
         - In Simple Bypass Mode, the engine does not track anything for the queue, and the user logic can define its own method to receive descriptors. The user logic is then responsible for delivering the packet and associated descriptor through the simple bypass interface. The ordering of the descriptors fetched by a queue in the bypass interface and the C2H stream interface must be maintained across all queues in bypass mode.
 
-.. note::
+.. AXI Memory Mapped Bridge Master Interface::
     :class: highlight-box
 
     • https://docs.amd.com/r/en-US/pg302-qdma/AXI-Memory-Mapped-Bridge-Master-Interface
