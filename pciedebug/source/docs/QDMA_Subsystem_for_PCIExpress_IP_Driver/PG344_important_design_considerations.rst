@@ -259,3 +259,123 @@ Important Design Considerations from PG344
    - When prefetch mode is enabled, the user application cannot send credits as input in QDMA Descriptor Credit input ports.
    - In cache bypass mode, prefetch tag is maintained by the IP internally. Signal c2h_byp_out_pfch_tag[6:0] should be looped back as an input c2h_byp_in_st_csh_pfch_tag[6:0]. The prefetch tag points to the cam that stores the active queues in the prefetch engine.
    - No sequence is required between payload and completion packets.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Handling Descriptors With Errors <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Handling-Descriptors-With-Errors?tocId=GpF6nsAjv5m5zjd_It3VnA>`_
+
+   - For a queue in bypass mode, it is the responsibility of the user logic to not issue a batch of descriptors with an error descriptor. Instead, it must send just one descriptor with error input asserted on the C2H Stream bypass-in interface and set the SOP, EOP, no_dma signal, and sdi or mrkr_req signal to make the C2H Stream Engine send a writeback to Host.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Completion Engine <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Engine?tocId=Ceq2lA4K4EK694IQPAqrAg>`_
+
+   - Although not a requirement, a CMPT is typically used with a C2H queue.
+   - The user-defined portion of the CMPT packet typically needs to specify the length of the data packet transferred and whether or not descriptors were consumed as a result of the data packet transfer. 
+   - Maximum buffer size register 0xB50 bits[31:26] is programmed to 0 (default value). This value might result in an overflow depending on the simulator or the synthesis tool used. To avoid overflow, set 0xB50 bits[31:26] to maximum value of 63.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Completion Context Structure <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Context-Structure>`_
+
+   - baddr4_low: Since the minimum alignment supported is 64B in this case, this field must be 0.
+   - pidx: Completion Ring Producer Index. This is a field written by the hardware. The software must initialize it to 0 and then treat it as read-only. Color bit to be used on Completion.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Completion Status Structure <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Status-Structure>`_
+
+   - In order to make the QDMA write Completion Status to the Completion ring, Completion Status must be enabled in the Completion context.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Completion Status/Interrupt Moderation <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Status/Interrupt-Moderation>`_
+
+   - When in TRIGGER_EVERY, TRIGGER_USER, and TRIGGER_USER_COUNT mode, the software must read all the Completion entries in the Completion ring as indicated by an interrupt (or a Completion Status write). 
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Address Translation <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Address-Translation>`_
+
+   - When this option is selected, one full 64-bit BAR space is given for slave data transfer. You must set up any address translation if needed. If No Address Translation is not selected, DMA will do address translation.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Slave Address Translation Examples <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Slave-Address-Translation-Examples>`_
+
+   - The slave bridge does not support narrow burst AXI transfers.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Legacy Interrupt <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Legacy-Interrupt>`_
+
+   - To enable the legacy interrupt, the software needs to set the en_lgcy_intr bit in the register QDMA_GLBL_GLBL_INTERRUPT_CFG (0x2C4).
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Function Map Table <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Function-Map-Table>`_
+
+   - Along with FMAP table programming in the IP, you must program the FMAP table in the Mailbox IP. This is needed for function level reset (FLR) procedure.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Context Programming <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Context-Programming>`_
+
+   - A host profile table context needs to be programmed before any context settings.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Queue Setup <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Queue-Setup>`_
+
+   - If interrupts/status writes are desired (enabled in the Completion Context), an initial Completion CIDX update is required to send the hardware into a state where it is sensitive to trigger conditions. This initial CIDX update is required, because when out of reset, the hardware initializes into an unarmed state.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Host Profile <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Host-Profile>`_
+
+   - Host profile must be programmed to represent root port host. Host profile can be programmed through context programming. Select QDMA_CTXT_SELC_HOST_PROFILE (4'hA) in QDMA_IND_CTXT_CMD.
+   - H2C AXI4-MM steering bit and C2H AXI4-MM steering bit should be set to 0s. If not, DMA AXI4-MM transfers do not work. For most cases, host profile context structure is all 0s, and host profile must still be programmed to represent a host.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Resets <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Resets?tocId=fmctYn5tKkX~OxMI1rYFeg>`_
+
+   - Reset the QDMA logic through the soft_reset_n port. This port needs to be held in reset for a minimum of 100 clock cycles (axi_aclk cycles). This does not reset PCIe hard block. It resets only the DMA portion of logic. This reset can be asserted if there is a DMA hang or some error condition.
+   - The use cases that prompt the use of soft_reset include:
+     - DMA hangs and user is not getting proper values.
+     - DMA transfers have errors, but the PCIe links are good. DMA records some asynchronous error.
+   - After soft_reset, you must reinitialize the queues and program all queue context.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Expansion ROM <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Expansion-ROM>`_
+
+   - The maximum size for the Expansion ROM BAR should be no larger than 16 MB. Selecting an address space larger than 16 MB can result in a non-compliant core.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Data Path Errors <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Data-Path-Errors>`_
+
+   - Any DMA during and after the parity error should be considered invalid. If there is a parity error and transfer hangs or stops, the DMA will log the error. You must investigate and fix the parity issues.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `AXI Bridge Slave Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Slave-Ports>`_
+
+   - The valid data identified by s_axib_wstrb must be continuous from the first byte enable to the last byte enable.
