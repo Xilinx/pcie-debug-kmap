@@ -167,3 +167,53 @@ Important Design Considerations from PG344
    - Any descriptors that have already started the source buffer fetch will continue to be processed. Reassertion of the run bit will result in resetting internal engine state and should only be done when the engine is quiesced.
    - Once sufficient read completion data is received, the write request will be issued to the destination interface in the same order that the read data was requested. Before the request is retired, the destination interfaces must accept all the write data and provide a completion response.
 
+.. note::
+   :class: highlight-box
+
+   **Link**: `AXI Memory Mapped Descriptor for H2C and C2H 32B <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Memory-Mapped-Descriptor-for-H2C-and-C2H-32B>`_
+
+   - Internal mode memory mapped DMA must configure the descriptor queue to be 32B and follow the above descriptor format. In bypass mode, the descriptor format is defined by the user logic, which must drive the H2C or C2H MM bypass input port.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Internal and Bypass Modes <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Internal-and-Bypass-Modes>`_
+
+   - If the packet is present in host memory in non-contiguous space, then it has to be defined by more than one descriptor, and this requires that the queue be programmed in bypass mode.
+   - When fcrd_en is enabled in the software context, DMA will wait for the user application to provide credits. When fcrd_en is not set, the DMA uses a pointer update, fetches descriptors and sends the descriptor out. The user application should not send in credits.
+   - Because the bypass mode allows a packet to span multiple descriptors, the user logic needs to indicate to QDMA which descriptor marks the Start-Of-Packet (SOP) and which marks the End-Of-Packet (EOP).
+   - At the QDMA H2C Stream bypass-in interface, among other pieces of information, the user logic needs to provide: Address, Length, SOP, and EOP. It is required that once the user logic feeds SOP descriptor information into QDMA, it must eventually feed EOP descriptor information also.
+   - Descriptors for these multi-descriptor packets must be fed in sequentially. Other descriptors not belonging to the packet must not be interleaved within the multidescriptor packet.
+   - The user logic must accumulate the descriptors up to the EOP descriptor, before feeding them back to QDMA. Not doing so can result in a hang. The QDMA will generate a TLAST at the QDMA H2C AXI4-Stream data output once it issues the last beat for the EOP descriptor. This is guaranteed because the user is required to submit the descriptors for a given packet sequentially.
+   - The Stream engine is designed to saturate PCIe for packet sizes as low as 128B, so AMD recommends that you restrict the packet size to be host page size or maximum transfer unit as required by the user application.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `H2C Stream Descriptor 16B <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/H2C-Stream-Descriptor-16B>`_
+
+   - This H2C descriptor format is only applicable for internal mode.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Descriptor Metadata <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Metadata>`_
+
+   - Passing metadata on the tuser is not supported for a queue in bypass mode and consequently there is no input to provide the metadata on the QDMA H2C Stream bypass-in interface.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Zero Length Descriptor <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Zero-Length-Descriptor>`_
+
+   - The user logic must set both the SOP and EOP for a zero byte descriptor. If not done, an error will be flagged by the H2C Stream Engine.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `H2C Stream Status Descriptor Writeback <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/H2C-Stream-Status-Descriptor-Writeback>`_
+
+   - The format of the H2C-ST status descriptor written to the descriptor ring is different from that written into the interrupt coalesce entry.
+
+
+
