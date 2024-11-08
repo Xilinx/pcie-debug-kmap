@@ -379,3 +379,84 @@ Important Design Considerations from PG344
    **Link**: `AXI Bridge Slave Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Slave-Ports>`_
 
    - The valid data identified by s_axib_wstrb must be continuous from the first byte enable to the last byte enable.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `AXI4 Stream H2C Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-H2C-Ports>`_
+
+   - m_axis_h2c_tuser_err : If set, indicates the packet has an error. The error could come from the PCIe, or the error could be in the DMA transfer. AMD recommends that you look at the error registers and context for details.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `AXI4 Stream C2H Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-C2H-Ports>`_
+
+   - s_axis_c2h_ctrl_len [15:0] : ctrl_len is in bytes and should be valid in first beat of the packet.
+   - s_axis_c2h_mty [5:0] : Empty byte should be set in last beat.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `AXI4 Stream C2H Completion Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-C2H-Completion-Ports>`_
+
+   - HAS_PLD. The CMPT packet has a corresponding payload packet, and it needs to wait for the payload packet to be sent before sending the CMPT packet.
+   - s_axis_c2h_cmpt_tvalid must be asserted until s_axis_c2h_cmpt_tready is asserted.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `VDM Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/VDM-Ports>`_
+
+   - When this interface is not used, Ready must be tied-off to 1.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `QDMA Descriptor Bypass Input Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Input-Ports>`_
+
+   - For performance reasons, AMD recommends that this port be asserted once in 32 or 64 descriptors and assert at the last descriptor if there are no more descriptors left.
+   - If h2c_byp_in_st_no_dma is set, then both h2c_byp_in_st_sop and h2c_byp_in_st_eop must be set.
+   - h2c_byp_in_mm_len[27:0] : The DMA data length. The upper 12 bits must be tied to 0. Thus only the lower 16 bits of this field can be used for specifying the length.
+   - h2c_byp_in_mm_sdi : For performance reasons, AMD recommends that this port be asserted once in 32 or 64 descriptors and be asserted at the last descriptor if there are no more descriptors left.
+   - c2h_byp_in_st_csh_pfch_tag[6:0] : In Cache Bypass mode, you must loop back c2h_byp_out_pfch_tag[6:0] to c2h_byp_in_st_csh_pfch_tag[6:0]. In Simple Bypass mode, user needs to pass in the Prefetch tag value from MDMA_C2H_PFCH_BYP_TAG (0x140C) register.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `QDMA Descriptor Bypass Output Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Output-Ports>`_
+
+   - h2c_byp_out_cidx [15:0] : The User must echo this field back to QDMA when submitting the descriptor on the bypass-in interface.
+   - h2c_byp_out_rdy : When this interface is not used, Ready must be tied-off to 1.
+   - c2h_byp_out_cidx [15:0] : The User must echo this field back to QDMA when submitting the descriptor on the bypass-in interface.
+   - c2h_byp_out_rdy : When this interface is not used, Ready must be tied-off to 1.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `QDMA Descriptor Credit Input Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Credit-Input-Ports>`_
+
+   - dsc_crdt_in_vld : When asserted the user must be presenting valid data on the bus and maintain the bus values until both valid and ready are asserted on the same cycle.
+   - dsc_crdt_in_fence : The fence bit should only be set for a queue that is enabled, and has both descriptors and credits available, otherwise a hang condition might occur.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `QDMA Traffic Manager Credit Output Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Traffic-Manager-Credit-Output-Ports>`_
+
+   - tm_dsc_sts_rdy : When this interface is not used, Ready must be tied-off to 1.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `Queue Status Ports <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Queue-Status-Ports>`_
+
+   - qsts_out_rdy : Ready must be tied to 1 so status output will not be blocked. Even if this interface is not used, the ready port must be tied to 1.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `QDMA PF Address Register Space <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-PF-Address-Register-Space>`_
+
+   - When you generate the IP in default mode, not all registers are exposed. For example, debug registers will be missing. Refer to the qdma_v5_0_pf_registers.csv file to identify the debug registers. To expose all registers, use the following tcl command during IP generation:
+   - set_property CONFIG.debug_mode {DEBUG_REG_ONLY} [get_ips qdma_0]
