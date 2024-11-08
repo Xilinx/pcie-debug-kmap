@@ -215,5 +215,47 @@ Important Design Considerations from PG344
 
    - The format of the H2C-ST status descriptor written to the descriptor ring is different from that written into the interrupt coalesce entry.
 
+.. note::
+   :class: highlight-box
 
+   **Link**: `Handling Descriptors With Errors <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Handling-Descriptors-With-Errors?tocId=tis~ohdvqbaLPsOGV4YzOQ>`_
 
+   - For a queue in bypass mode, it is the responsibility of the user logic to not issue a batch of descriptors with an error descriptor. Instead, it must send just one descriptor with error input asserted on the H2C Stream bypass-in interface and set the SOP, EOP, no_dma signal, and sdi or mrkr-req signal to make the H2C Stream Engine send a writeback to Host.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `C2H Stream Engine <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Stream-Engine?tocId=rz5SyePZBHI8hPsLfqBusg>`_
+
+   - The buffer size is fixed per queue basis.
+   - The QDMA requires software to post full ring size so the C2H stream engine can fetch the needed number of descriptors for all received packets.
+   - For performance reasons, the software is required to post the PIDX as soon as possible to ensure there are always enough descriptors in the ring.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `C2H Prefetch Engine <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Prefetch-Engine>`_
+
+   - sw_crdt (Software credit): The software must initialize it to 0 and then treat it as read-only.
+
+.. note::
+   :class: highlight-box
+
+   **Link**: `C2H Stream Modes <https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Stream-Modes>`_
+
+   - The descriptors from the C2H bypass input interfaces have one interface for both simple mode and cache mode (note that both simple bypass and cache bypass use the same interface).
+   - If you already have the descriptor cached on the device, there is no need to fetch one from the host and you should follow the simple bypass mode for the C2H Stream application. In simple bypass mode, do not provide credits to fetch the descriptor, and instead, you need to send in the descriptor on the descriptor bypass interface.
+   - AXI4-Stream C2H Simple Bypass mode and Cache Bypass mode both use same bypass in ports (c2h_byp_in_st_csh_* ports).
+   - For simple bypass transfer to work, a prefetch tag is needed and it can be fetched from the QDMA IP.
+   - The user application must request a prefetch tag before sending any traffic for a simple bypass queue through the C2H ST engine. Invalid queues or non-bypass queues should not request any tags using this method, as it might reduce performance by freezing tags that never get used.
+   - The prefetch tag needs to be reserved upfront before any traffic can start. One prefetch tag per target host is required.
+   - In most applications, one prefetch tag for a host is needed. In Simple Bypass mode, the tag is not tied to any descriptor ring. For the queues that share the same prefetch tag, the data and descriptors need to come in the same order.
+   - For Simple Bypass, the data and descriptors are both controlled by the user, so they need to guarantee the order is maintained. For example when the data stream has packets in the order of Q0, Q1, and Q2, on descriptor input, you cannot send Q1, Q2, Q0 etc. The order needs to be maintained.
+   - The user application writes to the MDMA_C2H_PFCH_BYP_QID (0x1408) register with the qid for a simple bypass queue, then reads from MDMA_C2H_PFCH_BYP_TAG (0x140C) register to retrieve the corresponding prefetch tag. This tag must be driven with all bypass_in descriptors for as long as the current qid is valid. If a current qid is invalidated, a new prefetch tag must be requested with a valid qid.
+   - The prefetch tag points to the CAM that stores the active queues in the prefetch engine. Also the qid that was used to prefetch tag needs to be used as the qid for all simple bypass packets. Assign the qid to dma_s_axis_c2h_ctrl_qid.
+   - The prefetch tag and the qid that was used to fetch the tag should be used for all simple bypass packets. This information needs to be communicated to the user side.
+   - The c2h_byp_in_st_csh_pfch_tag[6:0] port can have the same prefetch_tag for as long as the original qid is valid.
+   - No sequence is required between descriptor bypass in, data payload, and completion packets.
+   - When prefetch mode is enabled, the user application cannot send credits as input in QDMA Descriptor Credit input ports.
+   - In cache bypass mode, prefetch tag is maintained by the IP internally. Signal c2h_byp_out_pfch_tag[6:0] should be looped back as an input c2h_byp_in_st_csh_pfch_tag[6:0]. The prefetch tag points to the cam that stores the active queues in the prefetch engine.
+   - No sequence is required between payload and completion packets.
