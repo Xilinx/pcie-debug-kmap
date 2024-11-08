@@ -186,6 +186,161 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><p>Queue-based interrupts and user interrupts are allowed on PFs and VFs, but error interrupts are allowed only on PFs.</p></li>
 </ul>
 </div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/General-Design-of-Queues">General Design of Queues</a></p>
+<ul class="simple">
+<li><p>PIDX update should never be equal to CIDX. For this case, if CIDX is 0, the maximum PIDX update would be 6.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Subsystem-Limitations">QDMA Subsystem Limitations</a></p>
+<ul class="simple">
+<li><p>Use AXI SmartConnect to support Narrow Burst.</p></li>
+<li><p>ECC and Slave Narrow Burst support is mutually exclusive.</p></li>
+<li><p>If you want an ECC feature, the recommendation is to up-size your AXI Master externally.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Performance-and-Resource-Utilization?tocId=6QfBEhQFba9swgGuwrX89A">Performance and Resource Utilization</a></p>
+<ul class="simple">
+<li><p>Following are the QDMA register settings recommended by AMD for better performance. Performance numbers can vary based on systems and OS used.</p></li>
+<li><p>AMD recommends that you limit the total outstanding descriptor fetch to be less than 8 KB on the PCIe. For example, limit the outstanding credits across all queues to 512 for a 16B descriptor.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Context">Descriptor Context</a></p>
+<ul class="simple">
+<li><p>After the queue is enabled, the software context should only be updated through the direct mapped address space to update the Producer Index and Interrupt Arm® bit, unless the queue is being disabled.</p></li>
+<li><p>The hardware context and credit context contain only status. It is only necessary to interact with the hardware and credit contexts as part of queue initialization to clear them to all zeros.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C">Software Descriptor Context Structure 0x0-C2H and 0x1-H2C</a></p>
+<ul class="simple">
+<li><p>If bypass mode is not enabled, 32B is required for Memory Mapped DMA, 16B is required for H2C Stream DMA, and 8B is required for C2H Stream DMA.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Credit-Descriptor-Context-Structure">Credit Descriptor Context Structure</a></p>
+<ul class="simple">
+<li><p>The credit descriptor context is for internal DMA use only and it can be read from the indirect bus for debug.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Fetch">Descriptor Fetch</a></p>
+<ul class="simple">
+<li><p>If fetch crediting is enabled, the user logic is required to provide a credit for each descriptor that should be fetched.</p></li>
+<li><p>If queue size is 8, which contains the entry index 0 to 7, the last entry (index 7) is reserved for status. This index should never be used for the PIDX update, and the PIDX update should never be equal to CIDX. For this case, if CIDX is 0, the maximum PIDX update would be 6.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Internal-Mode-Writeback-and-Interrupts-AXI-MM-and-H2C-ST">Internal Mode Writeback and Interrupts AXI-MM and H2C-ST</a></p>
+<ul class="simple">
+<li><p>It is recommended the wbi_chk bit be set for all internal mode operation, including when interval mode is enabled.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Bypass-Mode?tocId=OnYtjyqAgfk9Lr7lh5_z4w">Descriptor Bypass Mode</a></p>
+<ul class="simple">
+<li><p>To perform DMA operations, the user logic drives descriptors (must be QDMA format) into the descriptor bypass input interface.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Bypass-Mode-Writeback/Interrupts">Descriptor Bypass Mode Writeback/Interrupts</a></p>
+<ul class="simple">
+<li><p>Once a descriptor with the sdi bit is sent, another irq_arm assertion must be observed before another descriptor with the sdi bit can be sent.</p></li>
+<li><p>If you set the sdi bit when the arm bit is not properly observed, an interrupt might or might not be sent, and software might hang indefinitely waiting for an interrupt.</p></li>
+<li><p>When interrupts are not enabled, setting the sdi bit has no restriction. However, excessive writeback events can severely reduce the descriptor engine performance and consume write bandwidth to the host.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Traffic-Manager-Output-Interface">Traffic Manager Output Interface</a></p>
+<ul class="simple">
+<li><p>While the tm_dsc_sts interface is a valid/ready interface, it should not be back-pressured for optimal performance. Since multiple events trigger a tm_dsc_sts cycle, if internal buffering is filled, descriptor fetching will be halted to prevent generation of new events.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Errors?tocId=tsnP~q1s6VOFgCB4k~4Hlw">Errors</a></p>
+<ul class="simple">
+<li><p>After the queue is invalidated, if there is an error you can determine the cause by reading the error registers and context for that queue. You must clear and remove that queue, and then add the queue back later when needed.</p></li>
+<li><p>If the descriptor fetch itself encounters an error, the descriptor will be marked with an error bit. If the error bit is set, the contents of the descriptor should be considered invalid.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Memory-Mapped-DMA">Memory Mapped DMA</a></p>
+<ul class="simple">
+<li><p>PCIe-to-PCIe, and AXI MM-to-AXI MM DMAs are not supported.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Operation">Operation</a></p>
+<ul class="simple">
+<li><p>Any descriptors that have already started the source buffer fetch will continue to be processed. Reassertion of the run bit will result in resetting internal engine state and should only be done when the engine is quiesced.</p></li>
+<li><p>Once sufficient read completion data is received, the write request will be issued to the destination interface in the same order that the read data was requested. Before the request is retired, the destination interfaces must accept all the write data and provide a completion response.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Memory-Mapped-Descriptor-for-H2C-and-C2H-32B">AXI Memory Mapped Descriptor for H2C and C2H 32B</a></p>
+<ul class="simple">
+<li><p>Internal mode memory mapped DMA must configure the descriptor queue to be 32B and follow the above descriptor format. In bypass mode, the descriptor format is defined by the user logic, which must drive the H2C or C2H MM bypass input port.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Internal-and-Bypass-Modes">Internal and Bypass Modes</a></p>
+<ul class="simple">
+<li><p>If the packet is present in host memory in non-contiguous space, then it has to be defined by more than one descriptor, and this requires that the queue be programmed in bypass mode.</p></li>
+<li><p>When fcrd_en is enabled in the software context, DMA will wait for the user application to provide credits. When fcrd_en is not set, the DMA uses a pointer update, fetches descriptors and sends the descriptor out. The user application should not send in credits.</p></li>
+<li><p>Because the bypass mode allows a packet to span multiple descriptors, the user logic needs to indicate to QDMA which descriptor marks the Start-Of-Packet (SOP) and which marks the End-Of-Packet (EOP).</p></li>
+<li><p>At the QDMA H2C Stream bypass-in interface, among other pieces of information, the user logic needs to provide: Address, Length, SOP, and EOP. It is required that once the user logic feeds SOP descriptor information into QDMA, it must eventually feed EOP descriptor information also.</p></li>
+<li><p>Descriptors for these multi-descriptor packets must be fed in sequentially. Other descriptors not belonging to the packet must not be interleaved within the multidescriptor packet.</p></li>
+<li><p>The user logic must accumulate the descriptors up to the EOP descriptor, before feeding them back to QDMA. Not doing so can result in a hang. The QDMA will generate a TLAST at the QDMA H2C AXI4-Stream data output once it issues the last beat for the EOP descriptor. This is guaranteed because the user is required to submit the descriptors for a given packet sequentially.</p></li>
+<li><p>The Stream engine is designed to saturate PCIe for packet sizes as low as 128B, so AMD recommends that you restrict the packet size to be host page size or maximum transfer unit as required by the user application.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/H2C-Stream-Descriptor-16B">H2C Stream Descriptor 16B</a></p>
+<ul class="simple">
+<li><p>This H2C descriptor format is only applicable for internal mode.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Metadata">Descriptor Metadata</a></p>
+<ul class="simple">
+<li><p>Passing metadata on the tuser is not supported for a queue in bypass mode and consequently there is no input to provide the metadata on the QDMA H2C Stream bypass-in interface.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Zero-Length-Descriptor">Zero Length Descriptor</a></p>
+<ul class="simple">
+<li><p>The user logic must set both the SOP and EOP for a zero byte descriptor. If not done, an error will be flagged by the H2C Stream Engine.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/H2C-Stream-Status-Descriptor-Writeback">H2C Stream Status Descriptor Writeback</a></p>
+<ul class="simple">
+<li><p>The format of the H2C-ST status descriptor written to the descriptor ring is different from that written into the interrupt coalesce entry.</p></li>
+</ul>
+</div>
 </div>
 
 
