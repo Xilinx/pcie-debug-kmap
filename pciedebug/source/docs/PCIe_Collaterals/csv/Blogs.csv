@@ -39,3 +39,4 @@ S.No.,Title
 38,`Understanding Versal CPM CED QDMA Example Design Simulation <https://support.xilinx.com/s/article/000036469?language=en_US>`_
 39,`Understanding the "Versal CPM5 QDMA Gen4x8 ST Only Performance Design" CED Example in Vivado 2024.1 <https://support.xilinx.com/s/article/Understanding-the-Versal-CPM5-QDMA-Gen4x8-ST-Only-Performance-Design-CED-Example-in-Vivado-2023-2?language=en_US>`_
 40,`Demystifying CPM5 BDF Table programming for Slave Bridge Address Translation for AXI addresses <https://support.xilinx.com/s/article/Demystifying-CPM5-BDF-Table-programming-for-Slave-Bridge-Address-Translations-for-AXI-address?language=en_US>`_
+41,`Generating User MSI-X Interrupts for Four Physical Functions in Vivado 2024.1 Using the CPM5 QDMA Simulation CED Example <https://adaptivesupport.amd.com/s/article/000036770?language=en_US>`_
