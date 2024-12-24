@@ -3,6 +3,11 @@
 Versal Adaptive SoC CPM Example Designs
 ===============================
 
+.. note::
+
+   The example design links below are from the Vivado 2023.2 release. Clicking on a link will redirect you to the GitHub repository. Please select the latest Vivado version from the upper-left column to access the most recent version of the example design files.
+
+
 * 1 - Versal Adaptive SoC CPM5 QDMA Simulation Example Design
     - https://github.com/Xilinx/XilinxCEDStore/tree/2023.2/ced/Xilinx/IPI/Versal_CPM_QDMA_EP_Simulation_Design/cpm5_qdma
     - https://adaptivesupport.amd.com/s/article/000036469?language=en_US
