@@ -47,7 +47,7 @@ PCIe Debug K-Map
    :caption: Embedded PCI Express
 
    docs/PS_PCIe_PL_PCIe_Root_Port_Driver/index
-   docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM4_PCIe_Root_Port_Design_Linux/index
+   docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/index
    
 
 
