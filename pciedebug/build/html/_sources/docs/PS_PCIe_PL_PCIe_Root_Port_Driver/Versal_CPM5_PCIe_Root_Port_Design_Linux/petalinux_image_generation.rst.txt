@@ -22,13 +22,13 @@ Navigate to a directory where you wish to create a workspace for the PetaLinux p
 
 This command creates a workspace directory for the PetaLinux project. All details related to the build, such as the configured device tree and kernel, will be located here. All project modifications will be contained in this directory.
 
-You have now created an empty project. It is time to configure this project with the appropriate settings needed for this application.
+After creating an empty project, configure this project with the appropriate settings needed for this application.
 
 .. image:: Petalinux_Image_Generation/img_16.jpg
 
 Configuring the PetaLinux Project
 ---------------------------------
-We will use the example design configured in Vivado to build the base of our system image.
+For system image, the example design configured in Vivado will be used.
 
 1. **Configure the project with the .xsa file from Vivado**:
 
@@ -36,7 +36,7 @@ We will use the example design configured in Vivado to build the base of our sys
 
        petalinux-config --get-hw-description=<PATH_TO_XSA_DIRECTORY>
 
-   Since we only have one `.xsa` file in our directory, the PetaLinux tool will automatically pick the appropriate file and begin configuration.
+   Since there is only one `.xsa` file in the directory, the PetaLinux tool will automatically pick the appropriate file and begin configuration.
 
    .. image:: Petalinux_Image_Generation/img_17.jpg
 

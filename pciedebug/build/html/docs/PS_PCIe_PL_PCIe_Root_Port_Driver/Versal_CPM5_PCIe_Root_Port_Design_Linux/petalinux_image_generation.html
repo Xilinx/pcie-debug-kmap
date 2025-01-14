@@ -152,18 +152,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </pre></div>
 </div>
 <p>This command creates a workspace directory for the PetaLinux project. All details related to the build, such as the configured device tree and kernel, will be located here. All project modifications will be contained in this directory.</p>
-<p>You have now created an empty project. It is time to configure this project with the appropriate settings needed for this application.</p>
+<p>After creating an empty project, configure this project with the appropriate settings needed for this application.</p>
 <img alt="../../../_images/img_16.jpg" src="../../../_images/img_16.jpg" />
 </div>
 <div class="section" id="configuring-the-petalinux-project">
 <h2>Configuring the PetaLinux Project<a class="headerlink" href="#configuring-the-petalinux-project" title="Permalink to this heading">¶</a></h2>
-<p>We will use the example design configured in Vivado to build the base of our system image.</p>
+<p>For system image, the example design configured in Vivado will be used.</p>
 <ol class="arabic">
 <li><p><strong>Configure the project with the .xsa file from Vivado</strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-config<span class="w"> </span>--get-hw-description<span class="o">=</span>&lt;PATH_TO_XSA_DIRECTORY&gt;
 </pre></div>
 </div>
-<p>Since we only have one <cite>.xsa</cite> file in our directory, the PetaLinux tool will automatically pick the appropriate file and begin configuration.</p>
+<p>Since there is only one <cite>.xsa</cite> file in the directory, the PetaLinux tool will automatically pick the appropriate file and begin configuration.</p>
 <img alt="../../../_images/img_17.jpg" src="../../../_images/img_17.jpg" />
 </li>
 <li><p><strong>Navigate through the configuration menu</strong>:</p>
