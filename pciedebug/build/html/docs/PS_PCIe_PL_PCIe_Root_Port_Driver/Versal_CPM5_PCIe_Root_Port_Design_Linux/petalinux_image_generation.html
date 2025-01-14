@@ -18,7 +18,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5RHQV7');</script>
 <!-- End Google Tag Manager -->
-  <title>Petalinux Image Generation &mdash; PCIe Debug K-Map 1.0 documentation</title>
+  <title>PetaLinux Image Generation &mdash; PCIe Debug K-Map 1.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/_static/custom.css" type="text/css" />
@@ -95,7 +95,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation &amp; Debugging Resources</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Versal CPM5 PCIe Root Port Design (Linux)</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="hardware_design_creation.html">Hardware Design Creation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Petalinux Image Generation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PetaLinux Image Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#launching-petalinux-2024-2">Launching PetaLinux 2024.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-petalinux-project">Creating a PetaLinux Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-petalinux-project">Configuring the PetaLinux Project</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="device_tree_structure.html">Device Tree Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ecam_mapping_and_addressing.html">ECAM Mapping and Addressing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tactical_patch_requirement.html">Tactical Patch Requirement</a></li>
@@ -121,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Versal CPM5 PCIe Root Port Design (Linux)</a> &raquo;</li>
-      <li>Petalinux Image Generation</li>
+      <li>PetaLinux Image Generation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/petalinux_image_generation.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -132,12 +137,120 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            <div itemprop="articleBody">
              
   <div class="section" id="petalinux-image-generation">
-<span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>Petalinux Image Generation<a class="headerlink" href="#petalinux-image-generation" title="Permalink to this heading">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li><p>This page is in progress and will be available soon. Please visit later.</p></li>
+<span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>PetaLinux Image Generation<a class="headerlink" href="#petalinux-image-generation" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="launching-petalinux-2024-2">
+<h2>Launching PetaLinux 2024.2<a class="headerlink" href="#launching-petalinux-2024-2" title="Permalink to this heading">¶</a></h2>
+<p>To launch PetaLinux 2024.2, source the <cite>settings.sh</cite> script using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>&lt;path-to-petalinux-install&gt;/2024.2/settings.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-petalinux-project">
+<h2>Creating a PetaLinux Project<a class="headerlink" href="#creating-a-petalinux-project" title="Permalink to this heading">¶</a></h2>
+<p>Navigate to a directory where you wish to create a workspace for the PetaLinux project. Use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-create<span class="w"> </span>project<span class="w"> </span>--template<span class="w"> </span>versal<span class="w"> </span>--name<span class="w"> </span>&lt;PROJECT_NAME_HERE&gt;
+</pre></div>
+</div>
+<p>This command creates a workspace directory for the PetaLinux project. All details related to the build, such as the configured device tree and kernel, will be located here. All project modifications will be contained in this directory.</p>
+<p>You have now created an empty project. It is time to configure this project with the appropriate settings needed for this application.</p>
+<img alt="../../../_images/img_16.jpg" src="../../../_images/img_16.jpg" />
+</div>
+<div class="section" id="configuring-the-petalinux-project">
+<h2>Configuring the PetaLinux Project<a class="headerlink" href="#configuring-the-petalinux-project" title="Permalink to this heading">¶</a></h2>
+<p>We will use the example design configured in Vivado to build the base of our system image.</p>
+<ol class="arabic">
+<li><p><strong>Configure the project with the .xsa file from Vivado</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-config<span class="w"> </span>--get-hw-description<span class="o">=</span>&lt;PATH_TO_XSA_DIRECTORY&gt;
+</pre></div>
+</div>
+<p>Since we only have one <cite>.xsa</cite> file in our directory, the PetaLinux tool will automatically pick the appropriate file and begin configuration.</p>
+<img alt="../../../_images/img_17.jpg" src="../../../_images/img_17.jpg" />
+</li>
+<li><p><strong>Navigate through the configuration menu</strong>:</p>
+<p>Upon running the above command, a PetaLinux configuration menu will appear. Use the arrow keys to navigate and the <cite>Enter</cite> key to select or perform actions.</p>
+<img alt="../../../_images/img_18.jpg" src="../../../_images/img_18.jpg" />
+</li>
+<li><p><strong>Exit the configuration menu</strong>:</p>
+<p>In this menu, no modifications are needed. To exit:
+- Use the right arrow key to highlight “Exit”.
+- Press <cite>Enter</cite>.
+- When prompted to save changes, select “Yes”.</p>
+<p>The terminal output should resemble the screenshot below:</p>
+<img alt="../../../_images/img_19.jpg" src="../../../_images/img_19.jpg" />
+</li>
+<li><p><strong>Kernel configuration for PCIe and NVME support</strong>:</p>
+<p>To configure the kernel, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-config<span class="w"> </span>-c<span class="w"> </span>kernel
+</pre></div>
+</div>
+<p>This opens a kernel configuration menu. Note that it may take some time for the menu to load.</p>
+</li>
+<li><p><strong>Enable PCIe drivers</strong>:</p>
+<ul>
+<li><p>Navigate to “Device Drivers”.</p>
+<img alt="../../../_images/img_20.jpg" src="../../../_images/img_20.jpg" />
+</li>
+<li><p>Select “PCI support”.</p>
+<img alt="../../../_images/img_21.jpg" src="../../../_images/img_21.jpg" />
+</li>
+<li><p>Select “PCI controller drivers”.</p>
+<img alt="../../../_images/img_22.jpg" src="../../../_images/img_22.jpg" />
+</li>
+<li><p>Enable “Xilinx Versal CPM PCI controller”:
+- Hover over the option.
+- Press the spacebar to add an asterisk (<cite>*</cite>).
+- Exit back to the “Device Drivers” menu.</p>
+<img alt="../../../_images/img_23.jpg" src="../../../_images/img_23.jpg" />
+</li>
 </ul>
-</div></blockquote>
+</li>
+<li><p><strong>Enable NVME support</strong>:</p>
+<ul>
+<li><p>Navigate to the “NVME Support” section.</p>
+<img alt="../../../_images/img_24.jpg" src="../../../_images/img_24.jpg" />
+</li>
+<li><p>Enable “NVM Express block device” by pressing the spacebar twice.</p>
+<img alt="../../../_images/img_25.jpg" src="../../../_images/img_25.jpg" />
+</li>
+<li><p>Exit and save the kernel configuration.</p>
+<img alt="../../../_images/img_26.jpg" src="../../../_images/img_26.jpg" />
+</li>
+</ul>
+</li>
+<li><p><strong>Root File System configuration</strong>:</p>
+<p>To configure the Root File System, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-config<span class="w"> </span>-c<span class="w"> </span>rootfs
+</pre></div>
+</div>
+<ul>
+<li><p>Navigate to the “Filesystem Packages” section.</p>
+<img alt="../../../_images/img_27.jpg" src="../../../_images/img_27.jpg" />
+</li>
+<li><p>Enter the “base” section.</p>
+<img alt="../../../_images/img_28.jpg" src="../../../_images/img_28.jpg" />
+</li>
+<li><p>Enter the “util-linux” section.</p>
+<img alt="../../../_images/img_29.jpg" src="../../../_images/img_29.jpg" />
+</li>
+<li><p>Select all options in this menu to enable utility functions.</p>
+<img alt="../../../_images/img_30.jpg" src="../../../_images/img_30.jpg" />
+</li>
+<li><p>Press “Exit” three times to return to the Root File System configuration menu.</p></li>
+<li><p>Navigate to the “Image Features” section.</p>
+<img alt="../../../_images/img_31.jpg" src="../../../_images/img_31.jpg" />
+</li>
+<li><p>Enable the following options:
+- “empty-root-password”
+- “serial-autologin-root”</p>
+<img alt="../../../_images/img_32.jpg" src="../../../_images/img_32.jpg" />
+</li>
+<li><p>Exit and save the Root File System configuration. The terminal output should look similar to the screenshot below:</p>
+<img alt="../../../_images/img_33.jpg" src="../../../_images/img_33.jpg" />
+</li>
+</ul>
+</li>
+</ol>
+</div>
 </div>
 
 
