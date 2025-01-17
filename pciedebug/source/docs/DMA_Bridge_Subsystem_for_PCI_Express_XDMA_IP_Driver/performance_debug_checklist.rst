@@ -1,34 +1,44 @@
 .. _dma_bridge_xdma_ip_performance_debug:
 
-XDMA Performance Debug
-======================
+XDMA Performance Debug Checklist
+=======================================
 
-- How are you measuring the performance? 
-- Check the Link Status in lspci to ensure that your link is coming up to the full speed and width     
-- Have you checked Xilinx Video - “Getting the Best Performance with Xilinx’s DMA for PCI Express” ? 
-- Have you checked XDMA Debug Guide – AR71435? 
-- Have you checked XDMA Performance Number answer record – AR68049? 
-- Are you using the Xilinx provided driver or Custom driver? 
-- If you are using Xilinx provided driver, did you download the driver from an answer record or from the GitHub? If you are using the driver from answer record 65444, can you try with the latest XDMA driver available in the GitHub: https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel 
-- Which version of Vivado are you using? If it is not the latest Vivado version, can you try with the latest version? 
-- Which silicon device are you using? Is it production or ES? 
-- Have you tried by using prefetchable BAR memory? -- possible to get performance improvement. 
-- One of the main factors affecting data throughput is interrupt processing. Once data transfer is completed, the DMA sends an interrupt to the host and waits for ISR to process the status. However, this wait time is not predictable and so the overall total data transfer time is slow and unpredictable. There are a couple of options you can try to work around this. 
-    - MSI-X interrupt: Users can try using MSI-X interrupt Instead of MSI or legacy interrupts. With MSI-X interrupt, the data rate is better than with an MSI or legacy interrupt-based design. -- How? Can we explain this with some lower level details? 
-    - Poll mode (See AR:71435): Users can try using Poll mode which gives the best data rate. With Poll mode, there are no interrupts to process.  
-- Have you tried Descriptor Credit based transfer? The example design supports this only for C2H streaming. (See: AR71435) -- How? Can we explain this with some lower level details? 
-- Have you checked MPS, MRRS values? Systems with better MPS will give a better performance; a typical system would have 128Bytes MPS. (See WP350 for more details). For e.g. the x58 supports up to 256-byte maximum payload size (MPS), and the x38 supports up to 128-byte MPS. Overall, the x58 is a high-end, efficient machine and the x38 is a value-based machine. The performance of the x38 will be lower in comparison to the x58. 
-- Have you checked if you have a stable link? Does LTSSM go to recovery intermittently or continuously? (See: AR71355) 
-- Do you have a link analyzer to see if there are any NAKs being issued? You could also check this by looking at the PIPE interface using Gen3 descrambler module. See Xilinx Blog for more details.  
-- What speed and lane width configuration are you using? Have you tried with Gen3x8? 
-- What is the transfer size of the DMA? Larger the transfer size (within the limit of the application), better is the performance.  
-- How many channels are you using in XDMA? Higher the number of channels, better the performance but the tradeoff is, it will consume more logic inside the device.  
-- Have you checked credit information? Is there enough credit from the link partner for the XDMA IP to initiate data transfer? 
-- Are you using BRAM or DDR for your endpoint memory? 
-- If you have configured your design for Gen3, can you try by configuring it as Gen2? Gen3 could be more error-prone if the signal integrity on the board is not robust enough. Configuring the IP for a lower speed will reduce the possibility of signal integrity issue kicking in. If this happens, you should see an increase in performance.   
-- What is the AXI side data width and frequency configured for? Have you tried higher values if the option is available?  
-- Do you have AXI Smart Connect in your design? If so, can you try by replacing it with AXI Interconnect IP? 
-- If you have AXI Interconnect, try by using it in synchronous mode.  
-- See if your AXI system is on the same data width. This could provide some performance boost if the performance is affected due to hardware.  
-- Try by disabling Narrow Burst, if it is enabled.  
-- Check in the XDMA log if there is a call for repeated ISR.  
+- **Link Status**: Check Link Status in lspci to ensure the link is operating at full speed and width.
+- **Xilinx Video**: Check Xilinx Video - "Getting the Best Performance with Xilinx’s DMA for PCI Express."  
+  Link: `https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html`
+- **XDMA Debug Guide**: Check XDMA Debug Guide – AR71435.
+- **XDMA Performance**: Check XDMA Performance Number answer record – AR68049.
+- **Driver Type**: Check if you are using the Xilinx-provided driver or a custom driver.
+- **Driver Source**: If using Xilinx driver, check if it's from an answer record or GitHub. For answer record 65444, try using the latest XDMA driver from GitHub: `https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel`.
+- **Vivado Version**: Check the Vivado version. If it's not the latest, try updating to the latest version.
+- **Silicon Device**: Check which silicon device you are using (Production or ES).
+- **Prefetchable BAR Memory**: Check if you are using prefetchable BAR memory to potentially improve performance.
+- **Interrupt Processing**:
+  - Check if MSI-X interrupt is being used instead of MSI or legacy interrupts for better data rates.
+  - Check if Poll mode is being used for optimal data rate (See AR71435).
+- **Descriptor Credit Transfer**: Check if you have tried Descriptor Credit-based transfer (supported only for C2H streaming in example design - See AR71435).
+- **MPS/MRRS Values**: Check MPS and MRRS values. A typical system has 128Bytes MPS. Higher MPS leads to better performance (See WP350).
+  - Example: x58 supports 256-byte MPS, x38 supports 128-byte MPS.
+- **Link Stability**: Check if you have a stable link. Verify if LTSSM is recovering intermittently or continuously (See AR71355).
+- **Link Analyzer**: Check if you have a link analyzer to identify NAKs. You can also use the PIPE interface with Gen3 descrambler for analysis.
+- **Speed and Lane Configuration**: Check the speed and lane width configuration. Try using Gen3x8 if not already configured.
+- **DMA Transfer Size**: Check DMA transfer size. Larger transfer sizes (within application limits) generally result in better performance.
+- **XDMA Channels**: Check the number of channels used in XDMA. More channels can improve performance but consume more logic resources.
+- **Credit Information**: Check if there is sufficient credit from the link partner for the XDMA IP to initiate data transfer.
+- **Endpoint Memory**: Check if you are using BRAM or DDR for endpoint memory.
+- **Gen3 vs Gen2**: If using Gen3, try configuring it for Gen2. Gen3 may be more error-prone if signal integrity is not robust.
+- **AXI Data Width/Frequency**: Check the AXI side data width and frequency configuration. Try higher values if possible.
+- **AXI Smart Connect**: If using AXI Smart Connect, try replacing it with AXI Interconnect IP.
+- **AXI Interconnect**: If using AXI Interconnect, try configuring it in synchronous mode.
+- **AXI System Data Width**: Check if your AXI system is on the same data width, which could improve performance if hardware limitations affect performance.
+- **Narrow Burst**: Check if Narrow Burst is enabled. If so, try disabling it.
+- **ISR Calls**: Check the XDMA log for repeated ISR calls.
+
+Third-party references that may be helpful:
+------------------------------------------------
+
+- `Xilinx DMA PCIe Tutorial - Part 1`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-1-roy-messinger`
+- `Xilinx DMA PCIe Tutorial - Part 2`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-2-roy-messinger/`
+- `Xilinx DMA PCIe Tutorial - Part 3`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-3-roy-messinger`
+- `Deep Dive into Xilinx AXI Bridge for PCI Express (PG194)`: `https://www.linkedin.com/pulse/deep-dive-xilinx-axi-bridge-pci-express-pg194-`
+ 
