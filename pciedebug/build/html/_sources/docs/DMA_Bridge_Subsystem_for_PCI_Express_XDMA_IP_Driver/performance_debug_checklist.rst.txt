@@ -1,7 +1,7 @@
 .. _dma_bridge_xdma_ip_performance_debug:
 
 XDMA Performance Debug Checklist
-=======================================
+================================
 
 - **Link Status**: Check Link Status in lspci to ensure the link is operating at full speed and width.
 - **Xilinx Video**: Check Xilinx Video - "Getting the Best Performance with Xilinx’s DMA for PCI Express."  
