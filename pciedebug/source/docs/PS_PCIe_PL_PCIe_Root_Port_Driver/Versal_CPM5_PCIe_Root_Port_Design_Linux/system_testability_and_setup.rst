@@ -4,7 +4,7 @@ System Testability and Setup
 ============================
 
 Loading Images onto SD
-=======================
+----------------------
 
 To boot via SD card, the correct files need to be loaded onto the SD card. First, the SD card should be connected to the system. The following three files from the ``<PETALINUX_PROJECT_FOLDER>/images/linux`` path must be copied to the SD card:
 
@@ -15,7 +15,7 @@ To boot via SD card, the correct files need to be loaded onto the SD card. First
 Once the files are finished copying to the SD card, the device should be safely ejected. The system is now ready to work directly with the VPK120.
 
 Booting and Testing
-===================
+-------------------
 
 Setting up Components
 ----------------------
