@@ -172,10 +172,12 @@ Once the system image is built, it needs to be packaged in U-Boot to generate th
 
 .. code:: bash
 
-    petalinux-package --boot --format BIN --plm --psmfw --u-boot --dtb --force
+    petalinux-package --boot --format BIN --plm --psmfw --u-boot --dtb --force	
+
+After the above command finishes executing, the PetaLinux build is complete, and the VPK120 board is ready to be booted.
 	
      .. image:: Petalinux_Image_Generation/img_35.jpg
 
-3. **Completing the Build**:
 
-After the above command finishes executing, the PetaLinux build is complete, and the VPK120 board is ready to be booted.
+
+
