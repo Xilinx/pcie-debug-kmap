@@ -20,7 +20,7 @@ Booting and Testing
 Setting up Components
 ----------------------
 
-### Boot Mode Configuration
+**Boot Mode Configuration**
 
 On the VPK120, ensure that the Boot Mode is set to the SD configuration. To do this, configure switch SW1 such that it is set to ON-OFF-OFF-OFF (in order from positions 1 to 4). Refer to the VPK120 user guide for more information.
 
@@ -32,11 +32,11 @@ Connect the PCIe slot of the X-PCIE-04 card to the PCIe edge connector on the VP
 
 In this example design, the CPM5 preset is selected as "CPM5 PCIe Controller0." PCIe Controller0 drives Quad 102 and Quad 103 lanes, landing on Lane 8-Lane 15 of the VPK120 board. Therefore, an external lane shifter card (X-PCIE-04) is needed to shift the "Lane 8-Lane 15" signals to "Lane 0-Lane 7."
 
-.. image:: <System_Testability_and_Setup/img_36.jpg>
+.. image:: System_Testability_and_Setup/img_36.jpg
 
 If PCIe Controller1 is used, it drives Quad 104 and Quad 105 lanes, landing on Lane 0-Lane 7 of the VPK120 board. In this case, the additional X-PCIE-04 lane-shifter card is not needed.
 
-### Connecting Other Components
+**Connecting Other Components**
 
 - Connect the other end of the X-PCIE-04 card to the PCIe slot on the solder side (back/under side) of the X-PCIE-03 card.
 - Connect the M.2 PCIe carrier card assembly with SSD into the PCIe slot on the component side (top/front side) of the X-PCIE-03.
@@ -48,11 +48,11 @@ If PCIe Controller1 is used, it drives Quad 104 and Quad 105 lanes, landing on L
 
 The following image shows the final test setup:
 
-.. image:: <System_Testability_and_Setup/img_37.jpg>
+.. image:: System_Testability_and_Setup/img_37.jpg
 
 Once all connections are made, open the Putty application on the connected machine. Select the connection type as "Serial" and choose the appropriate COM port number. For "Speed," select 115200. After clicking "Open," a terminal window will appear.
 
-.. image:: <System_Testability_and_Setup/img_38.jpg>
+.. image:: System_Testability_and_Setup/img_38.jpg
 
 ### Powering On the VPK120
 
@@ -77,9 +77,9 @@ To verify if the Linux OS can detect the connected PCIe devices, the following c
 
     lspci
 
-.. code:: bash
-
 Sample output is as follows:
+
+.. code:: bash
 
 [    1.215511] NFS: Registering the id_resolver key type
 [    1.220646] Key type id_resolver registered
@@ -146,7 +146,7 @@ Sample output is as follows:
 
 Two lines of output should appear—one for the X-PCIe adapter and one for the NVMe drive connected.
 
-.. image:: <System_Testability_and_Setup/img_39.jpg>
+.. image:: System_Testability_and_Setup/img_39.jpg
 
 For more detailed information about each PCIe device, the following commands can be used:
 

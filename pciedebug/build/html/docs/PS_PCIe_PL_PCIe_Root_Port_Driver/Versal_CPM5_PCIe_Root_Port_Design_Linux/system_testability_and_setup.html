@@ -154,15 +154,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h1>Booting and Testing<a class="headerlink" href="#booting-and-testing" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="setting-up-components">
 <h2>Setting up Components<a class="headerlink" href="#setting-up-components" title="Permalink to this heading">¶</a></h2>
-<p>### Boot Mode Configuration</p>
+<p><strong>Boot Mode Configuration</strong></p>
 <p>On the VPK120, ensure that the Boot Mode is set to the SD configuration. To do this, configure switch SW1 such that it is set to ON-OFF-OFF-OFF (in order from positions 1 to 4). Refer to the VPK120 user guide for more information.</p>
 <p>### Connecting the SD Card and PCIe Components</p>
 <p>Insert the SD card into the SD card socket on the VPK120 board.</p>
 <p>Connect the PCIe slot of the X-PCIE-04 card to the PCIe edge connector on the VPK120 board.</p>
 <p>In this example design, the CPM5 preset is selected as “CPM5 PCIe Controller0.” PCIe Controller0 drives Quad 102 and Quad 103 lanes, landing on Lane 8-Lane 15 of the VPK120 board. Therefore, an external lane shifter card (X-PCIE-04) is needed to shift the “Lane 8-Lane 15” signals to “Lane 0-Lane 7.”</p>
-<img alt="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/&lt;System_Testability_and_Setup/img_36.jpg&gt;" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/&lt;System_Testability_and_Setup/img_36.jpg&gt;" />
+<img alt="../../../_images/img_36.jpg" src="../../../_images/img_36.jpg" />
 <p>If PCIe Controller1 is used, it drives Quad 104 and Quad 105 lanes, landing on Lane 0-Lane 7 of the VPK120 board. In this case, the additional X-PCIE-04 lane-shifter card is not needed.</p>
-<p>### Connecting Other Components</p>
+<p><strong>Connecting Other Components</strong></p>
 <ul class="simple">
 <li><p>Connect the other end of the X-PCIE-04 card to the PCIe slot on the solder side (back/under side) of the X-PCIE-03 card.</p></li>
 <li><p>Connect the M.2 PCIe carrier card assembly with SSD into the PCIe slot on the component side (top/front side) of the X-PCIE-03.</p></li>
@@ -173,9 +173,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><p>Connect the DC power brick and the ATX power supply to AC power.</p></li>
 </ul>
 <p>The following image shows the final test setup:</p>
-<img alt="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/&lt;System_Testability_and_Setup/img_37.jpg&gt;" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/&lt;System_Testability_and_Setup/img_37.jpg&gt;" />
+<img alt="../../../_images/img_37.jpg" src="../../../_images/img_37.jpg" />
 <p>Once all connections are made, open the Putty application on the connected machine. Select the connection type as “Serial” and choose the appropriate COM port number. For “Speed,” select 115200. After clicking “Open,” a terminal window will appear.</p>
-<img alt="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/&lt;System_Testability_and_Setup/img_38.jpg&gt;" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/&lt;System_Testability_and_Setup/img_38.jpg&gt;" />
+<img alt="../../../_images/img_38.jpg" src="../../../_images/img_38.jpg" />
 <p>### Powering On the VPK120</p>
 <p>The system is now ready to be powered on. Ensure that the power cables are plugged in, and that the proper power supply units are turned on. To boot the system, flip the switch next to the 6-pin power connector on the VPK120.</p>
 </div>
@@ -255,7 +255,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 [    1.639598] usbcore: registered new interface driver uas
 [    1.644995] usbcore: registered new interface driver usb-storage</p>
 <p>Two lines of output should appear—one for the X-PCIe adapter and one for the NVMe drive connected.</p>
-<img alt="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/&lt;System_Testability_and_Setup/img_39.jpg&gt;" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/&lt;System_Testability_and_Setup/img_39.jpg&gt;" />
+<img alt="../../../_images/img_39.jpg" src="../../../_images/img_39.jpg" />
 <p>For more detailed information about each PCIe device, the following commands can be used:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lspci<span class="w"> </span>-vvvs<span class="w"> </span><span class="m">00</span>:00.0<span class="w">  </span><span class="c1"># For the Xilinx device</span>
 lspci<span class="w"> </span>-vvvs<span class="w"> </span><span class="m">01</span>:00.0<span class="w">  </span><span class="c1"># For the NVMe device</span>
