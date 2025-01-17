@@ -5,7 +5,7 @@ XDMA Performance Debug Checklist
 
 - **Link Status**: Check Link Status in lspci to ensure the link is operating at full speed and width.
 - **Xilinx Video**: Check Xilinx Video - "Getting the Best Performance with Xilinx’s DMA for PCI Express."  
-  Link: `https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html <https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html>`
+  Link: `https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html`
 - **XDMA Debug Guide**: Check XDMA Debug Guide – AR71435.
 - **XDMA Performance**: Check XDMA Performance Number answer record – AR68049.
 - **Driver Type**: Check if you are using the Xilinx-provided driver or a custom driver.
@@ -37,8 +37,8 @@ XDMA Performance Debug Checklist
 Third-party references that may be helpful:
 ------------------------------------------------
 
-- `Xilinx DMA PCIe Tutorial - Part 1`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-1-roy-messinger <https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-1-roy-messinger>`
-- `Xilinx DMA PCIe Tutorial - Part 2`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-2-roy-messinger/ <https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-2-roy-messinger/>`
-- `Xilinx DMA PCIe Tutorial - Part 3`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-3-roy-messinger <https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-3-roy-messinger>`
-- `Deep Dive into Xilinx AXI Bridge for PCI Express (PG194)`: `https://www.linkedin.com/pulse/deep-dive-xilinx-axi-bridge-pci-express-pg194- <https://www.linkedin.com/pulse/deep-dive-xilinx-axi-bridge-pci-express-pg194->`
+- `Xilinx DMA PCIe Tutorial - Part 1`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-1-roy-messinger`
+- `Xilinx DMA PCIe Tutorial - Part 2`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-2-roy-messinger/`
+- `Xilinx DMA PCIe Tutorial - Part 3`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-3-roy-messinger`
+- `Deep Dive into Xilinx AXI Bridge for PCI Express (PG194)`: `https://www.linkedin.com/pulse/deep-dive-xilinx-axi-bridge-pci-express-pg194-`
  
