@@ -59,7 +59,7 @@ Once all connections are made, open the Putty application on the connected machi
 The system is now ready to be powered on. Ensure that the power cables are plugged in, and that the proper power supply units are turned on. To boot the system, flip the switch next to the 6-pin power connector on the VPK120.
 
 Interacting with PetaLinux
-===========================
+--------------------------
 
 **Boot Process**
 

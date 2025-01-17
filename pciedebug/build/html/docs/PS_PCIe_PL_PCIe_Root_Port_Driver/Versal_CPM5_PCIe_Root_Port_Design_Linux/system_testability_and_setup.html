@@ -103,9 +103,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="#loading-images-onto-sd">Loading Images onto SD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#booting-and-testing">Booting and Testing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setting-up-components">Setting up Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interacting-with-petalinux">Interacting with PetaLinux</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#interacting-with-petalinux">Interacting with PetaLinux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supporting_documentation.html">Supporting Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging</a></li>
 </ul>
@@ -179,9 +179,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><strong>Powering On the VPK120</strong></p>
 <p>The system is now ready to be powered on. Ensure that the power cables are plugged in, and that the proper power supply units are turned on. To boot the system, flip the switch next to the 6-pin power connector on the VPK120.</p>
 </div>
-</div>
 <div class="section" id="interacting-with-petalinux">
-<h1>Interacting with PetaLinux<a class="headerlink" href="#interacting-with-petalinux" title="Permalink to this heading">¶</a></h1>
+<h2>Interacting with PetaLinux<a class="headerlink" href="#interacting-with-petalinux" title="Permalink to this heading">¶</a></h2>
 <p><strong>Boot Process</strong></p>
 <p>Once the system begins booting, the terminal will start showing information about the boot process of the VPK120. Eventually, the user will be automatically logged in as the root user in Linux.</p>
 <p><strong>Driver Initialization</strong></p>
@@ -216,6 +215,7 @@ dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>tempf
 </pre></div>
 </div>
 <p>This command outputs the read speed for a 1GB file copy and shows the speed of this operation. The commands create a 1GB file called <code class="docutils literal notranslate"><span class="pre">tempfile</span></code> to measure read and write speeds.</p>
+</div>
 </div>
 
 
