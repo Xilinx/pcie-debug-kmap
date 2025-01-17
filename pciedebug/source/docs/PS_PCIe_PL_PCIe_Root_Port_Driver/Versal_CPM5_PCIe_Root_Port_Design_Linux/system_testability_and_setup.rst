@@ -69,6 +69,8 @@ Once the system begins booting, the terminal will start showing information abou
 
 Below are print messages that show the "Driver Initialization" portion of the kernel console output.
 
+.. image:: System_Testability_and_Setup/img_41.jpg
+
 **Verifying PCIe Devices**
 
 To verify if the Linux OS can detect the connected PCIe devices, the following command should be entered in the terminal:
@@ -76,12 +78,6 @@ To verify if the Linux OS can detect the connected PCIe devices, the following c
 .. code:: bash
 
     lspci
-
-Sample output is as follows:
-
-.. code:: bash
-
-.. image:: System_Testability_and_Setup/img_41.jpg
 
 Two lines of output should appear—one for the X-PCIe adapter and one for the NVMe drive connected.
 
