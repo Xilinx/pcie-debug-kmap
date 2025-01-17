@@ -99,9 +99,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="device_tree_structure.html">Device Tree Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ecam_mapping_and_addressing.html">ECAM Mapping and Addressing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tactical_patch_requirement.html">Tactical Patch Requirement</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">System Testability and Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#loading-images-onto-sd">Loading Images onto SD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#booting-and-testing">Booting and Testing</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">System Testability and Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loading-images-onto-sd">Loading Images onto SD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#booting-and-testing">Booting and Testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-up-components">Setting up Components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#interacting-with-petalinux">Interacting with PetaLinux</a></li>
 </ul>
@@ -139,9 +139,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <div class="section" id="system-testability-and-setup">
 <span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>System Testability and Setup<a class="headerlink" href="#system-testability-and-setup" title="Permalink to this heading">¶</a></h1>
-</div>
 <div class="section" id="loading-images-onto-sd">
-<h1>Loading Images onto SD<a class="headerlink" href="#loading-images-onto-sd" title="Permalink to this heading">¶</a></h1>
+<h2>Loading Images onto SD<a class="headerlink" href="#loading-images-onto-sd" title="Permalink to this heading">¶</a></h2>
 <p>To boot via SD card, the correct files need to be loaded onto the SD card. First, the SD card should be connected to the system. The following three files from the <code class="docutils literal notranslate"><span class="pre">&lt;PETALINUX_PROJECT_FOLDER&gt;/images/linux</span></code> path must be copied to the SD card:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">boot.scr</span></code></p></li>
@@ -151,7 +150,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Once the files are finished copying to the SD card, the device should be safely ejected. The system is now ready to work directly with the VPK120.</p>
 </div>
 <div class="section" id="booting-and-testing">
-<h1>Booting and Testing<a class="headerlink" href="#booting-and-testing" title="Permalink to this heading">¶</a></h1>
+<h2>Booting and Testing<a class="headerlink" href="#booting-and-testing" title="Permalink to this heading">¶</a></h2>
+</div>
 <div class="section" id="setting-up-components">
 <h2>Setting up Components<a class="headerlink" href="#setting-up-components" title="Permalink to this heading">¶</a></h2>
 <p><strong>Boot Mode Configuration</strong></p>
