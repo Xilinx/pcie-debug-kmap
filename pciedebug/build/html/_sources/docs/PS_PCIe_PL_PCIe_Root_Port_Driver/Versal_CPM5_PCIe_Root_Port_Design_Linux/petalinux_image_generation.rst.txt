@@ -140,3 +140,42 @@ For system image, the example design configured in Vivado will be used.
    - Exit and save the Root File System configuration. The terminal output should look similar to the screenshot below:
 
      .. image:: Petalinux_Image_Generation/img_33.jpg
+
+Building the System Image and Booting
+-------------------------------------
+
+1. **Configuration and Build**:
+
+The configuration of the PetaLinux project has been completed. To build the project, the following command should be entered:
+
+.. code:: bash
+
+    petalinux-build
+
+This command may take a considerable amount of time to execute.
+
+     .. image:: Petalinux_Image_Generation/img_34.jpg
+
+Once the command completes, a warning message may appear regarding TFTPboot, depending on the system in use. This warning can be safely ignored, as the system is not being booted via a TFTP server. 
+
+It is important to note that, occasionally, when running ``petalinux-build`` on a project with memory cached, an error may occur that causes the build to fail. To resolve this, the cache should be cleared, and a clean build can be performed by running the following command:
+
+.. code:: bash
+
+    petalinux-build -x mrproper
+
+After executing this command, the ``petalinux-build`` command should be run again to successfully build the project.
+
+2. **Packaging the System Image**:
+
+Once the system image is built, it needs to be packaged in U-Boot to generate the necessary files for booting the system. The following command should be entered:
+
+.. code:: bash
+
+    petalinux-package --boot --format BIN --plm --psmfw --u-boot --dtb --force
+	
+     .. image:: Petalinux_Image_Generation/img_35.jpg
+
+3. **Completing the Build**:
+
+After the above command finishes executing, the PetaLinux build is complete, and the VPK120 board is ready to be booted.

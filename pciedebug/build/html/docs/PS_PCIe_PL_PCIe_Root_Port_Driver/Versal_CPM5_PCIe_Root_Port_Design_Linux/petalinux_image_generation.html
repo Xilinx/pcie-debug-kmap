@@ -99,6 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="#launching-petalinux-2024-2">Launching PetaLinux 2024.2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#creating-a-petalinux-project">Creating a PetaLinux Project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuring-the-petalinux-project">Configuring the PetaLinux Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-system-image-and-booting">Building the System Image and Booting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="device_tree_structure.html">Device Tree Structure</a></li>
@@ -250,6 +251,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 </ol>
+</div>
+<div class="section" id="building-the-system-image-and-booting">
+<h2>Building the System Image and Booting<a class="headerlink" href="#building-the-system-image-and-booting" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Configuration and Build</strong>:</p></li>
+</ol>
+<p>The configuration of the PetaLinux project has been completed. To build the project, the following command should be entered:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-build
+</pre></div>
+</div>
+<p>This command may take a considerable amount of time to execute.</p>
+<blockquote>
+<div><img alt="../../../_images/img_34.jpg" src="../../../_images/img_34.jpg" />
+</div></blockquote>
+<p>Once the command completes, a warning message may appear regarding TFTPboot, depending on the system in use. This warning can be safely ignored, as the system is not being booted via a TFTP server.</p>
+<p>It is important to note that, occasionally, when running <code class="docutils literal notranslate"><span class="pre">petalinux-build</span></code> on a project with memory cached, an error may occur that causes the build to fail. To resolve this, the cache should be cleared, and a clean build can be performed by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-build<span class="w"> </span>-x<span class="w"> </span>mrproper
+</pre></div>
+</div>
+<p>After executing this command, the <code class="docutils literal notranslate"><span class="pre">petalinux-build</span></code> command should be run again to successfully build the project.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Packaging the System Image</strong>:</p></li>
+</ol>
+<p>Once the system image is built, it needs to be packaged in U-Boot to generate the necessary files for booting the system. The following command should be entered:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-package<span class="w"> </span>--boot<span class="w"> </span>--format<span class="w"> </span>BIN<span class="w"> </span>--plm<span class="w"> </span>--psmfw<span class="w"> </span>--u-boot<span class="w"> </span>--dtb<span class="w"> </span>--force
+
+<span class="w"> </span>..<span class="w"> </span>image::<span class="w"> </span>Petalinux_Image_Generation/img_35.jpg
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Completing the Build</strong>:</p></li>
+</ol>
+<p>After the above command finishes executing, the PetaLinux build is complete, and the VPK120 board is ready to be booted.</p>
 </div>
 </div>
 
