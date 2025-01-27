@@ -5,11 +5,26 @@ XDMA Performance Debug Checklist
 
 - **Link Status**: Check Link Status in lspci to ensure the link is operating at full speed and width.
 - **Xilinx Video**: Check Xilinx Video - "Getting the Best Performance with Xilinx’s DMA for PCI Express."  
-  Link: `https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html`
+  .. raw:: html
+
+     <div style="border: 1px solid #000; padding: 10px;">
+       <a href="https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html">
+         https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html
+       </a>
+     </div>
+
 - **XDMA Debug Guide**: Check XDMA Debug Guide – AR71435.
 - **XDMA Performance**: Check XDMA Performance Number answer record – AR68049.
 - **Driver Type**: Check if you are using the Xilinx-provided driver or a custom driver.
-- **Driver Source**: If using Xilinx driver, check if it's from an answer record or GitHub. For answer record 65444, try using the latest XDMA driver from GitHub: `https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel`.
+- **Driver Source**: If using Xilinx driver, check if it's from an answer record or GitHub. For answer record 65444, try using the latest XDMA driver from GitHub:  
+  .. raw:: html
+
+     <div style="border: 1px solid #000; padding: 10px;">
+       <a href="https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel">
+         https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel
+       </a>
+     </div>
+
 - **Vivado Version**: Check the Vivado version. If it's not the latest, try updating to the latest version.
 - **Silicon Device**: Check which silicon device you are using (Production or ES).
 - **Prefetchable BAR Memory**: Check if you are using prefetchable BAR memory to potentially improve performance.
@@ -37,8 +52,36 @@ XDMA Performance Debug Checklist
 Third-party references that may be helpful:
 ------------------------------------------------
 
-- `Xilinx DMA PCIe Tutorial - Part 1`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-1-roy-messinger`
-- `Xilinx DMA PCIe Tutorial - Part 2`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-2-roy-messinger/`
-- `Xilinx DMA PCIe Tutorial - Part 3`: `https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-3-roy-messinger`
-- `Deep Dive into Xilinx AXI Bridge for PCI Express (PG194)`: `https://www.linkedin.com/pulse/deep-dive-xilinx-axi-bridge-pci-express-pg194-`
+.. raw:: html
+
+   <div style="border: 1px solid #000; padding: 10px;">
+     <a href="https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-1-roy-messinger">
+       Xilinx DMA PCIe Tutorial - Part 1
+     </a>
+   </div>
+
+.. raw:: html
+
+   <div style="border: 1px solid #000; padding: 10px;">
+     <a href="https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-2-roy-messinger/">
+       Xilinx DMA PCIe Tutorial - Part 2
+     </a>
+   </div>
+
+.. raw:: html
+
+   <div style="border: 1px solid #000; padding: 10px;">
+     <a href="https://www.linkedin.com/pulse/xilinx-dma-pcie-tutorial-part-3-roy-messinger">
+       Xilinx DMA PCIe Tutorial - Part 3
+     </a>
+   </div>
+
+.. raw:: html
+
+   <div style="border: 1px solid #000; padding: 10px;">
+     <a href="https://www.linkedin.com/pulse/deep-dive-xilinx-axi-bridge-pci-express-pg194-">
+       Deep Dive into Xilinx AXI Bridge for PCI Express (PG194)
+     </a>
+   </div>
+
  
