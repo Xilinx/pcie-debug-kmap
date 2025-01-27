@@ -5,6 +5,7 @@ XDMA Performance Debug Checklist
 
 - **Link Status**: Check Link Status in lspci to ensure the link is operating at full speed and width.
 - **Xilinx Video**: Check Xilinx Video - "Getting the Best Performance with Xilinx’s DMA for PCI Express."  
+
   .. raw:: html
 
      <div style="border: 1px solid #000; padding: 10px;">
@@ -17,6 +18,7 @@ XDMA Performance Debug Checklist
 - **XDMA Performance**: Check XDMA Performance Number answer record – AR68049.
 - **Driver Type**: Check if you are using the Xilinx-provided driver or a custom driver.
 - **Driver Source**: If using Xilinx driver, check if it's from an answer record or GitHub. For answer record 65444, try using the latest XDMA driver from GitHub:  
+
   .. raw:: html
 
      <div style="border: 1px solid #000; padding: 10px;">
