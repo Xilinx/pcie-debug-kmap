@@ -137,37 +137,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <span id="dma-bridge-xdma-ip-performance-debug"></span><h1>XDMA Performance Debug Checklist<a class="headerlink" href="#xdma-performance-debug-checklist" title="Permalink to this heading">¶</a></h1>
 <ul>
 <li><p><strong>Link Status</strong>: Check Link Status in lspci to ensure the link is operating at full speed and width.</p></li>
-<li><p><strong>Xilinx Video</strong>: Check Xilinx Video - “Getting the Best Performance with Xilinx’s DMA for PCI Express.”
-.. raw:: html</p>
-<blockquote>
-<div><dl>
-<dt>&lt;div style=”border: 1px solid #000; padding: 10px;”&gt;</dt><dd><dl class="simple">
-<dt>&lt;a href=”<a class="reference external" href="https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html">https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html</a>”&gt;</dt><dd><p><a class="reference external" href="https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html">https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html</a></p>
-</dd>
-</dl>
-<p>&lt;/a&gt;</p>
-</dd>
-</dl>
-<p>&lt;/div&gt;</p>
-</div></blockquote>
-</li>
+<li><p><strong>Xilinx Video</strong>: Check Xilinx Video - “Getting the Best Performance with Xilinx’s DMA for PCI Express.”</p>
+<div style="border: 1px solid #000; padding: 10px;">
+  <a href="https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html">
+    https://www.xilinx.com/video/technology/getting-the-best-performance-with-dma-for-pci-express.html
+  </a>
+</div></li>
 <li><p><strong>XDMA Debug Guide</strong>: Check XDMA Debug Guide – AR71435.</p></li>
 <li><p><strong>XDMA Performance</strong>: Check XDMA Performance Number answer record – AR68049.</p></li>
 <li><p><strong>Driver Type</strong>: Check if you are using the Xilinx-provided driver or a custom driver.</p></li>
-<li><p><strong>Driver Source</strong>: If using Xilinx driver, check if it’s from an answer record or GitHub. For answer record 65444, try using the latest XDMA driver from GitHub:
-.. raw:: html</p>
-<blockquote>
-<div><dl>
-<dt>&lt;div style=”border: 1px solid #000; padding: 10px;”&gt;</dt><dd><dl class="simple">
-<dt>&lt;a href=”<a class="reference external" href="https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel">https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel</a>”&gt;</dt><dd><p><a class="reference external" href="https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel">https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel</a></p>
-</dd>
-</dl>
-<p>&lt;/a&gt;</p>
-</dd>
-</dl>
-<p>&lt;/div&gt;</p>
-</div></blockquote>
-</li>
+<li><p><strong>Driver Source</strong>: If using Xilinx driver, check if it’s from an answer record or GitHub. For answer record 65444, try using the latest XDMA driver from GitHub:</p>
+<div style="border: 1px solid #000; padding: 10px;">
+  <a href="https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel">
+    https://github.com/Xilinx/dma_ip_drivers/tree/master/XDMA/linux-kernel
+  </a>
+</div></li>
 <li><p><strong>Vivado Version</strong>: Check the Vivado version. If it’s not the latest, try updating to the latest version.</p></li>
 <li><p><strong>Silicon Device</strong>: Check which silicon device you are using (Production or ES).</p></li>
 <li><p><strong>Prefetchable BAR Memory</strong>: Check if you are using prefetchable BAR memory to potentially improve performance.</p></li>
