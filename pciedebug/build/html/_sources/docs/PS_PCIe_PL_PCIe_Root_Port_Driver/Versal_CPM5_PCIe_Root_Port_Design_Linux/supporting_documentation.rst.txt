@@ -3,6 +3,11 @@
 Supporting Documentation
 ========================
 
-    * This page is in progress and will be available soon. Please visit later.
-..            *   The PCI Express Controller Programing Model section in UG1085 summarizes programming of the PCI Express controller for Endpoint and Root Port mode operations. Review that section to make sure programming of the PS-GT Transceiver Interface, IOU for Reset Pin, PCI Express Controller and Bridge initialization has been done correctly.
+For additional reference and relevant information, users can consult the following links:
 
+- `AMD Adaptive Support - Article 70702 <https://adaptivesupport.amd.com/s/article/70702?language=en_US>`_
+- `AMD Adaptive Support - Article 75396 <https://adaptivesupport.amd.com/s/article/75396?language=en_US>`_
+- `Xilinx GitHub Repository - Versal CPM Bridge RP Design <https://github.com/Xilinx/XilinxCEDStore/tree/2023.2/ced/Xilinx/IPI/Versal_CPM_Bridge_RP_Design>`_
+- `Xilinx Wiki - PCIe Root Port Drivers Landing Page <https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/85983409/Xilinx+PCIe+Root+and+EndPoint>`_
+- `Versal Adaptive SoC CPM DMA and Bridge Mode for PCI Express Product Guide -  Root Port Documentation <https://docs.amd.com/r/en-US/pg347-cpm-dma-bridge/Root-Port?tocId=VMTvw3pDZyP40xTZSluAnQ>`_
+- `Xilinx Wiki - Versal Adaptive SoC CPM Root Port Linux Driver <https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/184287255/Versal+Adaptive+SoC+CCIX-PCIe+Module+CPM+Root+port+Linux+driver>`_
