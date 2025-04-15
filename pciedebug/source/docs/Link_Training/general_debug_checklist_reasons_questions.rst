@@ -28,11 +28,11 @@ General Debug Questions
 Regression
 ----------
   
-    - Did the issue occur in previous Vivado versions too? 
-    - Do other link width configurations show similar behavior?
-    - Have you tried with Gen1x1 configuration?
-    - Do you have a different board that you could try on? If you do, do you see the same issue on that board?
-    - Have you tried on a different machine?
+    - Check whether the issue occurs in previous Vivado versions
+    - Check whether other link width configurations show similar behavior
+    - Test with a Gen1x1 configuration
+    - Test on a different board
+    - Test on a different machine
 
 System Configuration
 --------------------
