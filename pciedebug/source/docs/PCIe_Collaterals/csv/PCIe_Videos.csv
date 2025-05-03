@@ -1,6 +1,4 @@
 PCIe Videos
-Xilinx UltraScale+ PCIe Gen3 x16 hardened IP passes PCI SIG compliance test: See it now on video running at 100Gbps+
-https://forums.xilinx.com/t5/Xcell-Daily-Blog/Xilinx-UltraScale-PCIe-Gen3-x16-hardened-IP-passes-PCI-SIG/ba-p/694911
 AXI PCIe with MIG on a KCU105 using WinDriver from Jungo Connectivity
 http://www.xilinx.com/video/fpga/ultrascale-designs-fast-ipi-ddr4-pcie-windriver.html
 How to create a PCI Express Design in an UltraScale FPGA:
