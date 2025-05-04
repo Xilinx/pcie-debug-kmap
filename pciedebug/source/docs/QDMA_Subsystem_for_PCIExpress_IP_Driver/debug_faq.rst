@@ -30,4 +30,6 @@ General FAQs
     * Yes Jumbo packet upto the size of 64K is supported. The provided driver breaks it into chunks of 4K to cater the requirement to meet 4K boundary in C2H direction. Jumbo packet is supported in both Internal Mode and Bypass Mode.  
 * Is it the hard requirement that user logic should monitor descriptor credits first and then send C2H data to QDMA IP? 
     * Yes, the user is required to check for the descriptor credits before sending the packet and this is a hard requirement. If not, the DMA will drop the packet. 
+* When does tlast get asserted for AXI4-Stream Ports? 
+    * For both s_axis_c2h_tlast and m_axis_h2c_tlast, tlast port indicates that this is the last cycle of the packet transfer.
 
