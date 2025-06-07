@@ -102,7 +102,7 @@ Endpoint BAR Read/Write
 
 • The Endpoint BAR read/write operations can be done as follows:
 
-.. image:: debugging/img_3.jpg
+.. image:: debugging/img_3.png
 
 **Reading the EP BAR**
 
