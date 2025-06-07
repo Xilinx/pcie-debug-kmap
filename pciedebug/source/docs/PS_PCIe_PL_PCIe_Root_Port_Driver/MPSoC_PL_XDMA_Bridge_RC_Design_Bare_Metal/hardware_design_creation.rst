@@ -25,4 +25,4 @@ The design is configured with the following settings:
 
 Download the TCL script for generating the design from the link below:
 
-:download:`genBd.tcl <./genBd.tcl>`
+:download:`genBd.tcl <_static/genBd.tcl>`
