@@ -95,7 +95,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation &amp; Debugging Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Versal_CPM5_PCIe_Root_Port_Design_Linux/index.html">Versal CPM5 PCIe Root Port Design (Linux)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">MPSoC PL XDMA Bridge Bare Metal Root Complex Design</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Design Creation in IP Integrator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Design Creation in IP Integrator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#design-configuration">Design Configuration</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="elf_generation_steps.html">ELF File Generation Steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ecam_mapping_and_addressing.html">ECAM Mapping and Addressing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="running_in_hardware.html">Hardware Programming</a></li>
@@ -131,8 +134,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              
   <div class="section" id="design-creation-in-ip-integrator">
 <h1>Design Creation in IP Integrator<a class="headerlink" href="#design-creation-in-ip-integrator" title="Permalink to this heading">¶</a></h1>
+<p>The figure below shows the block design for the ZCU106 evaluation board with PCI Express set up as the Root Complex.</p>
+<img alt="ZCU106 Block Design - Root Complex" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/MPSoC_PL_XDMA_Bridge_RC_Design_Bare_Metal/hardware_design_creation/img_1.jpg" />
+<div class="section" id="design-configuration">
+<h2>Design Configuration<a class="headerlink" href="#design-configuration" title="Permalink to this heading">¶</a></h2>
+<p>The design is configured with the following settings:</p>
+<ul class="simple">
+<li><p><strong>Functional Mode:</strong> XDMA as AXI Bridge</p></li>
+<li><p><strong>Mode:</strong> Advanced</p></li>
+<li><p><strong>Device/Port Type:</strong> Root Port of PCI Express Root Complex</p></li>
+<li><p><strong>PCIe Block Location:</strong> X0Y1</p></li>
+<li><p><strong>GT Quad:</strong> GTH Quad 227</p></li>
+<li><p><strong>Lane Width:</strong> X4</p></li>
+<li><p><strong>Maximum Link Speed:</strong> 5.0 GT/s</p></li>
+<li><p><strong>AXI Address Width:</strong> 64 bits</p></li>
+<li><p><strong>AXI Data Width:</strong> 64 bits</p></li>
+</ul>
 <p>Download the TCL script for generating the design from the link below:</p>
 <p><code class="xref download docutils literal notranslate"><span class="pre">genBd.tcl</span></code></p>
+</div>
 </div>
 
 
