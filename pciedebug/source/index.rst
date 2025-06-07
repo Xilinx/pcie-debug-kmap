@@ -48,6 +48,7 @@ PCIe Debug K-Map
 
    docs/PS_PCIe_PL_PCIe_Root_Port_Driver/index
    docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/index
+   docs/PS_PCIe_PL_PCIe_Root_Port_Driver/MPSoC_PL_XDMA_Bridge_RC_Design_Bare_Metal/index
    
 
 
