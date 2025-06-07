@@ -18,7 +18,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5RHQV7');</script>
 <!-- End Google Tag Manager -->
-  <title>Hardware Design Creation &mdash; PCIe Debug K-Map 1.0 documentation</title>
+  <title>Hardware Programming &mdash; PCIe Debug K-Map 1.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/_static/custom.css" type="text/css" />
@@ -33,9 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="PetaLinux Image Generation" href="petalinux_image_generation.html" />
-    <link rel="prev" title="Versal CPM5 PCIe Root Port Design (Linux)" href="index.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,20 +89,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="../../QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_debug_topics/index.html">QDMA Debug Topics</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Embedded PCI Express</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation &amp; Debugging Resources</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Versal CPM5 PCIe Root Port Design (Linux)</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Hardware Design Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="petalinux_image_generation.html">PetaLinux Image Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="device_tree_structure.html">Device Tree Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ecam_mapping_and_addressing.html">ECAM Mapping and Addressing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tactical_patch_requirement.html">Tactical Patch Requirement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="system_testability_and_setup.html">System Testability and Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supporting_documentation.html">Supporting Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../MPSoC_PL_XDMA_Bridge_RC_Design_Bare_Metal/index.html">MPSoC PL XDMA Bridge Bare Metal Root Complex Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Versal_CPM5_PCIe_Root_Port_Design_Linux/index.html">Versal CPM5 PCIe Root Port Design (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">MPSoC PL XDMA Bridge Bare Metal Root Complex Design</a></li>
 </ul>
 
         </div>
@@ -121,10 +109,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Versal CPM5 PCIe Root Port Design (Linux)</a> &raquo;</li>
-      <li>Hardware Design Creation</li>
+      <li>Hardware Programming</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/hardware_design_creation.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/docs/PS_PCIe_PL_PCIe_Root_Port_Driver/MPSoC_PL_XDMA_Bridge_RC_Design_Bare_Metal/running_in_hardware.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -132,43 +119,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="hardware-design-creation">
-<span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>Hardware Design Creation<a class="headerlink" href="#hardware-design-creation" title="Permalink to this heading">¶</a></h1>
-<p>Launch Vivado 2024.2 tool and select “Vivado Store” from the “Tools” list.</p>
-<img alt="Vivado Store Tool" src="../../../_images/img_14.jpg" />
-<p>In the “Vivado Store”, click on the “Example Designs” tab at the top of the left, then click the “Refresh” button at the bottom left. Vivado will contact GitHub to make sure the list of example designs is up to date. Locate the “Versal CPM Bridge RP Design” in the list. If the glyph is a grey circle with a down arrow, it means the example design needs to be downloaded – proceed to download it. If the glyph is a green check with a yellow dot, it means the example design needs to be updated – proceed to update it. Once the catalog is up to date and the glyph is a green check without any other annotation, it means the example design is downloaded and up to date.</p>
-<img alt="Vivado Store Example Designs" src="../../../_images/img_22.jpg" />
-<p>Once this example design is downloaded and up to date, close the “Vivado Store” by clicking “Close”.</p>
-<p>Select “Open Example Project” from the “Quick Start” list.</p>
-<img alt="Open Example Project" src="../../../_images/img_32.jpg" />
-<p>Advance through the wizard by clicking “Next”.</p>
-<img alt="Wizard Next Button" src="../../../_images/img_42.jpg" />
-<p>Access the “Versal CPM Bridge RP Design” example project.</p>
-<img alt="Versal CPM Bridge RP Design Project" src="../../../_images/img_52.jpg" />
-<p>Based on earlier steps, the example project should be showing as downloaded and up to date. With the example project selected, the “Description” should show basic information about the example project. Advance to the next step by clicking “Next”.</p>
-<p>Specify a project name and project location.</p>
-<img alt="Project Name and Location" src="../../../_images/img_61.jpg" />
-<p>Select the “Versal VPK120 Evaluation Platform”, switch part to xcvp1202-vsva2785-2MHP-e-S and click “Next”.</p>
-<img alt="Select Evaluation Platform" src="../../../_images/img_71.jpg" />
-<p>Ensure that CPM5 is auto-selected. Select “CPM5 PCIe Controller0 Gen4x8 RootPort Design” as CPM5_Preset and click “Next”.</p>
-<img alt="CPM5 PCIe Controller Configuration" src="../../../_images/img_81.jpg" />
-<p>Review the Project Summary to confirm that the part and product family selections are correct. Advance through the wizard by clicking “Finish”.</p>
-<img alt="Project Summary Review" src="../../../_images/img_91.jpg" />
-<p>Wait until the project creation, file import, and hierarchy update has completed. This may take a few minutes.</p>
-<p>No changes need to be made on any portion of this design. Feel free to investigate any properties of the IP Blocks in the design to learn more about the details of this example design.</p>
-<p>Below is the block diagram of the “cpm_rp.bd”:</p>
-<img alt="cpm_rp.bd Block Diagram" src="../../../_images/img_101.jpg" />
-<p>From “Flow Navigator” click “Generate Device Image”</p>
-<img alt="Generate Device Image" src="../../../_images/img_111.jpg" />
-<p>Export Hardware Design to Generate .xsa file for the Project</p>
-<p>From File menu, select “Export” –&gt; “Export Hardware”</p>
-<img alt="Export Hardware Menu" src="../../../_images/img_121.jpg" />
-<p>Select “Next”, and “Include Device Image”.</p>
-<img alt="Include Device Image" src="../../../_images/img_131.jpg" />
-<p>Create a .xsa file name and select export location. By default, the export location is inside of the project directory made earlier. Click on Next.</p>
-<img alt="File Export Location" src="../../../_images/img_141.jpg" />
-<p>Click on Finish.</p>
-<img alt="Finish Export Process" src="../../../_images/img_15.jpg" />
+  <div class="section" id="hardware-programming">
+<h1>Hardware Programming<a class="headerlink" href="#hardware-programming" title="Permalink to this heading">¶</a></h1>
+<p>Before running the application, the hardware need to be setup.</p>
+<ul class="simple">
+<li><p>Power on the hardware platform and ensure that the JTAG connection is properly established.</p></li>
+<li><p>To receive the UART output of this standalone application, connect the USB-UART of the development board to the PC and run a console program, such as PuTTY.</p></li>
+</ul>
+<div class="section" id="boot-steps">
+<h2>Boot Steps<a class="headerlink" href="#boot-steps" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Go to <strong>Debug Configurations</strong>.</p></li>
+<li><p>Select <strong>Single Application Debug</strong>.</p></li>
+<li><p>Navigate to the <strong>Connection</strong> tab, click <strong>New</strong>, and select the appropriate hardware.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure the hardware is set up correctly before executing this step.</p>
+</div>
+<img alt="Debug Configuration - Connection Tab" class="align-center" src="../../../_images/img_13.jpg" />
+</li>
+<li><p>Select the ELF file generated in the application.</p>
+<img alt="ELF File Selection" class="align-center" src="../../../_images/img_21.jpg" />
+</li>
+<li><p>Click <strong>Debug</strong> and check the output in the serial monitor.</p>
+<img alt="Serial Monitor Output" class="align-center" src="../../../_images/img_31.jpg" />
+</li>
+<li><p>Click on the highlighted icon.</p>
+<img alt="Highlighted Debug Icon" class="align-center" src="../../../_images/img_41.jpg" />
+</li>
+</ol>
+<p>The run configuration will first program the FPGA with the bitstream, then load and execute the application. You can view the UART output of the application in the console window, and it should appear as follows, indicating that the endpoint (EP) has been successfully enumerated.</p>
+<img alt="UART Output - Endpoint Enumerated" class="align-center" src="../../../_images/img_51.jpg" />
+</div>
 </div>
 
 
@@ -176,10 +158,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           
 				  
-				  <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Versal CPM5 PCIe Root Port Design (Linux)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="petalinux_image_generation.html" class="btn btn-neutral float-right" title="PetaLinux Image Generation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+				  <footer>
 
   <hr/>
 
