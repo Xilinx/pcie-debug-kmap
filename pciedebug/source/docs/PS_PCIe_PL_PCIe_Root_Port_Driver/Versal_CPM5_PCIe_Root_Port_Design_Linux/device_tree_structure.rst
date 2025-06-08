@@ -17,7 +17,7 @@ It is specified as a sequence of (address, size) pairs, corresponding to entries
           0x06 0x00000000  0x00 0x1000000
           0x00 0xfce20000  0x00 0x1000000>;
 
-Explanation:
+**Explanation**
 
 **cpm_slcr**
 - Address: ``0x00 0xfcdd0000``
