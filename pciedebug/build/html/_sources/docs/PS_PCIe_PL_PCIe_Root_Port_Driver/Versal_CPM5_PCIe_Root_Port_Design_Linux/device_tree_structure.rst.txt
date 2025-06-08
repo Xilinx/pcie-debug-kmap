@@ -61,10 +61,11 @@ It includes two Base Address Registers (BARs):
 - ``0x80 0x00000000`` — Corresponding CPU address
 - ``0x00 0x80000000`` — Size: 2 GB
 
-**Notes:**
-- Although BAR2 is configured as 256 GB in the AXI:BARs tab of the CPM5 IP GUI, the IP driver allocates only 2 GB, which is sufficient for operation.
-- PCIe Region 1 (BAR1) with a base address of ``0x06_00000000`` is reserved for ECAM (Enhanced Configuration Access Mechanism) space.
-- All BAR assignment details are also shown in the Address Editor tab, as illustrated in the following snippet:
+.. note::
+
+   - Although BAR2 is configured as 256 GB in the AXI:BARs tab of the CPM5 IP GUI, the IP driver allocates only 2 GB, which is sufficient for operation.
+   - PCIe Region 1 (BAR1) with a base address of ``0x06_00000000`` is reserved for ECAM (Enhanced Configuration Access Mechanism) space.
+   - All BAR assignment details are also shown in the Address Editor tab, as illustrated in the following snippet:
 
 .. image:: device_tree_structure/img_3.png
    :alt: Address Editor

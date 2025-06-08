@@ -176,10 +176,14 @@ It includes two Base Address Registers (BARs):</p>
 - <code class="docutils literal notranslate"><span class="pre">0x80</span> <span class="pre">0x00000000</span></code> — PCIe address (BAR2)
 - <code class="docutils literal notranslate"><span class="pre">0x80</span> <span class="pre">0x00000000</span></code> — Corresponding CPU address
 - <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0x80000000</span></code> — Size: 2 GB</p>
-<p><strong>Notes:</strong>
-- Although BAR2 is configured as 256 GB in the AXI:BARs tab of the CPM5 IP GUI, the IP driver allocates only 2 GB, which is sufficient for operation.
-- PCIe Region 1 (BAR1) with a base address of <code class="docutils literal notranslate"><span class="pre">0x06_00000000</span></code> is reserved for ECAM (Enhanced Configuration Access Mechanism) space.
-- All BAR assignment details are also shown in the Address Editor tab, as illustrated in the following snippet:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Although BAR2 is configured as 256 GB in the AXI:BARs tab of the CPM5 IP GUI, the IP driver allocates only 2 GB, which is sufficient for operation.</p></li>
+<li><p>PCIe Region 1 (BAR1) with a base address of <code class="docutils literal notranslate"><span class="pre">0x06_00000000</span></code> is reserved for ECAM (Enhanced Configuration Access Mechanism) space.</p></li>
+<li><p>All BAR assignment details are also shown in the Address Editor tab, as illustrated in the following snippet:</p></li>
+</ul>
+</div>
 <img alt="Address Editor" class="align-center" src="../../../_images/img_31.png" />
 </div>
 
