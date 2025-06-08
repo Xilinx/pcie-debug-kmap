@@ -133,12 +133,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            <div itemprop="articleBody">
              
   <div class="section" id="ecam-mapping-and-addressing">
-<span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>ECAM Mapping and Addressing<a class="headerlink" href="#ecam-mapping-and-addressing" title="Permalink to this heading">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li><p>This page is in progress and will be available soon. Please visit later.</p></li>
+<h1>ECAM Mapping and Addressing<a class="headerlink" href="#ecam-mapping-and-addressing" title="Permalink to this heading">¶</a></h1>
+<p>The ECAM (Enhanced Configuration Access Mechanism) space is typically defined in the Device Tree (<code class="docutils literal notranslate"><span class="pre">.dts</span></code> file) under the PCIe node using the <code class="docutils literal notranslate"><span class="pre">reg</span></code> property:</p>
+<img alt="ECAM reg property in Device Tree" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/ecam_mapping_and_addressing/img_1.png" />
+<p>In the example above:</p>
+<ul class="simple">
+<li><p><strong>ECAM Base Address:</strong> <code class="docutils literal notranslate"><span class="pre">0x0600_0000_00</span></code></p></li>
+<li><p><strong>ECAM Size:</strong> <code class="docutils literal notranslate"><span class="pre">0x0100_0000</span></code> (16 MB)</p></li>
 </ul>
-</div></blockquote>
+<p>The probe function <code class="docutils literal notranslate"><span class="pre">xilinx_cpm_pcie_probe</span></code>, located in the file <code class="docutils literal notranslate"><span class="pre">pcie-xilinx-cpm.c</span></code> within the Linux kernel source
+(<code class="docutils literal notranslate"><span class="pre">linux-xlnx/drivers/pci/controller/pcie-xilinx-cpm.c</span></code>), is responsible for handling ECAM address mapping.</p>
+<p>During system initialization in the CED, the following warning appears in the boot log:</p>
+<img alt="ECAM warning in boot log" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/ecam_mapping_and_addressing/img_2.png" />
+<p>This message indicates the following:</p>
+<ul class="simple">
+<li><p>The desired PCIe bus range is <code class="docutils literal notranslate"><span class="pre">[bus</span> <span class="pre">00-ff]</span></code>, which corresponds to bus numbers 0 through 255.</p></li>
+<li><p>However, due to the ECAM size limitation, the bus range is adjusted to <code class="docutils literal notranslate"><span class="pre">[bus</span> <span class="pre">00-0f]</span></code>, meaning only buses 0 through 15 are supported.</p></li>
+<li><p>The ECAM memory region is defined as <code class="docutils literal notranslate"><span class="pre">[mem</span> <span class="pre">0x600000000-0x600ffffff]</span></code>, totaling <strong>16 MB</strong>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><strong>Memory required per bus:</strong> Each bus requires <code class="docutils literal notranslate"><span class="pre">2^bus_shift</span></code> bytes of memory.
+- For <code class="docutils literal notranslate"><span class="pre">bus_shift</span> <span class="pre">=</span> <span class="pre">20</span></code>, this equals <strong>1 MB per bus</strong>.</p></li>
+<li><p><strong>Maximum number of buses supported:</strong>
+- <code class="docutils literal notranslate"><span class="pre">16</span> <span class="pre">MB</span> <span class="pre">/</span> <span class="pre">1</span> <span class="pre">MB</span> <span class="pre">=</span> <span class="pre">16</span></code> → Buses <strong>0 through 15</strong> can be addressed.</p></li>
+</ul>
+</div>
+<p>The following log snippet shows a successful mapping message:</p>
+<img alt="ECAM mapping success log" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/ecam_mapping_and_addressing/img_3.png" />
 </div>
 
 
