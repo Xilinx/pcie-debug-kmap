@@ -133,12 +133,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            <div itemprop="articleBody">
              
   <div class="section" id="device-tree-structure">
-<span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>Device Tree Structure<a class="headerlink" href="#device-tree-structure" title="Permalink to this heading">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li><p>This page is in progress and will be available soon. Please visit later.</p></li>
-</ul>
-</div></blockquote>
+<h1>Device Tree Structure<a class="headerlink" href="#device-tree-structure" title="Permalink to this heading">¶</a></h1>
+<p>Below snippet shows the Device Tree information of the PCIe node in the CED example design:</p>
+<img alt="Device Tree Snippet" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/img_1.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">reg</span></code> property defines the physical addresses and sizes of various hardware registers.
+It is specified as a sequence of (address, size) pairs, corresponding to entries in the <code class="docutils literal notranslate"><span class="pre">reg-names</span></code> property:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>reg-names = &quot;cpm_slcr\0cfg\0cpm_csr&quot;;
+reg = &lt;0x00 0xfcdd0000  0x00 0x1000
+       0x06 0x00000000  0x00 0x1000000
+       0x00 0xfce20000  0x00 0x1000000&gt;;
+</pre></div>
+</div>
+<p>Explanation:</p>
+<p><strong>cpm_slcr</strong>
+- Address: <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0xfcdd0000</span></code>
+- Size: <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0x1000</span></code> (4 KB)
+- Description: CPM5 System Level Control Register (SLCR)</p>
+<p><strong>cfg</strong>
+- Address: <code class="docutils literal notranslate"><span class="pre">0x06</span> <span class="pre">0x00000000</span></code>
+- Size: <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0x1000000</span></code> (16 MB)
+- Description: ECAM (Enhanced Configuration Access Mechanism) space</p>
+<p><strong>cpm_csr</strong>
+- Address: <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0xfce20000</span></code>
+- Size: <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0x1000000</span></code> (16 MB)
+- Description: CPM5 DMA0 Control and Status Registers (CSR)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ranges</span></code> property in the Device Tree is derived from the CPM5 IP configuration,
+specifically from the AXI: BARs tab in the IP configuration GUI.</p>
+<img alt="AXI BAR Mapping" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/img_3.png" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ranges = &lt;0x2000000  0x00 0xe0000000  0x00 0xe0000000  0x00 0x10000000
+          0x43000000 0x80 0x00000000  0x80 0x00000000  0x00 0x80000000&gt;;
+</pre></div>
+</div>
+<p>This entry defines how PCIe address regions are mapped to the CPU address space.
+It includes two Base Address Registers (BARs):</p>
+<p><strong>Entry 1: 32-bit BAR (BAR0 / PCIe Region 0)</strong>
+- <code class="docutils literal notranslate"><span class="pre">0x2000000</span></code> — Flag indicating a 32-bit memory BAR
+- <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0xe0000000</span></code> — PCIe address (BAR0)
+- <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0xe0000000</span></code> — Corresponding CPU address
+- <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0x10000000</span></code> — Size: 256 MB</p>
+<p><strong>Entry 2: 64-bit BAR (BAR2 / PCIe Region 2)</strong>
+- <code class="docutils literal notranslate"><span class="pre">0x43000000</span></code> — Flag indicating a 64-bit memory BAR
+- <code class="docutils literal notranslate"><span class="pre">0x80</span> <span class="pre">0x00000000</span></code> — PCIe address (BAR2)
+- <code class="docutils literal notranslate"><span class="pre">0x80</span> <span class="pre">0x00000000</span></code> — Corresponding CPU address
+- <code class="docutils literal notranslate"><span class="pre">0x00</span> <span class="pre">0x80000000</span></code> — Size: 2 GB</p>
+<p><strong>Notes:</strong>
+- Although BAR2 is configured as 256 GB in the AXI:BARs tab of the CPM5 IP GUI, the IP driver allocates only 2 GB, which is sufficient for operation.
+- PCIe Region 1 (BAR1) with a base address of <code class="docutils literal notranslate"><span class="pre">0x06_00000000</span></code> is reserved for ECAM (Enhanced Configuration Access Mechanism) space.
+- All BAR assignment details are also shown in the Address Editor tab, as illustrated in the following snippet:</p>
+<img alt="Address Editor" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/img_3.png" />
 </div>
 
 
