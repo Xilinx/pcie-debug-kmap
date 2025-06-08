@@ -135,7 +135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="section" id="device-tree-structure">
 <h1>Device Tree Structure<a class="headerlink" href="#device-tree-structure" title="Permalink to this heading">¶</a></h1>
 <p>Below snippet shows the Device Tree information of the PCIe node in the CED example design:</p>
-<img alt="Device Tree Snippet" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/img_1.png" />
+<img alt="Device Tree Snippet" class="align-center" src="../../../_images/img_12.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">reg</span></code> property defines the physical addresses and sizes of various hardware registers.
 It is specified as a sequence of (address, size) pairs, corresponding to entries in the <code class="docutils literal notranslate"><span class="pre">reg-names</span></code> property:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>reg-names = &quot;cpm_slcr\0cfg\0cpm_csr&quot;;
@@ -159,7 +159,7 @@ reg = &lt;0x00 0xfcdd0000  0x00 0x1000
 - Description: CPM5 DMA0 Control and Status Registers (CSR)</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ranges</span></code> property in the Device Tree is derived from the CPM5 IP configuration,
 specifically from the AXI: BARs tab in the IP configuration GUI.</p>
-<img alt="AXI BAR Mapping" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/img_3.png" />
+<img alt="AXI BAR Mapping" class="align-center" src="../../../_images/img_31.png" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ranges = &lt;0x2000000  0x00 0xe0000000  0x00 0xe0000000  0x00 0x10000000
           0x43000000 0x80 0x00000000  0x80 0x00000000  0x00 0x80000000&gt;;
 </pre></div>
@@ -180,7 +180,7 @@ It includes two Base Address Registers (BARs):</p>
 - Although BAR2 is configured as 256 GB in the AXI:BARs tab of the CPM5 IP GUI, the IP driver allocates only 2 GB, which is sufficient for operation.
 - PCIe Region 1 (BAR1) with a base address of <code class="docutils literal notranslate"><span class="pre">0x06_00000000</span></code> is reserved for ECAM (Enhanced Configuration Access Mechanism) space.
 - All BAR assignment details are also shown in the Address Editor tab, as illustrated in the following snippet:</p>
-<img alt="Address Editor" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/img_3.png" />
+<img alt="Address Editor" class="align-center" src="../../../_images/img_31.png" />
 </div>
 
 

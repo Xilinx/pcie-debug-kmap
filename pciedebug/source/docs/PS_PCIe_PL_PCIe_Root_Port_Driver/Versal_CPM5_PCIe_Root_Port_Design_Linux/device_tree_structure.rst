@@ -3,7 +3,7 @@ Device Tree Structure
 
 Below snippet shows the Device Tree information of the PCIe node in the CED example design:
 
-.. image:: img_1.png
+.. image:: device_tree_structure/img_1.png
    :alt: Device Tree Snippet
    :align: center
 
@@ -37,7 +37,7 @@ Explanation:
 The ``ranges`` property in the Device Tree is derived from the CPM5 IP configuration,
 specifically from the AXI: BARs tab in the IP configuration GUI.
 
-.. image:: img_3.png
+.. image:: device_tree_structure/img_3.png
    :alt: AXI BAR Mapping
    :align: center
 
@@ -66,6 +66,6 @@ It includes two Base Address Registers (BARs):
 - PCIe Region 1 (BAR1) with a base address of ``0x06_00000000`` is reserved for ECAM (Enhanced Configuration Access Mechanism) space.
 - All BAR assignment details are also shown in the Address Editor tab, as illustrated in the following snippet:
 
-.. image:: img_3.png
+.. image:: device_tree_structure/img_3.png
    :alt: Address Editor
    :align: center
