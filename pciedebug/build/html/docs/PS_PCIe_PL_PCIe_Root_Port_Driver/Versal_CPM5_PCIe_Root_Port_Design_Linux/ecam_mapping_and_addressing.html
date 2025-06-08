@@ -135,7 +135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="section" id="ecam-mapping-and-addressing">
 <h1>ECAM Mapping and Addressing<a class="headerlink" href="#ecam-mapping-and-addressing" title="Permalink to this heading">¶</a></h1>
 <p>The ECAM (Enhanced Configuration Access Mechanism) space is typically defined in the Device Tree (<code class="docutils literal notranslate"><span class="pre">.dts</span></code> file) under the PCIe node using the <code class="docutils literal notranslate"><span class="pre">reg</span></code> property:</p>
-<img alt="ECAM reg property in Device Tree" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/ecam_mapping_and_addressing/img_1.png" />
+<img alt="ECAM reg property in Device Tree" class="align-center" src="../../../_images/img_13.png" />
 <p>In the example above:</p>
 <ul class="simple">
 <li><p><strong>ECAM Base Address:</strong> <code class="docutils literal notranslate"><span class="pre">0x0600_0000_00</span></code></p></li>
@@ -144,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The probe function <code class="docutils literal notranslate"><span class="pre">xilinx_cpm_pcie_probe</span></code>, located in the file <code class="docutils literal notranslate"><span class="pre">pcie-xilinx-cpm.c</span></code> within the Linux kernel source
 (<code class="docutils literal notranslate"><span class="pre">linux-xlnx/drivers/pci/controller/pcie-xilinx-cpm.c</span></code>), is responsible for handling ECAM address mapping.</p>
 <p>During system initialization in the CED, the following warning appears in the boot log:</p>
-<img alt="ECAM warning in boot log" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/ecam_mapping_and_addressing/img_2.png" />
+<img alt="ECAM warning in boot log" class="align-center" src="../../../_images/img_22.png" />
 <p>This message indicates the following:</p>
 <ul class="simple">
 <li><p>The desired PCIe bus range is <code class="docutils literal notranslate"><span class="pre">[bus</span> <span class="pre">00-ff]</span></code>, which corresponds to bus numbers 0 through 255.</p></li>
@@ -161,7 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </div>
 <p>The following log snippet shows a successful mapping message:</p>
-<img alt="ECAM mapping success log" class="align-center" src="docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/ecam_mapping_and_addressing/img_3.png" />
+<img alt="ECAM mapping success log" class="align-center" src="../../../_images/img_32.png" />
 </div>
 
 
