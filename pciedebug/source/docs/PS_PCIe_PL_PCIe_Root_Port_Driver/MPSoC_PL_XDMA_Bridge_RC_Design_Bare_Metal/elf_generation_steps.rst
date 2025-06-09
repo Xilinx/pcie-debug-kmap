@@ -22,7 +22,7 @@ ELF File Generation Steps
 
 .. image:: elf_generation_steps/img_5.jpg
 
-5. Select **Create new platform from hardware (XSA)** and provide the path to the 2023.1 design. Then, click **Next**.
+5. Select **Create new platform from hardware (XSA)** and provide the path to the 2023.2 design. Then, click **Next**.
 
 .. image:: elf_generation_steps/img_6.jpg
 
