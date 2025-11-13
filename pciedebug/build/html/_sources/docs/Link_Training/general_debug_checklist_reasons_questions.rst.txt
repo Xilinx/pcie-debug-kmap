@@ -51,33 +51,31 @@ Design Implementation
 Failing Behavior
 ----------------
   
-    - What is the frequency of the error? For example, does it happen immediately or after 1 hour?
-    - Can the error be cleared? If cleared, does the error come back?
-    - Is this failure observed on multiple parts?
-    - Does failure occur immediately after reset?
-    - Does failure occur immediately, after first rate change, after multiple rate changes?
-    - How long after successful rate change does it fail?
-    - Does the issue occur with the Example Design as well or only in your design?
+    - Note the frequency of the error (e.g., occurs immediately or after a period such as 1 hour).
+    - Check whether the error can be cleared, and if so, whether it reappears afterward.
+    - Verify if the failure is observed across multiple parts.
+    - Check if the failure occurs immediately after reset.
+    - Observe whether the failure occurs immediately, after the first rate change, or after multiple rate changes.
+    - Measure the time between a successful rate change and the occurrence of failure.
+    - Check whether the issue occurs with the Example Design or only with custom design.
 
 Debug Capability
 ----------------
 
-    - Was a protocol link analyzer used? If so, provide protocol link analyzer captures with the details of your analysis of the captures.
-    - Do you have a high-speed oscilloscope available, to probe clock / power / data lines?
-    - Do you have a free-running clock available to the FPGA?  (A clock that is separate from the PCIe reference clock, and not tied to the PCIe reset)
-    - Do you have the ability to insert a clean clock in place of the on-board reference clock? 
-    - Have you captured an LTSSM graph by enabling the JTAG Debugger feature in the GUI?
-    - Have you run Eye Scan by enabling the In-system IBERT feature in the GUI?
+    - Check using a protocol link analyzer.
+    - Probe the clock, power, and data lines with a high-speed oscilloscope.
+    - Check whether you can insert a clean clock in place of the on-board reference clock.
+    - Capture and review the LTSSM graph by enabling the JTAG Debugger or PCIe Link Debug feature (depending on the device used) in the GUI.
 
 SI Debug Info
 -------------
 
-    - Has it been confirmed whether Clock Jitter and Power Noise are within the specification?
-    - Power integrity measurements
-    - REFCLK jitter measurements
-    - Channel loss data
-    - Eye Scan plots
-    - Confirm whether DFE, LPM or AutoRxEq are selected in the core configuration.
+    - Confirm that clock jitter and power noise are within specification.
+    - Perform and review power integrity measurements.
+    - Perform and review REFCLK jitter measurements.
+    - Collect and analyze channel loss data.
+    - Capture and review Eye Scan plots.
+    - Confirm whether DFE, LPM, or AutoRxEq is selected in the core configuration.
 
 .. _link_training_debug_checklist:
 
