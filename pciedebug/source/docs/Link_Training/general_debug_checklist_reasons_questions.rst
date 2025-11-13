@@ -44,9 +44,9 @@ Clocking
 Design Implementation
 ---------------------
 
-    - Were there any implementation (synthesis, routing) errors?
-    - Were there any timing errors?
-    - Have all of the IP constraints been verified by comparing with the Example Design XDC file? 
+    - Check for any implementation errors (synthesis or routing).
+    - Check for any timing errors.
+    - Verify that all IP constraints have been validated against the Example Design XDC file.
 
 Failing Behavior
 ----------------
