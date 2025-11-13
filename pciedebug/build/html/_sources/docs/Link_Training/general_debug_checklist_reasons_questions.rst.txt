@@ -22,8 +22,8 @@ Common Link Training Issue Reasons
   
 .. _link_training_debug_questions:
 
-General Debug Questions and Checklist
-=====================================
+Debug Pointers
+===============
 
 Regression
 ----------
