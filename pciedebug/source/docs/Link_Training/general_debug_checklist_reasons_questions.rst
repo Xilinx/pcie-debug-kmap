@@ -34,34 +34,12 @@ Regression
     - Test on a different hardware board.
     - Test with a different link partner device.
 
-System Configuration
---------------------
-
-    - Indicate what board you are using: is it a Xilinx Development Board or a Customer Board? If it is a Xilinx development board, please provide the board revision ID. Indicate motherboard description:
-    - What is the link partner? Is it a switch, or a PC? Who is the manufacturer of that switch or PC? - Which Chipset are you using?
-    - Did the failure occur in Gen1, Gen2, and/or Gen3?
-    - Did the failure occur as RP (Root Port) and/or EP (Endpoint)?
-    - Describe the channel between the FPGA and the link partner, and estimated channel loss at desired link speed. 
-    - Is there any passive hardware (Interposer for analyzer, retimer) in the path?
-    - How is the Xilinx part connected to the system / link partner (Chip-to-chip on single board, add-in card, backplane, cabling) ?
-
-Regression
-----------
-
-    - Did the issue occur in previous Vivado versions too? 
-    - Do other link width configurations show similar behavior?
-    - Have you tried with Gen1x1 configuration?
-    - Do you have a different board that you could try on? If you do, do you see the same issue on that board?
-    - Have you tried on a different machine?
-
 Clocking
 --------
 
-    - Did the clock lock?
-    - What is the clocking architecture? Synchronous or Asynchronous?
-    - Is SSC enabled?
-    - Have you checked by disabling SSC?
-    - What frequency are you using for the reference clock?
+    - Check if the clock is locking.
+    - Verify whether the issue occurs only with the asynchronous clocking architecture.
+    - Test by disabling SSC (Spread Spectrum Clocking).
 
 Design Implementation
 ---------------------
