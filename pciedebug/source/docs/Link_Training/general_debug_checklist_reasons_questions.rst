@@ -22,17 +22,17 @@ Common Link Training Issue Reasons
   
 .. _link_training_debug_questions:
 
-General Debug Questions
-=======================
+General Debug Questions and Checklist
+=====================================
 
 Regression
 ----------
   
-    - Check whether the issue occurs in previous Vivado versions
-    - Check whether other link width configurations show similar behavior
-    - Test with a Gen1x1 configuration
-    - Test on a different board
-    - Test on a different machine
+    - Verify whether the issue occurs in earlier versions of Vivado.
+    - Check if other link width configurations exhibit similar behavior.
+    - Test using a Gen1x1 configuration.
+    - Test on a different hardware board.
+    - Test with a different link partner device.
 
 System Configuration
 --------------------
