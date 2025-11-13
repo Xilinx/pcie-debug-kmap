@@ -70,8 +70,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Common Link Training Issue Reasons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#general-debug-questions-and-checklist">General Debug Questions and Checklist</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#regression">Regression</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#system-configuration">System Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#clocking">Clocking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#design-implementation">Design Implementation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#failing-behavior">Failing Behavior</a></li>
@@ -176,41 +174,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="system-configuration">
-<h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this heading">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>Indicate what board you are using: is it a Xilinx Development Board or a Customer Board? If it is a Xilinx development board, please provide the board revision ID. Indicate motherboard description:</p></li>
-<li><p>What is the link partner? Is it a switch, or a PC? Who is the manufacturer of that switch or PC? - Which Chipset are you using?</p></li>
-<li><p>Did the failure occur in Gen1, Gen2, and/or Gen3?</p></li>
-<li><p>Did the failure occur as RP (Root Port) and/or EP (Endpoint)?</p></li>
-<li><p>Describe the channel between the FPGA and the link partner, and estimated channel loss at desired link speed.</p></li>
-<li><p>Is there any passive hardware (Interposer for analyzer, retimer) in the path?</p></li>
-<li><p>How is the Xilinx part connected to the system / link partner (Chip-to-chip on single board, add-in card, backplane, cabling) ?</p></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="id1">
-<h2>Regression<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>Did the issue occur in previous Vivado versions too?</p></li>
-<li><p>Do other link width configurations show similar behavior?</p></li>
-<li><p>Have you tried with Gen1x1 configuration?</p></li>
-<li><p>Do you have a different board that you could try on? If you do, do you see the same issue on that board?</p></li>
-<li><p>Have you tried on a different machine?</p></li>
-</ul>
-</div></blockquote>
-</div>
 <div class="section" id="clocking">
 <h2>Clocking<a class="headerlink" href="#clocking" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><p>Did the clock lock?</p></li>
-<li><p>What is the clocking architecture? Synchronous or Asynchronous?</p></li>
-<li><p>Is SSC enabled?</p></li>
-<li><p>Have you checked by disabling SSC?</p></li>
-<li><p>What frequency are you using for the reference clock?</p></li>
+<li><p>Check if the clock is locking.</p></li>
+<li><p>Verify whether the issue occurs only with the asynchronous clocking architecture.</p></li>
+<li><p>Test by disabling SSC (Spread Spectrum Clocking).</p></li>
 </ul>
 </div></blockquote>
 </div>
